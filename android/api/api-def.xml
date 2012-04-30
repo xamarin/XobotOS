@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition>
+
+	<templates>
+		<templates id="output">
+			<output-type id="stub" class="stub">
+				<remove-docs>true</remove-docs>
+				<remove-static-constructor>true</remove-static-constructor>
+			</output-type>
+		
+			<output-type id="sharpen" class="sharpen"/>
+			
+			<output-type id="sharpen-no-docs" class="sharpen">
+				<remove-docs>true</remove-docs>
+			</output-type>
+
+			<output-type id="api-stub" class="stub">
+				<remove-fields>true</remove-fields>
+				<remove-non-public>true</remove-non-public>
+				<remove-docs>true</remove-docs>
+				<remove-static-constructor>true</remove-static-constructor>
+				<remove-anonymous-classes>true</remove-anonymous-classes>
+			</output-type>
+
+			<output-type id="naked-stub" class="naked-stub"/>
+		
+			<output-type id="nothing" class="nothing"/>
+
+			<output-type id="partial" class="nothing"/>
+		</templates>
+
+		<native-config id="native">
+			<dll-name>libxobotos.dll</dll-name>
+			<output-dir>glue</output-dir>
+			<function-prefix>libxobotos</function-prefix>
+			<include>libxobotos.h</include>
+			<marshal-info class="native-pointer" id="Pointer" />
+		</native-config>
+
+	</templates>
+	
+	<include-file file="api/android-app.xml"/>
+	
+	<include-file file="api/android-content.xml"/>
+	
+	<include-file file="api/android-graphics.xml"/>
+
+	<include-file file="api/android-text.xml"/>
+	
+	<include-file file="api/android-view.xml"/>
+	
+	<include-file file="api/android-widget.xml"/>
+	
+	<include-file file="api/android-animation.xml"/>
+
+	<include-file file="api/android-os.xml"/>
+	
+	<include-file file="api/android-util.xml"/>
+
+	<include-file file="api/other-namespaces.xml"/>
+
+	<namespace>
+		<compilation-unit name="android.internal.R" output="/output/sharpen">
+			<binding auto-rename-fields="true" />
+		</compilation-unit>
+
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>java.math.RoundingMode</include>
+				<include>android.Manifest</include>
+				<include>android.R</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+	
+	<namespace name="android.provider">
+		<compilation-unit output="output/stub">
+			<location-filter>
+				<include>BaseColumns</include>
+				<include>SyncStateContract</include>
+				<include>Applications</include>
+				<include>CalendarContract</include>
+				<include>Contacts</include>
+				<include>MediaStore</include>
+				<include>Telephony</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="ContactsContract" output="/output/stub">
+			<main-type>
+				<type name="StatusUpdates" abstract="true">
+					<remove-members>
+						<member-kind>CONSTRUCTOR</member-kind>
+					</remove-members>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="BrowserContract" output="output/stub">
+			<main-type>
+				<type name="Accounts">
+					<field name="CONTENT_URI">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="DrmStore" output="output/stub">
+			<main-type>
+				<type>
+					<filter>
+						<name>Images</name>
+						<name>Audio</name>
+					</filter>
+					<field name="CONTENT_URI">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Settings" output="output/stub">
+			<main-type>
+				<type name="System" output="output/nothing"/>
+			</main-type>
+		</compilation-unit>
+	</namespace>
+	
+	<namespace name="android.database" output="/output/stub">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>Observable</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace recursive="true" />
+	</namespace>
+	
+	<namespace name="android.media">
+		<compilation-unit output="output/stub">
+			<location-filter>
+				<include>IRemoteControlDisplay</include>
+				<include>IAudioFocusDispatcher</include>
+				<include>AudioSystem</include>
+				<include>AudioManager</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="android.emoji">
+		<templates>
+			<output-type id="custom-output" class="stub">
+				<remove-chained-constructors>true</remove-chained-constructors>
+				<remove-fields>false</remove-fields>
+				<remove-non-public>true</remove-non-public>
+				<remove-docs>true</remove-docs>
+			</output-type>
+		</templates>
+		<compilation-unit output="$custom-output">
+			<location-filter>
+				<include>EmojiFactory</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+	
+	<namespace name="android.policy.internal" output="/output/sharpen" />
+
+	<namespace name="android.appwidget" output="/output/sharpen">
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<include>AppWidgetHost</include>
+				<include>AppWidgetHostView</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace recursive="true" />
+	</namespace>
+
+	<namespace name="android.statusbar.internal" output="/output/sharpen" />
+
+	<namespace name="android.inputmethodservice" output="output/stub"/>
+	
+	<namespace name="android.drm">
+		<compilation-unit name="DrmStore" output="/output/stub">
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="android.telephony">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>TelephonyManager</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="internal">
+			<compilation-unit name="Call">
+				<binding auto-rename-fields="true" />
+			</compilation-unit>
+			<compilation-unit name="SmsMessageBase">
+				<binding auto-rename-fields="true" />
+			</compilation-unit>
+		</namespace>
+	</namespace>
+
+	<namespace name="android.accounts">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>Account</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>IAccountManager</include>
+				<include>IAccountManagerResponse</include>
+				<include>AccountManager</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="android.speech">
+		<compilation-unit name="RecognizerIntent" output="/output/sharpen" />
+	</namespace>
+
+	<namespace name="android.net">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>IConnectivityManager</include>
+				<include>INetworkPolicyManager</include>
+				<include>IThrottleManager</include>
+				<include>ConnectivityManager</include>
+				<include>NetworkPolicyManager</include>
+				<include>ThrottleManager</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="wifi">
+			<compilation-unit output="/output/api-stub">
+				<location-filter>
+					<include>IWifiManager</include>
+					<include>WifiManager</include>
+				</location-filter>
+			</compilation-unit>
+			<namespace name="p2p">
+				<compilation-unit output="/output/api-stub">
+					<location-filter>
+						<include>IWifiP2pManager</include>
+						<include>WifiP2pManager</include>
+					</location-filter>
+				</compilation-unit>
+			</namespace>
+		</namespace>
+	</namespace>
+
+	<namespace name="android.location">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>ICountryDetector</include>
+				<include>ILocationManager</include>
+				<include>CountryDetector</include>
+				<include>LocationManager</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="android.nfc">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>NfcManager</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="android.hardware.usb">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>IUsbManager</include>
+				<include>UsbManager</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="martin" output="/output/sharpen">
+		<template-include-file file="api/test.xml"/>
+	</namespace>
+
+</api-definition>

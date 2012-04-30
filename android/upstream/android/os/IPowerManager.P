@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/os/IPowerManager.java: \
+  frameworks/base/core/java/android/os/IPowerManager.aidl \
+  frameworks/base/core/java/android/os/WorkSource.aidl 
+

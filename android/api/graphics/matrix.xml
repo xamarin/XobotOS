@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Matrix">
+	<native-handle id="NativeMatrix">
+		<name>NativeMatrix</name>
+		<type>android.graphics.Matrix</type>
+		<include>MatrixGlue.h</include>
+		<class>MatrixGlue</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeMatrix"
+		id="Matrix" />
+	<marshal-info class="native-class" native-handle="NativeMatrix"
+		flags="ALLOW_NULL" id="Matrix-AllowNull" />
+	<marshal-info class="native-enum" id="Matrix-ScaleToFit">
+		<native-type>SkMatrix::ScaleToFit</native-type>
+	</marshal-info>
+	<compilation-unit name="Matrix">
+		<main-type native-handle="NativeMatrix" >
+			<enum name="ScaleToFit">
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<method name="ni">
+				<binding native-handle="NativeMatrix" />
+			</method>
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="native_create(int)">
+				<native name="constructor" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Matrix" />
+						<parameter marshal="Matrix-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_equals(int,int)">
+				<native name="equals" kind="STATIC">
+					<class>MatrixGlue</class>
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getValues(int,float[])">
+				<native name="getValues" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_invert(int,int)">
+				<native name="invert" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_isIdentity(int)">
+				<native name="isIdentity" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_mapPoints(int,float[],int,float[],int,int,boolean)">
+				<native name="mapPoints" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_mapRadius(int,float)">
+				<native name="mapRadius" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_mapRect(int,android.graphics.RectF,android.graphics.RectF)">
+				<native name="mapRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter mode="REF" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postConcat(int,int)">
+				<native name="postConcat" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postRotate(int,float)">
+				<native name="postRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postRotate(int,float,float,float)">
+				<native name="postRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postScale(int,float,float)">
+				<native name="postScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postScale(int,float,float,float,float)">
+				<native name="postScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postSkew(int,float,float)">
+				<native name="postSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postSkew(int,float,float,float,float)">
+				<native name="postSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_postTranslate(int,float,float)">
+				<native name="postTranslate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preConcat(int,int)">
+				<native name="preConcat" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preRotate(int,float)">
+				<native name="preRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preRotate(int,float,float,float)">
+				<native name="preRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preScale(int,float,float)">
+				<native name="preScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preScale(int,float,float,float,float)">
+				<native name="preScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preSkew(int,float,float)">
+				<native name="preSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preSkew(int,float,float,float,float)">
+				<native name="preSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_preTranslate(int,float,float)">
+				<native name="preTranslate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rectStaysRect(int)">
+				<native name="rectStaysRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_reset(int)">
+				<native name="reset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_set(int,int)">
+				<native name="set" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setConcat(int,int,int)">
+				<native name="setConcat" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setPolyToPoly(int,float[],int,float[],int,int)">
+				<native name="setPolyToPoly" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_setRectToRect(int,android.graphics.RectF,android.graphics.RectF,int)">
+				<native name="setRectToRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+						<parameter />
+						<parameter />
+						<parameter marshal="Matrix-ScaleToFit" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setRotate(int,float)">
+				<native name="setRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setRotate(int,float,float,float)">
+				<native name="setRotate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setScale(int,float,float)">
+				<native name="setScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setScale(int,float,float,float,float)">
+				<native name="setScale" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setSinCos(int,float,float)">
+				<native name="setSinCos" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setSinCos(int,float,float,float,float)">
+				<native name="setSinCos" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setSkew(int,float,float)">
+				<native name="setSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setSkew(int,float,float,float,float)">
+				<native name="setSkew" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setTranslate(int,float,float)">
+				<native name="setTranslate" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setValues(int,float[])">
+				<native name="setValues" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Matrix" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

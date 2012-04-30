@@ -1,0 +1,10 @@
+# Copyright 2010 Google Inc. All Rights Reserved.
+#Fri Jul 16 10:03:08 PDT 2010
+currentVersion=1.4
+version=1.3
+isNative=false
+feedurl=http\://commons.apache.org/codec/changes-report.html
+name=apache_commons_codec
+keywords=apache commons codec
+onDevice=true
+homepage=http\://commons.apache.org/codec/

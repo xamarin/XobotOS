@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:padding="20px"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<fragment android:name=".MonkeyImage"
+		android:id="@+id/image_fragment"
+		android:layout_weight="5"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent" />
+
+	<Button android:name="Back"
+		android:id="@+id/back_button"
+		android:text="Back"
+		android:textSize="12pt"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent" />
+
+</LinearLayout>

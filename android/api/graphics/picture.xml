@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Picture">
+	<native-handle id="NativePicture">
+		<name>NativePicture</name>
+		<type>android.graphics.Picture</type>
+		<include>PictureGlue.h</include>
+		<class>PictureGlue</class>
+		<field>mNativePicture</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePicture"
+		id="Picture" />
+	<marshal-info class="native-class" native-handle="NativePicture"
+		flags="ALLOW_NULL" id="Picture-AllowNull" />
+	<compilation-unit name="Picture">
+		<main-type native-handle="NativePicture" >
+			<method name="beginRecording(int,int)">
+				<variable name="ni">
+					<binding native-handle="/android.graphics/Canvas/NativeCanvas" />
+				</variable>
+			</method>
+			<method name="getWidth()">
+				<native name="width" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getHeight()">
+				<native name="height" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="nativeConstructor(int)">
+				<native name="create" kind="STATIC">
+					<class>PictureGlue</class>
+					<signature>
+						<return-type marshal="Picture" />
+						<parameter marshal="Picture-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDraw(int,int)">
+				<native name="draw" kind="STATIC">
+					<class>PictureGlue</class>
+					<signature>
+						<parameter marshal="/android.graphics/Canvas/Canvas"
+							mode="REF" />
+						<parameter marshal="Picture" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeBeginRecording(int,int,int)">
+				<native name="beginRecording" kind="INSTANCE">
+					<signature>
+						<return-type marshal="/android.graphics/Canvas/Canvas" />
+						<parameter marshal="Picture" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeEndRecording(int)">
+				<native name="endRecording" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Picture" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method output="/output/stub">
+				<filter>
+					<name>createFromStream</name>
+					<name>writeToStream</name>
+				</filter>
+				<modify>
+					<comment text="java.io has not yet been ported." />
+				</modify>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>nativeCreateFromStream</name>
+					<name>nativeWriteToStream</name>
+				</filter>
+			</method>
+			<method name="ni">
+				<binding native-handle="NativePicture" />
+			</method>
+			<constructor name="Picture(int)">
+				<parameter>
+					<binding native-handle="NativePicture" />
+				</parameter>
+			</constructor>
+			<type name="RecordingCanvas">
+				<constructor>
+					<parameter index="1">
+						<binding native-handle="/android.graphics/Canvas/NativeCanvas" />
+					</parameter>
+				</constructor>
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

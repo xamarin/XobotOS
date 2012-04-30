@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="MaskFilter">
+	<native-handle marshal="MaskFilter" id="NativeMaskFilter">
+		<name>NativeFilter</name>
+		<type>android.graphics.MaskFilter</type>
+		<include>MaskFilterGlue.h</include>
+		<class>SkMaskFilter</class>
+		<field>native_instance</field>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-enum" id="BlurMaskFilter-Blur">
+		<native-type>SkBlurMaskFilter::BlurStyle</native-type>
+	</marshal-info>
+	<marshal-info class="native-class" native-handle="NativeMaskFilter"
+		id="MaskFilter" />
+	<marshal-info class="native-class" native-handle="NativeMaskFilter"
+		flags="ALLOW_NULL" id="MaskFilter-AllowNull" />
+	<compilation-unit name="MaskFilter">
+		<main-type abstract="true" native-handle="NativeMaskFilter" >
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="BlurMaskFilter">
+		<main-type>
+			<native-type />
+			<enum name="Blur">
+				<binding>
+					<base-type>int</base-type>
+					<value-field>native_int</value-field>
+				</binding>
+			</enum>
+			<method name="nativeConstructor(float,int)">
+				<native name="constructor" native-name="Create" kind="STATIC">
+					<class>SkBlurMaskFilter</class>
+					<signature>
+						<return-type marshal="MaskFilter" />
+						<parameter index="1" marshal="BlurMaskFilter-Blur" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="EmbossMaskFilter">
+		<main-type>
+			<native-type />
+			<method name="nativeConstructor(float[],float,float,float)">
+				<native name="constructor" native-name="Emboss_create" kind="STATIC">
+					<class>MaskFilterGlue</class>
+					<signature>
+						<return-type marshal="MaskFilter" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="TableMaskFilter">
+		<main-type>
+			<native-type />
+			<method name="nativeNewTable(byte[])">
+				<native name="newTable" native-name="Table_create" kind="STATIC">
+					<class>MaskFilterGlue</class>
+					<signature>
+						<return-type marshal="MaskFilter" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeNewClip(int,int)">
+				<native name="newClip" native-name="Table_createClip" kind="STATIC">
+					<class>MaskFilterGlue</class>
+					<signature>
+						<return-type marshal="MaskFilter" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeNewGamma(float)">
+				<native name="newGamma" native-name="Table_createGamma" kind="STATIC">
+					<class>MaskFilterGlue</class>
+					<signature>
+						<return-type marshal="MaskFilter" />
+					</signature>
+				</native>
+			</method>
+			<constructor name="TableMaskFilter(int)">
+				<parameter>
+					<binding native-handle="NativeMaskFilter" />
+				</parameter>
+			</constructor>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

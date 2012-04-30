@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Interpolator">
+	<native-handle id="NativeInterpolator">
+		<name>NativeInterpolator</name>
+		<type>android.graphics.Interpolator</type>
+		<include>InterpolatorGlue.h</include>
+		<class>InterpolatorGlue</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeInterpolator" id="Interpolator" />
+	<marshal-info class="native-enum" id="InterpolatorBase-Result">
+		<native-type>SkInterpolatorBase::Result</native-type>
+	</marshal-info>
+	<compilation-unit name="Interpolator">
+		<main-type native-handle="NativeInterpolator">
+			<method name="nativeConstructor(int,int)">
+				<native name="constructor" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Interpolator" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeReset(int,int,int)">
+				<native name="reset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Interpolator" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetKeyFrame(int,int,int,float[],float[])">
+				<native name="setKeyFrame" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Interpolator" />
+						<parameter index="3" />
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetRepeatMirror(int,float,boolean)">
+				<native name="setRepeatMirror" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Interpolator" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeTimeToValues(int,int,float[])">
+				<native name="timeToValues" kind="INSTANCE">
+					<signature>
+						<return-type marshal="InterpolatorBase-Result" />
+						<parameter marshal="Interpolator" />
+						<parameter index="2" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" native-handle="NativeInterpolator" />
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

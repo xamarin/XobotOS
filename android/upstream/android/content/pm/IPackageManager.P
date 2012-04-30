@@ -1,0 +1,27 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/content/pm/IPackageManager.java: \
+  frameworks/base/core/java/android/content/pm/IPackageManager.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl \
+  frameworks/base/core/java/android/content/IntentFilter.aidl \
+  frameworks/base/core/java/android/content/pm/ActivityInfo.aidl \
+  frameworks/base/core/java/android/content/pm/ApplicationInfo.aidl \
+  frameworks/base/core/java/android/content/pm/FeatureInfo.aidl \
+  frameworks/base/core/java/android/content/pm/IPackageInstallObserver.aidl \
+  frameworks/base/core/java/android/content/pm/IPackageDeleteObserver.aidl \
+  frameworks/base/core/java/android/content/pm/IPackageDataObserver.aidl \
+  frameworks/base/core/java/android/content/pm/IPackageMoveObserver.aidl \
+  frameworks/base/core/java/android/content/pm/IPackageStatsObserver.aidl \
+  frameworks/base/core/java/android/content/pm/InstrumentationInfo.aidl \
+  frameworks/base/core/java/android/content/pm/PackageInfo.aidl \
+  frameworks/base/core/java/android/content/pm/ManifestDigest.aidl \
+  frameworks/base/core/java/android/content/pm/ParceledListSlice.aidl \
+  frameworks/base/core/java/android/content/pm/ProviderInfo.aidl \
+  frameworks/base/core/java/android/content/pm/PermissionGroupInfo.aidl \
+  frameworks/base/core/java/android/content/pm/PermissionInfo.aidl \
+  frameworks/base/core/java/android/content/pm/ResolveInfo.aidl \
+  frameworks/base/core/java/android/content/pm/ServiceInfo.aidl \
+  frameworks/base/core/java/android/content/pm/UserInfo.aidl \
+  frameworks/base/core/java/android/content/pm/VerifierDeviceIdentity.aidl \
+  frameworks/base/core/java/android/net/Uri.aidl \
+  frameworks/base/core/java/android/content/IntentSender.aidl 
+

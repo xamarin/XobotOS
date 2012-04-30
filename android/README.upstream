@@ -1,0 +1,40 @@
+* Copy all files from
+
+	frameworks/base/core/java/*
+	frameworks/base/media/java/*
+	frameworks/base/graphics/java/*
+	frameworks/base/telephony/java/*
+	frameworks/base/location/java/*
+	frameworks/base/voip/java/*
+	frameworks/base/wifi/java/*
+	frameworks/base/keystore/java/*
+	frameworks/base/opengl/java/*
+	frameworks/base/drm/java/*
+	frameworks/base/sax/java/*
+	libcore/dalvik/src/main/java/*
+	libcore/junit/src/main/java/*
+	libcore/luni/src/main/java/*
+	libcore/json/src/main/java/*
+	external/libphonenumber/java/src/*
+	external/jsr305/ri/src/main/java/*
+	external/apache-http/src/*
+	external/bouncycastle/src/main/java/*
+	external/nist-sip/java/*
+	external/guava/src/*
+	external/tagsoup/src/*
+	external/libphonenumber/java/src/*
+	
+	out/target/common/R/*
+	
+  to upstream-ics
+
+* From out/target/common/obj/APPS/framework-res_intermediates/src/android:
+
+  Copy Manifest.java and R.java to upstream-ics/android
+  
+* From out/target/common/obj/APPS/framework_intermediates/src:
+
+  Copy */java/* to upstream-ics
+  
+* Replace all references to com.android.org.bouncycastle to org.bouncycastle
+

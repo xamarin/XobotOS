@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/IWallpaperManager.java: \
+  frameworks/base/core/java/android/app/IWallpaperManager.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl \
+  frameworks/base/core/java/android/app/IWallpaperManagerCallback.aidl \
+  frameworks/base/core/java/android/app/WallpaperInfo.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl 
+

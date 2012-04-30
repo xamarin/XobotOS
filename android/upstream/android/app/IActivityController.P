@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/IActivityController.java: \
+  frameworks/base/core/java/android/app/IActivityController.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl 
+

@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/INotificationManager.java: \
+  frameworks/base/core/java/android/app/INotificationManager.aidl \
+  frameworks/base/core/java/android/app/ITransientNotification.aidl \
+  frameworks/base/core/java/android/app/Notification.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl 
+

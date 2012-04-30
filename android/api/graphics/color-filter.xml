@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="ColorFilter">
+	<native-handle id="NativeColorFilter">
+		<name>NativeFilter</name>
+		<type>android.graphics.ColorFilter</type>
+		<include>ColorFilterGlue.h</include>
+		<class>SkColorFilter</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeColorFilter"
+		id="ColorFilter" />
+	<marshal-info class="native-class" native-handle="NativeColorFilter"
+		flags="ALLOW_NULL" id="ColorFilter-AllowNull" />
+	<compilation-unit name="ColorFilter">
+		<main-type abstract="true" native-handle="NativeColorFilter" >
+			<field name="nativeColorFilter">
+				<binding pointer="true" />
+			</field>
+			<method name="finalizer" output="/output/nothing" />
+			<remove-members>
+				<member-kind>DESTRUCTOR</member-kind>
+			</remove-members>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="ColorMatrixColorFilter">
+		<main-type>
+			<native-type />
+			<method name="nativeColorMatrixFilter(float[])">
+				<native name="ColorMatrixFilter_create" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="ColorFilter" />
+					</signature>
+				</native>
+			</method>
+			<method name="nColorMatrixFilter(int,float[])">
+				<native name="ColorMatrixFilter_postCreate" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/ColorFilter/ColorFilter"
+							mode="REF" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="LightingColorFilter">
+		<main-type>
+			<native-type />
+			<method name="native_CreateLightingFilter">
+				<native name="LightingFilter_create" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="ColorFilter" />
+					</signature>
+				</native>
+			</method>
+			<method name="nCreateLightingFilter(int,int,int)">
+				<native name="LightingFilter_postCreate" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/ColorFilter/ColorFilter"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="PorterDuffColorFilter">
+		<main-type>
+			<native-type />
+			<method name="native_CreatePorterDuffFilter">
+				<native name="PorterDuffFilter_create" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="ColorFilter" />
+						<parameter marshal="/android.graphics/Color/Color" />
+						<parameter marshal="/android.graphics/PorterDuff-Mode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nCreatePorterDuffFilter(int,int,int)">
+				<native name="PorterDuffFilter_postCreate" kind="STATIC">
+					<class>ColorFilterGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="ColorFilter" mode="REF" />
+						<parameter marshal="/android.graphics/Color/Color" />
+						<parameter marshal="/android.graphics/PorterDuff-Mode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

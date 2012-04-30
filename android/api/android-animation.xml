@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.animation">
+
+	<namespace name="android.animation">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>Animator</include>
+				<include>AnimatorInflater</include>
+				<include>AnimatorListenerAdapter</include>
+				<include>TimeInterpolator</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<include>ValueAnimator</include>
+				<include>PropertyValuesHolder</include>
+			</location-filter>
+			<main-type>
+				<field>
+					<filter>
+						<name>sIntEvaluator</name>
+						<name>sFloatEvaluator</name>
+					</filter>
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="FloatEvaluator" output="/output/naked-stub" />
+		<compilation-unit name="ObjectAnimator" output="/output/stub">
+			<main-type partial="true">
+				<constructor name="ObjectAnimator(T,android.util.Property)" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/stub" />
+	</namespace>
+
+</api-definition>

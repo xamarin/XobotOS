@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/telephony/java/com/android/internal/telephony/IWapPushManager.java: \
+  frameworks/base/telephony/java/com/android/internal/telephony/IWapPushManager.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl 
+

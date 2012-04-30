@@ -1,0 +1,13 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/view/IWindowSession.java: \
+  frameworks/base/core/java/android/view/IWindowSession.aidl \
+  frameworks/base/core/java/android/content/ClipData.aidl \
+  frameworks/base/core/java/android/content/res/Configuration.aidl \
+  frameworks/base/graphics/java/android/graphics/Rect.aidl \
+  frameworks/base/graphics/java/android/graphics/Region.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/core/java/android/view/InputChannel.aidl \
+  frameworks/base/core/java/android/view/IWindow.aidl \
+  frameworks/base/core/java/android/view/MotionEvent.aidl \
+  frameworks/base/core/java/android/view/WindowManager.aidl \
+  frameworks/base/core/java/android/view/Surface.aidl 
+

@@ -1,0 +1,6 @@
+/bin/
+/obj/
+/*.mpack
+/*.pc
+/setenv.sh
+/*.config

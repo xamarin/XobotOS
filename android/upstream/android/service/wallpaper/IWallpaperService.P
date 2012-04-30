@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/service/wallpaper/IWallpaperService.java: \
+  frameworks/base/core/java/android/service/wallpaper/IWallpaperService.aidl \
+  frameworks/base/core/java/android/service/wallpaper/IWallpaperConnection.aidl 
+

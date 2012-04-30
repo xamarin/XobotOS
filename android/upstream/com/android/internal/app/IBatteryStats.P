@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/app/IBatteryStats.java: \
+  frameworks/base/core/java/com/android/internal/app/IBatteryStats.aidl \
+  frameworks/base/core/java/com/android/internal/os/BatteryStatsImpl.aidl \
+  frameworks/base/core/java/android/os/WorkSource.aidl \
+  frameworks/base/telephony/java/android/telephony/SignalStrength.aidl 
+

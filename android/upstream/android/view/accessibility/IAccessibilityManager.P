@@ -1,0 +1,11 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/view/accessibility/IAccessibilityManager.java: \
+  frameworks/base/core/java/android/view/accessibility/IAccessibilityManager.aidl \
+  frameworks/base/core/java/android/accessibilityservice/AccessibilityServiceInfo.aidl \
+  frameworks/base/core/java/android/accessibilityservice/IAccessibilityServiceConnection.aidl \
+  frameworks/base/core/java/android/accessibilityservice/IEventListener.aidl \
+  frameworks/base/core/java/android/view/accessibility/AccessibilityEvent.aidl \
+  frameworks/base/core/java/android/view/accessibility/AccessibilityNodeInfo.aidl \
+  frameworks/base/core/java/android/view/accessibility/IAccessibilityInteractionConnection.aidl \
+  frameworks/base/core/java/android/view/accessibility/IAccessibilityManagerClient.aidl \
+  frameworks/base/core/java/android/view/IWindow.aidl 
+

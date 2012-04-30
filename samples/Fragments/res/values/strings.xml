@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="ring_tailed_lemur">ring-tailed lemur</string>
+	<string name="silky_sifaka">silky sifaka</string>
+	<string name="mouse_lemur">mouse lemur</string>
+	<string name="bamboo_lemur">bamboo lemur</string>
+	<string name="gray_mouse_lemur">gray mouse lemur</string>
+	<string name="fork_marked_lemur">fork marked lemur</string>
+	<string name="red_fronted_lemur">red fronted lemur</string>
+	<string name="ruffed_lemur">ruffed lemur</string>
+	<string name="sahamalaza_sportive_lemur">sahamalaza sportive lemur</string>
+	<string name="indri">indri</string>
+	<string name="sifaka">sifaka</string>
+	<string name="aye_aye">aye_aye</string>
+
+</resources>

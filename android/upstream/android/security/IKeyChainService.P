@@ -1,0 +1,3 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/keystore/java/android/security/IKeyChainService.java: \
+  frameworks/base/keystore/java/android/security/IKeyChainService.aidl 
+

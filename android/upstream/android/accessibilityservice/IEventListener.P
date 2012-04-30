@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/accessibilityservice/IEventListener.java: \
+  frameworks/base/core/java/android/accessibilityservice/IEventListener.aidl \
+  frameworks/base/core/java/android/accessibilityservice/IAccessibilityServiceConnection.aidl \
+  frameworks/base/core/java/android/view/accessibility/AccessibilityEvent.aidl 
+

@@ -1,0 +1,7 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/backup/IBackupManager.java: \
+  frameworks/base/core/java/android/app/backup/IBackupManager.aidl \
+  frameworks/base/core/java/android/app/backup/IFullBackupRestoreObserver.aidl \
+  frameworks/base/core/java/android/app/backup/IRestoreSession.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl 
+

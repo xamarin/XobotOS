@@ -1,0 +1,170 @@
+What this is and what this not is
+---------------------------------
+
+The marshaling code has been designed to specifically address the needs for
+XobotOS, it is a general managed <-> native marshaler for .NET applications.
+
+One important design principle is correcness and robustness over performance
+or beauty of the generated code.  The generated code may look very ugly and
+it's also a bit bloated - but it also makes it very difficult to make any
+mistakes.
+
+Four different layers
+---------------------
+
+In XobotOS, we have four different layers:
+
+(a) The Java source code that will be automatically converted to C#
+
+(b) An intermediate layer of generated C code - this should be regarded as
+    strictly private, an implementation detail that may change at any time.
+
+(c) A C++ library.
+
+    Android's JNI glue code contains both the Java <-> native marshaling code
+    as well as some added functionality on top of it.
+
+    In XobotOS, I separated this additional functionality from the marshaling
+    code and put it into a separate C++ library.
+
+    All the code has been manually written and this library could also be
+    re-used by other projects.
+
+(d) The Skia / Android native libraries.
+
+From a user's point of view, the public APIs in (a) simply call into (c)/(d),
+the intermediate layer is just an internal implementation detail.
+
+Marshaling classes and instance pointers
+----------------------------------------
+
+The native Java API is a huge mess and also very inconsistent:
+
+* They use the 32-bit 'int' type for pointers everywhere.
+
+* A native instance method may or may not take the native 'this' pointer;
+  sometimes they use native JNI reflection to get it.
+
+Which means that the type 'int' in a method signature could mean three
+different things: a pointer, an enum or an integer.
+
+Therefor, an XML entry is required.
+
+A special word about 'structs'
+------------------------------
+
+The term 'struct' is misleading since a valuetype struct does not exist in Java.
+
+Several 'structs' that you would expect to be valuetypes are in fact classes
+in XobotOS - for instance android.graphics.Rect.  These cannot be turned into
+valuetypes as this would chance semantics in a way that neither the converter
+nor the compiler would be able to detect.
+
+Consider this:
+
+	 void hello (Foo foo)
+	 {
+		foo.hello = 9;
+		foo = new Foo ();
+		foo.hello = 15;
+	 }
+
+	 int test ()
+	 {
+		Foo foo = new Foo ();
+		foo.hello = 3;
+		hello (foo);
+		return foo.hello;
+	 }
+
+What's the result of test() ?
+
+Well, it's 9 is Foo is a class, 3 if it's a struct - and 15 if it's a struct
+and you add the 'ref' modifier to hello().
+
+An additional difficulty is that 'structs' like android.graphics.Rect may
+sometimes be null - and the corresponding C++ Skia function also allows a NULL
+argument.
+
+Different marshaling modes
+--------------------------
+
+Marshaling info for arrays, strings and structs is created automatically, XML
+entries are only used to specify special marshaling modes.
+
+There are three different marshaling modes:
+
+* The default is "read-only" - 'const Foo&' is used as native type.
+
+  Specifying 'flags="ALLOW_NULL' in the XML turns it into 'const Foo*' and
+  null checks are added both on the native and the managed side.
+
+  ("read-only" means accidentally passing this to a function that expects a
+  non-const reference/pointer would yield a compilation error; there is no
+  protection against the native code explicitly casting this to non-const and
+  writing into it).
+
+* "writable" (mode="REF" in the XML) means that the native code may modify and
+  the modification will be automatically marshaled back into managed code.
+
+  This mode is not allowed for strings.
+
+  For arrays, it means that the native code may modify its elements - but it
+  must not touch the length or address of the array.
+
+  For structs, each of its members will be marshaled according to the rules in
+  this section.  However, a different marshaling mode may be specified for
+  individual members.
+
+  'Foo&' is used as native type - or 'Foo*' for ALLOW_NULL.
+
+* "out" (mode="OUT" in the XML).
+
+  The native code creates and returns a new instance of the type - 'Foo&' is
+  used for structs and 'Foo*' for arrays, strings and when used as a return value.
+
+  This mode may be used to return complex data structures such as strings or
+  arrays of arrays from native code.
+
+When looking at the C++ API:
+
+* 'const Foo&' - no special marshal flags have been used, parameter is passed
+  "IN" and may not be null.
+
+* 'Foo&' - native code may modify this.
+
+* 'const Foo*' - may be null
+
+* 'Foo*' - native code may modify this, may be null.
+
+Special handling of arrays
+--------------------------
+
+When marshaling an array of a blittable type, the marshaling code passes a
+pointer to the actual managed array elements to the native code using
+GCHandle.AddrOfPinnedObject().
+
+C++ API for arrays and structures
+---------------------------------
+
+For structures, the C++ API must define the data type - the marshaling code
+simply takes care of marshaling it to the managed side and vice-versa.
+
+For arrays, there's a template type 'NativeArray<T>' in <MarshalHelper.h>,
+it provides a non-copyable representation of a managed array with an API to
+access its elemements, automatically checking bounds.
+
+For strings, 'NativeString' derives from 'NativeElement<char16_t>' and
+provides some extra functionality like conversion to and from
+android::String16.
+
+Intermediate representation of structs
+--------------------------------------
+
+Marshaling structs is a little bit difficult because they may contain
+non-blittable elements such as arrays, strings or other structs.
+
+Internally, arrays and strings are turned into a structure containing their
+length and address and when these types are used as struct members, special
+marshaling code must be generated.
+

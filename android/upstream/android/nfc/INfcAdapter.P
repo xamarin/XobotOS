@@ -1,0 +1,12 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/nfc/INfcAdapter.java: \
+  frameworks/base/core/java/android/nfc/INfcAdapter.aidl \
+  frameworks/base/core/java/android/app/PendingIntent.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl \
+  frameworks/base/core/java/android/content/IntentFilter.aidl \
+  frameworks/base/core/java/android/nfc/NdefMessage.aidl \
+  frameworks/base/core/java/android/nfc/Tag.aidl \
+  frameworks/base/core/java/android/nfc/TechListParcel.aidl \
+  frameworks/base/core/java/android/nfc/INdefPushCallback.aidl \
+  frameworks/base/core/java/android/nfc/INfcAdapterExtras.aidl \
+  frameworks/base/core/java/android/nfc/INfcTag.aidl 
+

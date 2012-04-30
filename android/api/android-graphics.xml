@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.graphics">
+
+	<!-- Namespace: android.graphics -->
+	<!-- -->
+	<!-- We have full stubs for android.graphics -->
+	<!-- -->
+
+	<templates>
+		<marshal-info class="native-enum" id="PorterDuff-Mode">
+			<native-type>SkPorterDuff::Mode</native-type>
+		</marshal-info>
+		<binding id="native-int-enum" class="enum-binding">
+			<base-type>int</base-type>
+			<value-field>nativeInt</value-field>
+		</binding>
+		<binding id="nullable-native-int-enum" class="enum-binding">
+			<base-type>int</base-type>
+			<value-field>nativeInt</value-field>
+			<nullable>true</nullable>
+		</binding>
+	</templates>
+
+	<namespace name="android.graphics" output="/output/sharpen">
+		<template-include-file file="api/graphics/draw-filter.xml" />
+		<template-include-file file="api/graphics/mask-filter.xml" />
+		<template-include-file file="api/graphics/path-effect.xml" />
+		<template-include-file file="api/graphics/color-filter.xml" />
+		<template-include-file file="api/graphics/rasterizer.xml" />
+		<template-include-file file="api/graphics/xfermode.xml" />
+		<template-include-file file="api/graphics/shader.xml" />
+
+		<template-include-file file="api/graphics/bitmap.xml" />
+		<template-include-file file="api/graphics/canvas.xml" />
+		<template-include-file file="api/graphics/path.xml" />
+		<template-include-file file="api/graphics/paint.xml" />
+		<template-include-file file="api/graphics/rect.xml" />
+		<template-include-file file="api/graphics/matrix.xml" />
+		<template-include-file file="api/graphics/region.xml" />
+		<template-include-file file="api/graphics/typeface.xml" />
+		<template-include-file file="api/graphics/path-measure.xml" />
+		<template-include-file file="api/graphics/color.xml" />
+		<template-include-file file="api/graphics/interpolator.xml" />
+		<template-include-file file="api/graphics/nine-patch.xml" />
+		<template-include-file file="api/graphics/picture.xml" />
+
+		<compilation-unit name="Camera" output="/output/stub">
+			<main-type>
+				<native-type />
+				<method name="nativeApplyToCanvas">
+					<native kind="INSTANCE">
+						<signature>
+							<parameter marshal="/android.graphics/Canvas/Canvas" />
+						</signature>
+					</native>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="PixelFormat">
+			<main-type>
+				<method name="getPixelFormatInfo" output="/output/nothing" />
+				<method name="nativeClassInit" output="/output/nothing" />
+				<remove-members>
+					<member-kind>STATIC_CONSTRUCTOR</member-kind>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="PorterDuff">
+			<main-type>
+				<enum name="Mode">
+					<binding reference="/android.graphics/native-int-enum" />
+				</enum>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SurfaceTexture" output="/output/stub">
+			<main-type>
+				<modify>
+					<comment
+						text="This is using native code outside of Skia for 3D rendering." />
+				</modify>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="YuvImage">
+			<main-type>
+				<method name="compressToJpeg" output="/output/stub">
+					<modify>
+						<comment text="java.io has not yet been ported." />
+					</modify>
+				</method>
+				<method name="nativeCompressToJpeg" output="/output/nothing" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<include>Camera</include>
+				<include>BitmapRegionDecoder</include>
+				<include>Movie</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="drawable">
+			<template-include-file file="api/graphics/drawables.xml" />
+		</namespace>
+	</namespace>
+</api-definition>

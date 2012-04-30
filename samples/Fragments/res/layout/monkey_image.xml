@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/monkey_name"
+		android:editable="false"
+		android:textSize="16pt"
+		android:textStyle="bold"
+		android:padding="20px"
+		android:gravity="center_vertical|center_horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+
+	<ImageView
+		android:id="@+id/monkey_image_view"
+		android:padding="10px"
+		android:gravity="center_vertical|center_horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+
+</LinearLayout>

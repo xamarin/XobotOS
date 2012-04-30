@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/wifi/java/android/net/wifi/p2p/IWifiP2pManager.java: \
+  frameworks/base/wifi/java/android/net/wifi/p2p/IWifiP2pManager.aidl \
+  frameworks/base/core/java/android/os/Messenger.aidl 
+

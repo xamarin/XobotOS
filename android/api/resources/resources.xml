@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Resources">
+	<native-handle id="NativeTheme">
+		<name>NativeTheme</name>
+		<type>android.content.res.Resources.Theme</type>
+		<include>AssetManagerGlue.h</include>
+		<class>AssetManagerGlue::Theme</class>
+		<field>mTheme</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeTheme" id="Theme" />
+	<compilation-unit name="Resources" output="/output/sharpen">
+		<main-type partial="true">
+			<field name="EMPTY_ARRAY" output="/output/nothing" />
+			<method name="emptySparseArray" output="/output/nothing" />
+			<method output="/output/stub">
+				<filter>
+					<name>getQuantityText</name>
+					<name>openRawResource</name>
+					<name>openRawResourceFd</name>
+					<name>parseBundleExtras</name>
+				</filter>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>getPluralRule</name>
+					<name>attrForQuantityCode</name>
+					<name>stringForQuantityCode</name>
+				</filter>
+			</method>
+			<type name="Theme" partial="true" native-handle="NativeTheme" >
+				<method name="dump" output="/output/stub" />
+				<destructor output="/output/nothing" />
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

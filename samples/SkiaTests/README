@@ -1,0 +1,13 @@
+Directory Layout:
+
+	android/	Android SDK Samples
+			The samples in this directory have been ported from the
+			(Java) Android SDK Samples (sdk/samples/android-15/ApiDemos).
+
+	skia/		Skia Samples
+			The samples in this directory have been ported from the
+			(C++) Skia samples (external/skia/samplecode).
+
+	xobotos/	These are new samples.
+
+

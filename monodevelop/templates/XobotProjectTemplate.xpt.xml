@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>XobotOS Project</_Name>
+		<_Category>XobotOS</_Category>
+		<LanguageName>C#</LanguageName>
+		<_Description>Empty XobotOS Project.</_Description>
+	</TemplateConfiguration>
+	
+	<Actions>
+		<Open filename="AndroidManifest.xml" />
+	</Actions>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+                
+		<Project name = "${ProjectName}" directory = "." type="XobotProject">
+			<References>
+				<Reference type="Gac" refto="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Gac" refto="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Gac" refto="XobotOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0a30277e6179bbc2" />
+ 			</References>
+			<Files>
+				<File name="AndroidManifest.xml">
+					<FileText>
+						<![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		package="${ProjectName}">
+
+	<application android:name="android.app.Application"
+		android:label="${ProjectName}">
+
+		<activity android:name=".MyActivity">
+		</activity>
+	</application>
+
+</manifest>
+]]>
+					</FileText>
+				</File>
+
+				<File name="R.cs" />
+
+				<AndroidResourceFile />
+
+				<File name="MyActivity.cs">
+					<FileText>
+						<![CDATA[using System;
+using android.app;
+using android.content;
+using android.graphics;
+using android.graphics.drawable;
+using android.widget;
+using android.view;
+
+namespace ${ProjectName}
+{
+        public class MyActivity : Activity
+	{
+		protected override void onCreate (android.os.Bundle savedInstanceState)
+		{
+			base.onCreate (savedInstanceState);
+
+			setContentView (R.layout.main);
+		}
+	}
+}
+]]>
+					</FileText>
+				</File>
+
+				<File name="res/layout/main.xml">
+					<FileText>
+						<![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+</LinearLayout>
+]]>
+					</FileText>
+				</File>
+			</Files>
+ 		</Project>
+	</Combine>
+</Template>

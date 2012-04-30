@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/policy/IFaceLockInterface.java: \
+  frameworks/base/core/java/com/android/internal/policy/IFaceLockInterface.aidl \
+  frameworks/base/core/java/com/android/internal/policy/IFaceLockCallback.aidl 
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="sharpen"
+      label="Sharpen"
+      version="1.0.0.qualifier"
+      provider-name="Xamarin">
+
+   <description>
+      Java to C# Converter
+   </description>
+
+   <copyright>
+      Add some Copyright info here.
+   </copyright>
+
+   <license>
+      Add some License here.
+   </license>
+
+   <plugin
+         id="sharpen.xobotos"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="sharpen.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

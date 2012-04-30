@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="java.util.collections">
+	<compilation-unit output="/output/sharpen">
+		<location-filter>
+			<include>Collection</include>
+			<include>Set</include>
+			<include>Map</include>
+			<include>MapEntry</include>
+			<include>List</include>
+			<include>Dictionary</include>
+			<include>Queue</include>
+			<include>AbstractSet</include>
+			<include>AbstractCollection</include>
+			<include>AbstractSequentialList</include>
+			<include>HashSet</include>
+			<include>ListIterator</include>
+			<include>ArrayList</include>
+			<include>SortedMap</include>
+			<include>SortedSet</include>
+			<include>NavigableMap</include>
+			<include>NavigableSet</include>
+			<include>Comparator</include>
+			<include>LinkedHashMap</include>
+			<include>LinkedHashSet</include>
+			<include>Iterator</include>
+			<include>Stack</include>
+			<include>EnumMap</include>
+			<include>EnumSet</include>
+		</location-filter>
+	</compilation-unit>
+	<compilation-unit name="AbstractMap" output="/output/sharpen">
+		<binding auto-rename-fields="true" />
+	</compilation-unit>
+	<compilation-unit name="AbstractList" output="/output/sharpen">
+		<main-type>
+			<type recursive="true">
+				<modify>
+					<visibility>INTERNAL</visibility>
+				</modify>
+			</type>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="HashMap" output="/output/sharpen">
+		<main-type>
+			<field name="serialPersistentFields" output="/output/nothing" />
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="Hashtable" output="/output/sharpen">
+		<main-type partial="true">
+			<method name="hashCode" output="/output/partial" />
+			<method name="toString" output="/output/partial" />
+			<type name="HashtableEntry">
+				<modify>
+					<visibility>INTERNAL</visibility>
+				</modify>
+			</type>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="Collections" output="/output/stub">
+		<main-type>
+			<field output="/output/nothing" />
+			<method name="reverseOrder" output="/output/sharpen" />
+			<type name="ReverseComparator" output="/output/sharpen">
+				<field name="INSTANCE">
+					<modify>
+						<field-type type="ReverseComparator&lt;T&gt;" />
+						<field-initializer code="new ReverseComparator&lt;T&gt;()" />
+					</modify>
+				</field>
+			</type>
+			<type output="/output/sharpen">
+				<filter>
+					<name>ReverseComparator2</name>
+					<name>SynchronizedCollection</name>
+					<name>SynchronizedList</name>
+					<name>SynchronizedRandomAccessList</name>
+					<name>UnmodifiableCollection</name>
+					<name>UnmodifiableRandomAccessList</name>
+					<name>UnmodifiableList</name>
+					<name>UnmodifiableSet</name>
+					<name>UnmodifiableMap</name>
+				</filter>
+			</type>
+			<method output="/output/sharpen">
+				<filter>
+					<name>unmodifiableCollection</name>
+					<name>unmodifiableList</name>
+					<name>unmodifiableSet</name>
+					<name>unmodifiableMap</name>
+				</filter>
+			</method>
+			<type recursive="true" output="/output/nothing" />
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="TreeMap" output="/output/sharpen">
+		<binding auto-rename-fields="true" />
+		<main-type partial="true">
+			<type name="BoundedMap" partial="true">
+				<method name="writeReplace" output="/output/partial" />
+			</type>
+			<enum>
+				<binding>
+					<extract-enum value-field="ID" />
+				</binding>
+			</enum>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="TreeSet" output="/output/sharpen">
+		<main-type partial="true">
+			<method name="clone" output="/output/partial" />
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="LinkedList" output="/output/sharpen">
+		<binding auto-rename-fields="true" />
+		<main-type partial="true">
+			<method name="addAll" output="/output/partial" />
+			<field name="voidLink">
+				<modify>
+					<visibility>INTERNAL</visibility>
+				</modify>
+			</field>
+			<type name="Link">
+				<modify>
+					<visibility>INTERNAL</visibility>
+				</modify>
+			</type>
+			<type name="LinkIterator">
+				<modify>
+					<visibility>INTERNAL</visibility>
+				</modify>
+			</type>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="Vector" output="/output/sharpen">
+		<main-type partial="true">
+			<constructor name="Vector(int,int)" output="/output/partial" />
+			<method output="/output/partial">
+				<filter>
+					<name>newElementArray</name>
+				</filter>
+			</method>
+			<method>
+				<filter>
+					<name>grow</name>
+					<name>growBy</name>
+					<name>growByOne</name>
+				</filter>
+				<variable name="newData">
+					<binding>
+						<modify-type type="object[]" />
+					</binding>
+				</variable>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="WeakHashMap" output="/output/sharpen">
+		<main-type partial="true">
+			<type name="Entry" partial="true">
+				<constructor output="/output/partial" />
+				<method name="equals" output="/output/partial" />
+			</type>
+			<method output="/output/partial">
+				<filter>
+					<name>newEntryArray</name>
+					<name>poll</name>
+				</filter>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<namespace name="concurrent">
+		<compilation-unit name="CopyOnWriteArrayList" output="/output/sharpen">
+			<main-type partial="true">
+				<constructor output="/output/partial">
+					<filter>
+						<name>CopyOnWriteArrayList(java.util.Collection)</name>
+						<name>CopyOnWriteArrayList(E[])</name>
+					</filter>
+				</constructor>
+				<method name="toArray(T[])" output="/output/partial"/>
+				<type>
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="FutureTask" output="/output/stub" />
+		<namespace name="locks">
+			<compilation-unit name="AbstractQueuedSynchronizer" output="/output/api-stub" />
+		</namespace>
+	</namespace>
+</namespace-templates>

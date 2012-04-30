@@ -1,0 +1,154 @@
+
+Building 
+========
+
+Prior to building, you need to increase memory size in Eclipse
+(http://wiki.oseems.com/application/eclipse/fix-gc-overhead-limit-exceeded)
+
+I'm using -Xms2048m and -Xmx4096m.
+
+Directory Layout
+================
+
+	upstream
+
+		This contains the Java code from Ice Cream Sandwich.
+
+		Getting the sources from ICS is a very tricky
+		process.  There is not a single place where you can
+		just go and grab stuff, you have to run a full build,
+		then manually copy files and do the bouncycastle
+		rename.  Many of the .java files are also
+		auto-generated from .idl files during the ICS build.
+
+	api
+
+		This contains the definition of how we drive the
+		Sharpen translation process.   This is a Xamarin
+		extension, since Sharpen did not have this.
+
+		api/api-def.xml is the main file which drives the
+		translation process.
+
+		It is included from converter-config.xml.
+
+	extra-sources
+
+		These are C# source files that we write by hand.
+
+		They are partial classes that contain a custom
+		implementation for some methods.  
+
+		Whenever some method in a fully sharpened class
+		doesn't compile, a quick solution is to add a remove
+		entry for it to the api-def, then implement it in one
+		of these partial classes.  This directory does not
+		contain any stubs, only real code.
+
+	manual-stubs 
+
+		is for stubs that have been manually modified or
+		completely hand-written.  These are mostly for some of
+		the low-level classes like java.lang.
+
+	naked-stubs
+
+		Used for a build performance optimization 
+
+		When removed, the exact same files will be regenerated
+		in the output directory.  
+
+		This directory is listed as an extra source directory,
+		so everything in there won't ever be regenerated,
+		cutting the build time down to half.  That's a very
+		important performance optimization, a total build took
+		about ten minutes with the old builder and still takes
+		about two minutes with the new one.
+
+	output
+
+		The real output directory of the builder.
+
+		Use the XobotOS-debug.sln in the top-level directory to
+		compile the freshly generated files.
+
+	generated
+
+		A copy of the 'output' directory on github.
+
+		Use the XobotOS.sln in the top-level directory to build
+		these files.
+
+	system-root
+
+		The ANDROID_ROOT environment variable must point to this
+		directory, it contains the framework resources.
+
+Attributes
+==========
+
+Class-level attributes for the generated output:
+
+[Sharpen.Sharpened]
+
+	The class is fully translated by sharpen.
+
+	Example: 
+	stubs/android/widget/AdapterView.cs
+
+[Sharpen.Stub]
+
+	The code generated contains method signatures, constants and
+	definitions, but the bodies throw NotImplementedException
+
+	Example:
+	stubs/android/view/accessibility/AccessibilityManager.cs
+
+[Sharpen.NakedStub]
+
+	Only the type definition is included, no methods or members.
+	Used to simplify the build process.
+
+	Example:
+	naked-stubs/dalvik/bytecode/Opcodes.cs
+
+[Sharpen.EditedStub]
+
+	I mostly use [Sharpen.EditedStub] for stuff in the
+	manual-stubs directory, to mark that I made manual changes to
+	the output.
+
+[Sharpen.NativeStub]
+
+	Used to mark native methods without [DllImport].
+
+Other attributes:
+
+[Sharpen.Comment] 
+
+	Attribute can be used to add arbitrary comments; these can be
+	inserted by using a <comment> entry in the api-def.  Could be
+	useful, for instance when stubbing out a single method in a
+	fully sharpened file, to tell why it had to be stubbed out.
+
+[Sharpen.Proxy] 
+
+	Is Used when we generate a proxy method.  For example:
+
+	stubs/android/text/SpannableStringBuilder.cs
+
+	The append() methods have the wrong return type, so
+	we must provide an explicit interface implementation for
+	java.lang.Appendable and android.text.Editable.
+
+[Sharpen.ImplementsInterface] and [Sharpen.OverridesMethod] 
+
+	These are only used for debugging.  A frequent failure in
+	newly sharpened classes is that that C# compiler complains
+	about method overrides or interface implementations - often
+	either the base class is a stub without private members or
+	something is wrong with the method's signature.  These
+	attributes specify what Eclipse's JDT DOM API thinks the
+	method overrides / implements and helps me quickly fix these
+	issues.
+

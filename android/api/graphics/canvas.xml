@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Canvas">
+	<native-handle id="NativeCanvas">
+		<name>NativeCanvas</name>
+		<type>android.graphics.Canvas</type>
+		<include>CanvasGlue.h</include>
+		<class>SkCanvas</class>
+		<field>mNativeCanvas</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeCanvas"
+		id="Canvas" />
+	<marshal-info class="native-enum" id="Canvas-EdgeType">
+		<native-type>SkCanvas::EdgeType</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Canvas-SaveFlags">
+		<native-type>SkCanvas::SaveFlags</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Canvas-VertexMode">
+		<native-type>SkCanvas::VertexMode</native-type>
+	</marshal-info>
+	<compilation-unit name="Canvas">
+		<main-type partial="true" native-handle="NativeCanvas" >
+			<method name="clipRect(android.graphics.Rect)">
+				<native name="clipIRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="clipRect(android.graphics.RectF)">
+				<native name="clipRect" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="clipRect(float,float,float,float)">
+				<native name="clipRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="clipRect(int,int,int,int)">
+				<native name="clipIRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="drawLines(float[],int,int,android.graphics.Paint)">
+				<native name="drawLines" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true">
+						<parameter />
+						<parameter index="3" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="drawPoint(float,float,android.graphics.Paint)">
+				<native name="drawPoint" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="2" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="drawPoints(float[],int,int,android.graphics.Paint)">
+				<native name="drawPoints" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true">
+						<parameter />
+						<parameter index="3" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="freeCaches()">
+				<native name="freeCaches" kind="STATIC">
+					<class>CanvasGlue</class>
+				</native>
+			</method>
+			<method name="getHeight()">
+				<native name="getHeight" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getSaveCount()">
+				<native name="getSaveCount" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getWidth()">
+				<native name="getWidth" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="initRaster(int)">
+				<native name="create" kind="STATIC">
+					<class>CanvasGlue</class>
+					<signature>
+						<return-type marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="isOpaque()">
+				<native name="isOpaque" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="nativeDrawBitmapMatrix(int,int,int,int)">
+				<native name="drawBitmapMatrix" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeDrawBitmapMesh(int,int,int,int,float[],int,int[],int,int)">
+				<native name="drawBitmapMesh" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter index="4" />
+						<parameter index="6" flags="ALLOW_NULL" />
+						<parameter index="8"
+							marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeDrawVertices(int,int,int,float[],int,float[],int,int[],int,short[],int,int,int)">
+				<native name="drawVertices" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="Canvas-VertexMode" />
+						<parameter index="3" />
+						<parameter index="5" flags="ALLOW_NULL" />
+						<parameter index="7" flags="ALLOW_NULL" />
+						<parameter index="9" flags="ALLOW_NULL" />
+						<parameter index="12" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetDrawFilter(int,int)">
+				<native name="setDrawFilter" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/DrawFilter/DrawFilter-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_clipPath(int,int,int)">
+				<native name="clipPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter marshal="/android.graphics/Region/Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_clipRect(int,float,float,float,float,int)">
+				<native name="clipRectValues" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="5" marshal="/android.graphics/Region/Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_clipRegion(int,int,int)">
+				<native name="clipRegion" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Region/Region" />
+						<parameter marshal="/android.graphics/Region/Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_concat(int,int)">
+				<native name="concat" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawARGB(int,int,int,int,int)">
+				<native name="drawARGB" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawArc(int,android.graphics.RectF,float,float,boolean,int)">
+				<native name="drawArc" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="5" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawBitmap(int,int,android.graphics.Rect,android.graphics.Rect,int,int,int)">
+				<native name="drawBitmapRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawBitmap(int,int,android.graphics.Rect,android.graphics.RectF,int,int,int)">
+				<native name="drawBitmapRectF" native-name="drawBitmapRect"
+					kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawBitmap(int,int,float,float,int,int,int,int)">
+				<native name="drawBitmap" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter index="4"
+							marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawBitmap(int,int[],int,int,float,float,int,int,boolean,int)">
+				<native name="drawBitmapColors" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="9"
+							marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawCircle(int,float,float,float,int)">
+				<native name="drawCircle" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="4" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawColor(int,int)">
+				<native name="drawColor" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Color/Color" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawColor(int,int,int)">
+				<native name="drawColor" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Color/Color" />
+						<parameter marshal="/android.graphics/Xfermode/Xfermode-Mode" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawLine(int,float,float,float,float,int)">
+				<native name="drawLine" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="5" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawOval(int,android.graphics.RectF,int)">
+				<native name="drawOval" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawPaint(int,int)">
+				<native name="drawPaint" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawPath(int,int,int)">
+				<native name="drawPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawPicture(int,int)">
+				<native name="drawPicture" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Picture/Picture" mode="INSTANCE" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawRGB(int,int,int,int)">
+				<native name="drawRGB" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawRect(int,android.graphics.RectF,int)">
+				<native name="drawRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawRect(int,float,float,float,float,int)">
+				<native name="drawRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="5" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawRoundRect(int,android.graphics.RectF,float,float,int)">
+				<native name="drawRoundRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="4" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_drawText(int,char[],int,int,float,float,int,int)">
+				<native name="drawTextC" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="7" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawText(int,java.lang.String,int,int,float,float,int,int)">
+				<native name="drawTextS" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="7" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawTextRun(int,char[],int,int,int,int,float,float,int,int)">
+				<native name="drawTextRunC" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="9" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_drawTextRun(int,java.lang.String,int,int,int,int,float,float,int,int)">
+				<native name="drawTextRunS" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter index="9" marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getCTM(int,int)">
+				<native name="getCTM" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Matrix/Matrix"
+							mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getClipBounds(int,android.graphics.Rect)">
+				<native name="getClipBoundsIRect" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_quickReject(int,android.graphics.RectF,int)">
+				<native name="quickReject" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter />
+						<parameter marshal="Canvas-EdgeType" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_quickReject(int,float,float,float,float,int)">
+				<native name="quickReject" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="5" marshal="Canvas-EdgeType" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_quickReject(int,int,int)">
+				<native name="quickReject" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter marshal="Canvas-EdgeType" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_saveLayer(int,android.graphics.RectF,int,int)">
+				<native name="saveLayer" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+						<parameter marshal="Canvas-SaveFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_saveLayer(int,float,float,float,float,int,int)">
+				<native name="saveLayerValues" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="5"
+							marshal="/android.graphics/Paint/Paint-AllowNull" />
+						<parameter marshal="Canvas-SaveFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_saveLayerAlpha(int,android.graphics.RectF,int,int)">
+				<native name="saveLayerAlpha" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter index="3" marshal="Canvas-SaveFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_saveLayerAlpha(int,float,float,float,float,int,int)">
+				<native name="saveLayerAlphaValues" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter index="6" marshal="Canvas-SaveFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setBitmap(int,int)">
+				<native name="setBitmap" kind="PROXY">
+					<class>CanvasGlue</class>
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setMatrix(int,int)">
+				<native name="setMatrix" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Canvas" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="restore()">
+				<native name="restore" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="restoreToCount(int)">
+				<native name="restoreToCount" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="rotate(float)">
+				<native name="rotate" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="save()">
+				<native name="save" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="save(int)">
+				<native name="save" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter marshal="Canvas-SaveFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="scale(float,float)">
+				<native name="scale" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="skew(float,float)">
+				<native name="skew" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="translate(float,float)">
+				<native name="translate" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setBitmap">
+				<variable name="pointer">
+					<binding native-handle="/android.graphics/Bitmap/NativeBitmap" />
+				</variable>
+			</method>
+			<method name="setDrawFilter">
+				<variable name="nativeFilter">
+					<binding native-handle="/android.graphics/DrawFilter/NativeDrawFilter" />
+				</variable>
+			</method>
+			<remove-members>
+				<member-kind>CONSTRUCTOR</member-kind>
+			</remove-members>
+			<enum>
+				<filter>
+					<name>EdgeType</name>
+					<name>VertexMode</name>
+				</filter>
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<type name="CanvasFinalizer" output="/output/nothing" />
+			<field name="mFinalizer" output="/output/nothing" />
+			<method output="/output/stub">
+				<filter>
+					<name>drawPosText</name>
+					<name>drawTextOnPath</name>
+				</filter>
+				<modify>
+					<comment
+						text="This requires frameworks/base/core/jni/android/graphics/TextLayout.cpp." />
+				</modify>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>native_drawPosText</name>
+					<name>native_drawTextOnPath</name>
+				</filter>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

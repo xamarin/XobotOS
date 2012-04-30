@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Typeface">
+	<native-handle id="NativeTypeface">
+		<name>NativeTypeface</name>
+		<type>android.graphics.Typeface</type>
+		<include>TypefaceGlue.h</include>
+		<class>SkTypeface</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeTypeface"
+		id="Typeface" />
+	<marshal-info class="native-class" native-handle="NativeTypeface"
+		flags="ALLOW_NULL" id="Typeface-AllowNull" />
+	<marshal-info class="native-enum" id="Typeface-Style">
+		<native-type>SkTypeface::Style</native-type>
+	</marshal-info>
+	<compilation-unit name="Typeface">
+		<main-type native-handle="NativeTypeface" >
+			<constructor name="Typeface(int)">
+				<parameter>
+					<binding native-handle="NativeTypeface" />
+				</parameter>
+			</constructor>
+			<method name="create(android.graphics.Typeface,int)">
+				<variable name="ni">
+					<binding native-handle="NativeTypeface" />
+				</variable>
+			</method>
+			<method name="nativeCreate(java.lang.String,int)">
+				<native name="createFromName" kind="STATIC">
+					<class>TypefaceGlue</class>
+					<signature>
+						<return-type marshal="Typeface" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="Typeface-Style" />
+					</signature>
+				</native>
+			</method>
+			<method name="createFromAsset" output="/output/stub" />
+			<method name="nativeCreateFromAsset" output="/output/nothing" />
+			<method name="nativeCreateFromFile(java.lang.String)">
+				<native name="createFromFile" kind="STATIC">
+					<class>TypefaceGlue</class>
+					<signature>
+						<return-type marshal="Typeface" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreateFromTypeface(int,int)">
+				<native name="createFromTypeface" native-name="CreateFromTypeface"
+					kind="STATIC">
+					<class>SkTypeface</class>
+					<signature>
+						<return-type marshal="Typeface" />
+						<parameter marshal="Typeface-AllowNull" />
+						<parameter index="1" marshal="Typeface-Style" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetStyle(int)">
+				<native name="style" kind="INSTANCE">
+					<signature>
+						<return-type marshal="Typeface-Style" />
+						<parameter marshal="Typeface" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeUnref(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="setGammaForText(float,float)" output="/output/stub" />
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

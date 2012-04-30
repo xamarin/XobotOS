@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/backup/IRestoreSession.java: \
+  frameworks/base/core/java/android/app/backup/IRestoreSession.aidl \
+  frameworks/base/core/java/android/app/backup/RestoreSet.aidl \
+  frameworks/base/core/java/android/app/backup/IRestoreObserver.aidl 
+

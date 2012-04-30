@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="java.util.regex">
+	<native-handle id="NativeRegexPattern">
+		<name>NativeRegexPattern</name>
+		<type>java.util.regex.Pattern</type>
+		<include>RegexPatternGlue.h</include>
+		<class>icu_46::RegexPattern</class>
+		<field>address</field>
+	</native-handle>
+	<native-handle id="NativeRegexMatcher">
+		<name>NativeRegexMatcher</name>
+		<type>java.util.regex.Matcher</type>
+		<include>RegexMatcherGlue.h</include>
+		<class>icu_46::RegexMatcher</class>
+		<field>address</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeRegexPattern"
+		id="RegexPattern" />
+	<marshal-info class="native-class" native-handle="NativeRegexMatcher"
+		id="RegexMatcher" />
+	<compilation-unit name="Pattern" output="/output/sharpen">
+		<main-type native-handle="NativeRegexPattern" >
+			<method name="compileImpl(java.lang.String,int)">
+				<native name="compile" kind="STATIC">
+					<class>RegexPatternGlue</class>
+					<signature>
+						<return-type marshal="RegexPattern" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="closeImpl(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="Matcher" output="/output/sharpen">
+		<main-type native-handle="NativeRegexMatcher" >
+			<method name="openImpl(int)">
+				<native name="open" kind="STATIC">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<return-type marshal="RegexMatcher" />
+						<parameter marshal="RegexPattern" />
+					</signature>
+				</native>
+			</method>
+			<method name="closeImpl(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="findImpl(int,java.lang.String,int,int[])">
+				<native name="find" kind="PROXY">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<parameter marshal="RegexMatcher" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter index="3" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="findNextImpl(int,java.lang.String,int[])">
+				<native name="findNext" kind="PROXY">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<parameter marshal="RegexMatcher" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="groupCountImpl(int)">
+				<native name="groupCount" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegexMatcher" />
+					</signature>
+				</native>
+			</method>
+			<method name="hitEndImpl(int)">
+				<native name="hitEnd" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegexMatcher" />
+					</signature>
+				</native>
+			</method>
+			<method name="requireEndImpl(int)">
+				<native name="requireEnd" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegexMatcher" />
+					</signature>
+				</native>
+			</method>
+			<method name="lookingAtImpl(int,java.lang.String,int[])">
+				<native name="lookingAt" kind="PROXY">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<parameter marshal="RegexMatcher" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="matchesImpl(int,java.lang.String,int[])">
+				<native name="matches" kind="PROXY">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<parameter marshal="RegexMatcher" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="setInputImpl(int,java.lang.String,int,int)">
+				<native name="setInput" kind="PROXY">
+					<class>RegexMatcherGlue</class>
+					<signature>
+						<parameter marshal="RegexMatcher" />
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="useAnchoringBoundsImpl(int,boolean)">
+				<native name="useAnchoringBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegexMatcher" />
+					</signature>
+				</native>
+			</method>
+			<method name="useTransparentBoundsImpl(int,boolean)">
+				<native name="useTransparentBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegexMatcher" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

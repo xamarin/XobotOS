@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="XobotOS.Samples.ScrollView">
+
+	<application android:name="android.app.Application"
+		android:label="XobotOS Scroll View">
+
+		<activity android:name="MyActivity">
+		</activity>
+
+	</application>
+
+</manifest>

@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/telephony/java/com/android/internal/telephony/ITelephony.java: \
+  frameworks/base/telephony/java/com/android/internal/telephony/ITelephony.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/telephony/java/android/telephony/NeighboringCellInfo.aidl 
+

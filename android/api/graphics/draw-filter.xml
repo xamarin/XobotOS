@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="DrawFilter">
+	<native-handle id="NativeDrawFilter">
+		<name>NativeDrawFilter</name>
+		<type>android.graphics.DrawFilter</type>
+		<include>DrawFilterGlue.h</include>
+		<class>SkDrawFilter</class>
+		<field>mNativeInt</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeDrawFilter"
+		id="DrawFilter" />
+	<marshal-info class="native-class" native-handle="NativeDrawFilter"
+		flags="ALLOW_NULL" id="DrawFilter-AllowNull" />
+	<compilation-unit name="DrawFilter">
+		<main-type abstract="true" native-handle="NativeDrawFilter" >
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="PaintFlagsDrawFilter">
+		<main-type>
+			<native-type />
+			<method name="nativeConstructor(int,int)">
+				<native name="PaintFlagsDrawFilter_create" kind="STATIC">
+					<class>DrawFilterGlue</class>
+					<signature>
+						<return-type marshal="DrawFilter" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

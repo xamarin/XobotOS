@@ -1,0 +1,3 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/content/pm/IPackageInstallObserver.java: \
+  frameworks/base/core/java/android/content/pm/IPackageInstallObserver.aidl 
+

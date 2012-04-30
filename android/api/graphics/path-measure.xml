@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="PathMeasure">
+	<native-handle id="NativePathMeasure">
+		<name>NativePathMeasure</name>
+		<type>android.graphics.PathMeasure</type>
+		<include>PathMeasureGlue.h</include>
+		<class>PathMeasureGlue</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePathMeasure" id="PathMeasure" />
+	<marshal-info class="native-enum" id="PathMeasure-MatrixFlags">
+		<native-type>SkPathMeasure::MatrixFlags</native-type>
+	</marshal-info>
+	<compilation-unit name="PathMeasure">
+		<main-type native-handle="NativePathMeasure" >
+			<method name="native_create(int,boolean)">
+				<native name="create" kind="STATIC">
+					<class>PathMeasureGlue</class>
+					<signature>
+						<return-type marshal="PathMeasure" />
+						<parameter marshal="/android.graphics/Path/Path-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setPath(int,int,boolean)">
+				<native name="setPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+						<parameter marshal="/android.graphics/Path/Path-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getLength(int)">
+				<native name="getLength" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getPosTan(int,float,float[],float[])">
+				<native name="getPosTan" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+						<parameter index="2" mode="REF" flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getMatrix(int,float,int,int)">
+				<native name="getMatrix" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+						<parameter index="2" marshal="/android.graphics/Matrix/Matrix" mode="REF" />
+						<parameter marshal="PathMeasure-MatrixFlags" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getSegment(int,float,float,int,boolean)">
+				<native name="getSegment" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+						<parameter index="3" marshal="/android.graphics/Path/Path" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_isClosed(int)">
+				<native name="isClosed" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_nextContour(int)">
+				<native name="isClosed" kind="INSTANCE">
+					<signature>
+						<parameter marshal="PathMeasure" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_destroy(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

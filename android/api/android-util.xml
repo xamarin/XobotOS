@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.util">
+	<namespace name="android.util">
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<include>Config</include>
+				<include>ConfigBuildFlags</include>
+				<include>Pool</include>
+				<include>Singleton</include>
+				<include>ReflectiveProperty</include>
+				<include>LruCache</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<exclude>FastImmutableArraySet</exclude>
+				<include>EventLog</include>
+				<include>Printer</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="Xml" output="/output/stub">
+			<main-type partial="true">
+				<method name="asAttributeSet" output="/output/sharpen" />
+				<enum name="Encoding" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter regex="true">
+				<include>.*Exception</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="DisplayMetrics" output="/output/sharpen">
+			<main-type>
+				<field name="DENSITY_DEVICE">
+					<modify>
+						<field-initializer code="DENSITY_DEFAULT" />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Log" output="/output/sharpen">
+			<main-type partial="true">
+				<type name="TerribleFailure">
+					<binding visibility="INTERNAL" />
+				</type>
+				<type name="TerribleFailureHandler">
+					<binding visibility="INTERNAL" />
+				</type>
+				<method name="setWtfHandler">
+					<binding visibility="INTERNAL" />
+				</method>
+				<method name="isLoggable" output="/output/partial" />
+				<method name="println_native" output="/output/partial" />
+				<remove-members>
+					<member-kind>CONSTRUCTOR</member-kind>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Slog" output="/output/sharpen" />
+		<compilation-unit name="LogWriter" output="/output/sharpen" />
+		<compilation-unit name="MathUtils" output="/output/sharpen">
+			<main-type partial="true">
+				<field name="sRandom" output="/output/nothing" />
+				<method name="randomSeed" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SparseArray" output="/output/sharpen">
+			<main-type partial="true" />
+		</compilation-unit>
+		<compilation-unit name="DebugUtils" output="/output/sharpen">
+			<main-type>
+				<method name="isObjectSelected" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TimeUtils" output="/output/sharpen">
+			<main-type>
+				<method output="/output/stub">
+					<filter>
+						<name>getTimeZone</name>
+						<name>getTimeZoneDatabaseVersion</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TypedValue" output="/output/sharpen">
+			<main-type partial="true">
+				<native-struct id="TypedValue"
+					native-type="AssetManagerGlue::TypedValue">
+					<include>AssetManagerGlue.h</include>
+					<member name="type" native-name="mType" />
+					<member name="data" native-name="mData" />
+					<member name="string" value="null" />
+					<member name="assetCookie" native-name="mAssetCookie" />
+					<member name="resourceId" native-name="mResourceId" />
+					<member name="density" native-name="mDensity" />
+				</native-struct>
+				<method name="toString" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="LocaleUtil" output="/output/stub">
+			<main-type partial="true">
+				<method name="getLayoutDirectionFromLocale" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>Property</include>
+				<include>IntProperty</include>
+				<include>FloatProperty</include>
+				<include>LongSparseArray</include>
+				<include>SparseBooleanArray</include>
+				<include>SparseIntArray</include>
+				<include>StateSet</include>
+				<include>FloatMath</include>
+				<include>AttributeSet</include>
+				<include>XmlPullAttributes</include>
+				<include>Pair</include>
+				<include>Pools</include>
+				<include>Poolable</include>
+				<include>PoolableManager</include>
+				<include>FinitePool</include>
+				<include>SynchronizedPool</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="internal">
+			<compilation-unit name="XmlUtils" output="/output/sharpen">
+				<main-type>
+					<method name="writeMapXml" output="/output/stub" />
+				</main-type>
+			</compilation-unit>
+			<compilation-unit name="FastXmlSerializer" output="/output/sharpen">
+				<main-type partial="true">
+					<method output="/output/partial">
+						<filter>
+							<name>flushBytes</name>
+							<name>setOutput(java.io.OutputStream,java.lang.String)</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit output="/output/api-stub">
+				<location-filter>
+					<include>FastMath</include>
+					<include>Predicate</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit name="ArrayUtils" output="/output/sharpen">
+				<main-type>
+					<method output="/output/stub">
+						<filter>
+							<name>emptyArray</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+	</namespace>
+</api-definition>

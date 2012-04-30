@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/media/java/android/media/IAudioService.java: \
+  frameworks/base/media/java/android/media/IAudioService.aidl \
+  frameworks/base/core/java/android/app/PendingIntent.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl \
+  frameworks/base/media/java/android/media/IAudioFocusDispatcher.aidl \
+  frameworks/base/media/java/android/media/IRemoteControlClient.aidl \
+  frameworks/base/media/java/android/media/IRemoteControlDisplay.aidl 
+

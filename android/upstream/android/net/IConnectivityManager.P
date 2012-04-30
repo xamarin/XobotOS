@@ -1,0 +1,11 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/net/IConnectivityManager.java: \
+  frameworks/base/core/java/android/net/IConnectivityManager.aidl \
+  frameworks/base/core/java/android/net/LinkProperties.aidl \
+  frameworks/base/core/java/android/net/NetworkInfo.aidl \
+  frameworks/base/core/java/android/net/NetworkQuotaInfo.aidl \
+  frameworks/base/core/java/android/net/NetworkState.aidl \
+  frameworks/base/core/java/android/net/ProxyProperties.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl \
+  frameworks/base/core/java/com/android/internal/net/LegacyVpnInfo.aidl \
+  frameworks/base/core/java/com/android/internal/net/VpnConfig.aidl 
+

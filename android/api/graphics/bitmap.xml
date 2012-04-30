@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Bitmap">
+	<native-handle id="NativeBitmap">
+		<name>NativeBitmap</name>
+		<type>android.graphics.Bitmap</type>
+		<include>BitmapGlue.h</include>
+		<class>BitmapGlue</class>
+		<field>mNativeBitmap</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeBitmap"
+		id="Bitmap" />
+	<marshal-info class="native-class" native-handle="NativeBitmap"
+		flags="ALLOW_NULL" id="Bitmap-AllowNull" />
+	<marshal-info class="native-enum" id="Bitmap-Config">
+		<managed-type>android.graphics.Bitmap.Config</managed-type>
+		<native-type>SkBitmap::Config</native-type>
+	</marshal-info>
+	<compilation-unit name="Bitmap">
+		<main-type partial="true" native-handle="NativeBitmap" >
+			<enum name="Config">
+				<binding>
+					<base-type>int</base-type>
+					<value-field>nativeInt</value-field>
+					<constructor-method>nativeToConfig</constructor-method>
+				</binding>
+			</enum>
+			<enum name="CompressFormat">
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<method name="nativeConfig(int)">
+				<native name="config" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCopy(int,int,boolean)">
+				<native name="copy" kind="INSTANCE">
+					<signature>
+						<return-type marshal="Bitmap" />
+						<parameter marshal="Bitmap" />
+						<parameter marshal="Bitmap-Config" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreate(int[],int,int,int,int,int,boolean)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Bitmap" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter index="5" marshal="Bitmap-Config" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="nativeErase(int,int)">
+				<native name="eraseColor" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeExtractAlpha(int,int,int[])">
+				<native name="extractAlpha" kind="INSTANCE">
+					<signature>
+						<return-type marshal="Bitmap" />
+						<parameter marshal="Bitmap" />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGenerationId(int)">
+				<native name="getGenerationID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetPixel(int,int,int)">
+				<native name="getPixel" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetPixels(int,int[],int,int,int,int,int,int)">
+				<native name="getPixels" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeHasAlpha(int)">
+				<native name="hasAlpha" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeHeight(int)">
+				<native name="height" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePrepareToDraw(int)">
+				<native name="prepareToDraw" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeRecycle(int)">
+				<native name="recycle" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeRowBytes(int)">
+				<native name="rowBytes" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSameAs(int,int)">
+				<native name="sameAs" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetHasAlpha(int,boolean)">
+				<native name="setHasAlpha" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetPixel(int,int,int,int)">
+				<native name="setPixel" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetPixels(int,int[],int,int,int,int,int,int)">
+				<native name="setPixels" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeWidth(int)">
+				<native name="width" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Bitmap" />
+					</signature>
+				</native>
+			</method>
+			<method name="compress" output="/output/stub">
+				<modify>
+					<comment text="java.io has not yet been ported." />
+				</modify>
+			</method>
+			<method output="/output/stub">
+				<filter>
+					<name>createFromParcel</name>
+					<name>writeToParcel</name>
+				</filter>
+				<modify>
+					<comment text="Parcel has not yet been ported." />
+				</modify>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>nativeCompress</name>
+					<name>nativeCopyPixelsFromBuffer</name>
+					<name>nativeCopyPixelsToBuffer</name>
+					<name>nativeCreateFromParcel</name>
+					<name>nativeWriteToParcel</name>
+				</filter>
+			</method>
+			<method name="copyPixelsFromBuffer" output="/output/stub">
+				<modify>
+					<comment text="java.nio.Buffer has not yet been ported." />
+				</modify>
+			</method>
+			<method name="copyPixelsToBuffer" output="/output/partial" />
+			<method name="extractAlpha">
+				<variable name="nativePaint">
+					<binding native-handle="/android.graphics/Paint/NativePaint" />
+				</variable>
+			</method>
+			<method name="ni">
+				<binding native-handle="NativeBitmap" />
+			</method>
+			<constructor name="Bitmap(int,byte[],boolean,byte[],int)"
+				output="/output/nothing">
+				<parameter>
+					<binding native-handle="NativeBitmap" />
+				</parameter>
+			</constructor>
+			<constructor name="Bitmap(int)">
+				<parameter>
+					<binding native-handle="NativeBitmap" />
+				</parameter>
+			</constructor>
+			<field name="CREATOR">
+				<modify>
+					<field-initializer code="null" />
+				</modify>
+			</field>
+			<anonymous-class output="/output/nothing" />
+			<type name="BitmapFinalizer">
+				<constructor>
+					<parameter>
+						<binding native-handle="NativeBitmap" />
+					</parameter>
+				</constructor>
+				<field name="mNativeBitmap">
+					<binding native-handle="NativeBitmap" />
+				</field>
+				<remove-members>
+					<member-kind>DESTRUCTOR</member-kind>
+				</remove-members>
+			</type>
+			<field name="mBuffer">
+				<modify>
+					<visibility>PRIVATE</visibility>
+				</modify>
+			</field>
+			<field name="mIsMutable" output="/output/nothing" />
+			<method name="isMutable()">
+				<native name="isMutable" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="BitmapFactory">
+		<main-type partial="true">
+			<native-type />
+			<method
+				name="nativeDecodeByteArray(byte[],int,int,android.graphics.BitmapFactory.Options)">
+				<native name="decodeByteArray" kind="STATIC">
+					<class>BitmapFactoryGlue</class>
+					<include>BitmapFactoryGlue.h</include>
+					<signature>
+						<return-type marshal="Bitmap" />
+						<parameter index="3" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetDefaultConfig(int)">
+				<native name="setDefaultConfig" kind="STATIC">
+					<class>BitmapFactoryGlue</class>
+					<include>BitmapFactoryGlue.h</include>
+					<signature>
+						<parameter marshal="Bitmap-Config" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeDecodeAsset(int,android.graphics.Rect,android.graphics.BitmapFactory.Options)">
+				<native kind="PROXY">
+					<class>BitmapFactoryGlue</class>
+					<include>BitmapFactoryGlue.h</include>
+					<signature>
+						<return-type marshal="Bitmap" />
+						<parameter marshal="/android.content/AssetManager/Asset" />
+						<parameter />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="decodeFile" output="/output/partial" />
+			<method output="/output/nothing">
+				<filter>
+					<name>nativeDecodeFileDescriptor</name>
+					<name>nativeIsSeekable</name>
+				</filter>
+			</method>
+			<method output="/output/stub">
+				<filter>
+					<name>decodeFile</name>
+					<name>decodeFileDescriptor</name>
+				</filter>
+			</method>
+			<type name="Options">
+				<native-struct id="BitmapFactory-Options"
+					native-type="BitmapFactoryGlue::Options">
+					<include>BitmapFactoryGlue.h</include>
+					<member name="inMutable" native-name="isMutable" mode="IN" />
+					<member name="inJustDecodeBounds" native-name="justDecodeBounds"
+						mode="IN" />
+					<member name="inSampleSize" native-name="sampleSize" mode="IN" />
+					<member name="inDither" native-name="doDither" mode="IN" />
+					<member name="inPurgeable" native-name="isPurgeable" mode="IN" />
+					<member name="inPreferredConfig" native-name="config"
+						marshal="Bitmap-Config" mode="IN" />
+					<member name="inBitmap" native-name="bitmap" marshal="Bitmap"
+						mode="IN" />
+					<member name="outWidth" native-name="width" mode="OUT" />
+					<member name="outHeight" native-name="height" mode="OUT" />
+				</native-struct>
+				<method name="requestCancel" output="/output/nothing" />
+				<method name="requestCancelDecode" output="/output/stub" />
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

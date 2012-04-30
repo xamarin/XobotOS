@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="Local Sharpen Copy">
+      Local copy of Sharpen with Martin patches.
+   </description>
+   <feature url="features/sharpen_1.0.0.201110291957.jar" id="sharpen" version="1.0.0.201110291957"/>
+</site>

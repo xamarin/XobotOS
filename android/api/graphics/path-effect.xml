@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="PathEffect">
+	<native-handle marshal="PathEffect" id="NativePathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.PathEffect</type>
+		<include>SkPathEffect.h</include>
+		<class>SkPathEffect</class>
+		<field>native_instance</field>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePathEffect"
+		id="PathEffect" />
+	<marshal-info class="native-class" native-handle="NativePathEffect"
+		flags="ALLOW_NULL" id="PathEffect-AllowNull" />
+	<native-handle parent="NativePathEffect" id="NativeComposePathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.ComposePathEffect</type>
+		<include>SkPathEffect.h</include>
+		<class>SkComposePathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeComposePathEffect"
+		id="ComposePathEffect" />
+	<native-handle parent="NativePathEffect" id="NativeCornerPathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.CornerPathEffect</type>
+		<include>SkCornerPathEffect.h</include>
+		<class>SkCornerPathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeCornerPathEffect"
+		id="CornerPathEffect" />
+	<native-handle parent="NativePathEffect" id="NativeDashPathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.DashPathEffect</type>
+		<include>PathEffectGlue.h</include>
+		<class>SkDashPathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeDashPathEffect"
+		id="DashPathEffect" />
+	<native-handle parent="NativePathEffect" id="NativeDiscretePathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.DiscretePathEffect</type>
+		<include>SkDiscretePathEffect.h</include>
+		<class>SkDiscretePathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeDiscretePathEffect"
+		id="DiscretePathEffect" />
+	<marshal-info class="native-enum" id="PathDashPathEffect-Style">
+		<native-type>SkPath1DPathEffect::Style</native-type>
+	</marshal-info>
+	<native-handle parent="NativePathEffect" id="NativePathDashPathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.PathDashPathEffect</type>
+		<include>Sk1DPathEffect.h</include>
+		<class>SkPath1DPathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePathDashPathEffect"
+		id="PathDashPathEffect" />
+	<native-handle parent="NativePathEffect" id="NativeSumPathEffect">
+		<name>NativePathEffect</name>
+		<type>android.graphics.SumPathEffect</type>
+		<include>SkPathEffect.h</include>
+		<class>SkSumPathEffect</class>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeSumPathEffect"
+		id="SumPathEffect" />
+	<compilation-unit name="PathEffect">
+		<main-type abstract="true" native-handle="NativePathEffect" >
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="ComposePathEffect">
+		<main-type native-handle="NativeComposePathEffect" >
+			<method name="nativeCreate(int,int)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="ComposePathEffect" />
+						<parameter marshal="/android.graphics/PathEffect/PathEffect"
+							mode="REF" />
+						<parameter marshal="/android.graphics/PathEffect/PathEffect"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="CornerPathEffect">
+		<main-type native-handle="NativeCornerPathEffect" >
+			<method name="nativeCreate(float)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="CornerPathEffect" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="DashPathEffect">
+		<main-type native-handle="NativeDashPathEffect" >
+			<method name="nativeCreate(float[],float)">
+				<native name="Dash_constructor" kind="STATIC">
+					<class>PathEffectGlue</class>
+					<signature>
+						<return-type marshal="DashPathEffect" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="DiscretePathEffect">
+		<main-type native-handle="NativeDiscretePathEffect" >
+			<method name="nativeCreate(float,float)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="DiscretePathEffect" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="PathDashPathEffect">
+		<main-type native-handle="NativePathDashPathEffect" >
+			<enum name="Style">
+				<binding>
+					<base-type>int</base-type>
+					<value-field>native_style</value-field>
+				</binding>
+			</enum>
+			<method name="nativeCreate(int,float,float,int)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="PathDashPathEffect" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter index="3" marshal="PathDashPathEffect-Style" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="SumPathEffect">
+		<main-type native-handle="NativeSumPathEffect" >
+			<method name="nativeCreate(int,int)">
+				<native name="create" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="SumPathEffect" />
+						<parameter marshal="/android.graphics/PathEffect/PathEffect"
+							mode="REF" />
+						<parameter marshal="/android.graphics/PathEffect/PathEffect"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

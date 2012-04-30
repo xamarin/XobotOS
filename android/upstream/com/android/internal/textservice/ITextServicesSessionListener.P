@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/textservice/ITextServicesSessionListener.java: \
+  frameworks/base/core/java/com/android/internal/textservice/ITextServicesSessionListener.aidl \
+  frameworks/base/core/java/com/android/internal/textservice/ISpellCheckerSession.aidl \
+  frameworks/base/core/java/android/view/textservice/SpellCheckerInfo.aidl 
+

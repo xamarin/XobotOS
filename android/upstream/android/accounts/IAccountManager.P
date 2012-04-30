@@ -1,0 +1,7 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/accounts/IAccountManager.java: \
+  frameworks/base/core/java/android/accounts/IAccountManager.aidl \
+  frameworks/base/core/java/android/accounts/IAccountManagerResponse.aidl \
+  frameworks/base/core/java/android/accounts/Account.aidl \
+  frameworks/base/core/java/android/accounts/AuthenticatorDescription.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

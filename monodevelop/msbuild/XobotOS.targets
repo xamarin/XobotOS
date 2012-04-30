@@ -1,0 +1,18 @@
+<Project xmsns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<XobotOSInstallDir>$(MSBuildThisFileDirectory)</XobotOSInstallDir>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<AssemblySearchPaths>
+			$(XobotOSInstallDir);
+			$(AssemblySearchPaths)
+		</AssemblySearchPaths>
+	</PropertyGroup>
+
+	<UsingTask TaskName="XobotBinding.XorptTool" AssemblyFile="$(XobotOSInstallDir)/MonoDevelop.XobotBinding.dll" />
+
+	<Target Name="BeforeBuild">
+		<XorptTool InstallDir="$(XobotOSInstallDir)" ProjectName="$(MSBuildProjectName)" ProjectDir="$(ProjectDir)" />
+	</Target>
+</Project>

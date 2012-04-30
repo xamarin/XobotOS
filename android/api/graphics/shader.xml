@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Shader">
+	<native-handle id="NativeShader">
+		<name>NativeShader</name>
+		<type>android.graphics.Shader</type>
+		<include>ShaderGlue.h</include>
+		<class>SkShader</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeShader"
+		id="Shader" />
+	<marshal-info class="native-class" native-handle="NativeShader"
+		flags="ALLOW_NULL" id="Shader-AllowNull" />
+	<marshal-info class="native-enum" id="Shader-TileMode">
+		<native-type>SkShader::TileMode</native-type>
+	</marshal-info>
+	<compilation-unit name="Shader">
+		<main-type abstract="true" native-handle="NativeShader" >
+			<field name="native_shader">
+				<binding pointer="true" />
+			</field>
+			<method name="nativeDestructor(int,int)" output="/output/nothing" />
+			<method name="nativeSetLocalMatrix(int,int,int)">
+				<native name="setLocalMatrix" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<parameter marshal="/android.graphics/Shader/Shader-AllowNull" mode="REF" />
+						<parameter mode="REMOVE" />
+						<parameter marshal="/android.graphics/Matrix/Matrix-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<remove-members>
+				<member-kind>DESTRUCTOR</member-kind>
+			</remove-members>
+			<enum name="TileMode">
+				<binding reference="/android.graphics/nullable-native-int-enum" />
+			</enum>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="BitmapShader">
+		<main-type>
+			<native-type />
+			<constructor>
+				<variable name="b">
+					<binding native-handle="/android.graphics/Bitmap/NativeBitmap" />
+				</variable>
+			</constructor>
+			<method name="nativeCreate(int,int,int)">
+				<native name="BitmapShader_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate(int,int,int,int)">
+				<native name="BitmapShader_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="ComposeShader">
+		<main-type>
+			<native-type />
+			<method name="nativeCreate1(int,int,int)">
+				<native name="ComposeShader_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/android.graphics/Xfermode/Xfermode-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreate2(int,int,int)">
+				<native name="ComposeShader_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/android.graphics/PorterDuff-Mode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate1(int,int,int,int)">
+				<native name="ComposeShader_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/native/Pointer" />
+						<parameter marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Xfermode/Xfermode"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate2(int,int,int,int)">
+				<native name="ComposeShader_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter marshal="/native/Pointer" />
+						<parameter marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/PorterDuff-Mode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="LinearGradient">
+		<main-type>
+			<native-type />
+			<method name="nativeCreate1(float,float,float,float,int[],float[],int)">
+				<native name="LinearGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter index="4" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreate2(float,float,float,float,int,int,int)">
+				<native name="LinearGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter index="6"
+							marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativePostCreate1(int,float,float,float,float,int[],float[],int)">
+				<native name="LinearGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter index="5" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate2(int,float,float,float,float,int,int,int)">
+				<native name="LinearGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter index="7"
+							marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="RadialGradient">
+		<main-type>
+			<native-type />
+			<method name="nativeCreate1(float,float,float,int[],float[],int)">
+				<native name="RadialGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter index="3" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreate2(float,float,float,int,int,int)">
+				<native name="RadialGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter index="5"
+							marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate1(int,float,float,float,int[],float[],int)">
+				<native name="RadialGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter index="4" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate2(int,float,float,float,int,int,int)">
+				<native name="RadialGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter index="6"
+							marshal="/android.graphics/Shader/Shader-TileMode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="SweepGradient">
+		<main-type>
+			<native-type />
+			<method name="nativeCreate1(float,float,int[],float[])">
+				<native name="SweepGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+						<parameter index="2" />
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreate2(float,float,int,int)">
+				<native name="SweepGradient_create" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/android.graphics/Shader/Shader" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate1(int,float,float,int[],float[])">
+				<native name="SweepGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+						<parameter index="3" />
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativePostCreate2(int,float,float,int,int)">
+				<native name="SweepGradient_postCreate" kind="STATIC">
+					<class>ShaderGlue</class>
+					<signature>
+						<return-type marshal="/native/Pointer" />
+						<parameter marshal="/android.graphics/Shader/Shader"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

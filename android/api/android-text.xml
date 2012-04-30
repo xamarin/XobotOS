@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.text">
+	<!-- Namespace: android.text -->
+	<!-- -->
+	<!-- We have full stubs for most of these classes -->
+	<!-- -->
+	
+	<namespace name="android.text" output="/output/stub">
+		<templates>
+			<action class="action-list" id="spannable-string-action">
+				<action class="modify-method">
+					<filter>
+						<name>setSpan</name>
+						<name>removeSpan</name>
+					</filter>
+					<visibility>PUBLIC</visibility>
+				</action>
+			</action>
+		</templates>
+
+		<compilation-unit>
+			<location-filter>
+				<include>AndroidCharacter</include>
+				<include>AndroidBidi</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>BoringLayout</include>
+				<include>DynamicLayout</include>
+				<include>StaticLayout</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="SpannableStringBuilder" output="/output/sharpen">
+			<main-type partial="true">
+				<action reference="$spannable-string-action"/>
+				<remove-members>
+					<member-kind>METHOD</member-kind>
+					<name>getSpans</name>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>SpannableString</include>
+				<include>SpannableStringInternal</include>
+			</location-filter>
+			<main-type partial="true">
+				<remove-members>
+					<member-kind>METHOD</member-kind>
+					<name>getSpans</name>
+				</remove-members>
+				<method name="setSpan">
+					<modify>
+						<visibility>PUBLIC</visibility>
+					</modify>
+				</method>
+				<method name="removeSpan">
+					<modify>
+						<visibility>PUBLIC</visibility>
+					</modify>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Html">
+			<main-type>
+				<method name="fromHtml" output="/output/stub"/>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Layout" output="/output/sharpen">
+			<main-type>
+				<type name="Directions">
+					<modify>
+						<visibility>PUBLIC</visibility>
+					</modify>
+					<field name="mDirections">
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+				<enum name="Alignment">
+					<binding nullable="true"/>
+				</enum>
+				<field name="EMOJI_FACTORY">
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="AutoText" output="/output/stub">
+			<main-type>
+				<field name="TRIE_NULL">
+					<modify>
+						<field-initializer code="unchecked ((char)-1)" />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TextLine" output="/output/sharpen">
+			<main-type partial="true">
+				<remove-members>
+					<name>handleRun</name>
+				</remove-members>
+				<type name="SpanSet" partial="true">
+					<remove-members>
+						<member-kind>CONSTRUCTOR</member-kind>
+					</remove-members>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TextDirectionHeuristics" output="/output/sharpen">
+			<main-type>
+				<enum name="TriState">
+					<modify>
+						<visibility>PUBLIC</visibility>
+					</modify>
+				</enum>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TextUtils" output="/output/sharpen">
+			<main-type partial="true">
+				<method name="copySpansFrom" output="/output/stub">
+					<modify>
+						<comment text="FIXME: android.text.Spanned.getSpans()"/>
+					</modify>
+				</method>
+				<method name="commaEllipsize" output="/output/stub">
+					<modify>
+						<comment text="FIXME: Implicit conversion from float to int"/>
+					</modify>
+				</method>
+				<method name="join(java.lang.CharSequence.java.lang.Iteraboe)" output="/output/partial" />
+				<enum name="TruncateAt">
+					<binding nullable="true"/>
+				</enum>
+				<field name="ELLIPSIS_NORMAL">
+					<modify>
+						<field-initializer code='"..."' />
+					</modify>
+				</field>
+				<field name="ELLIPSIS_TWO_DOTS">
+					<modify>
+						<field-initializer code='".."' />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="PackedObjectVector" output="/output/sharpen">
+			<main-type partial="true">
+				<method name="insertAt" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen"/>
+		<namespace name="method">
+			<compilation-unit output="/output/sharpen">
+				<location-filter>
+					<include>ArrowKeyMovementMethod</include>
+					<include>BaseMovementMethod</include>
+					<include>MovementMethod</include>
+					<include>WordIterator</include>
+					<include>BaseKeyListener</include>
+					<include>MetaKeyKeyListener</include>
+					<include>TransformationMethod</include>
+					<include>ReplacementTransformationMethod</include>
+					<include>SingleLineTransformationMethod</include>
+					<include>CharacterPickerDialog</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit name="TextKeyListener" output="/output/sharpen">
+				<main-type partial="true">
+					<method output="/output/partial">
+						<filter>
+							<name>initPrefs</name>
+							<name>updatePrefs</name>
+							<name>getPrefs</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit name="Touch" output="/output/sharpen">
+				<main-type partial="true">
+					<method name="onTouchEvent" output="/output/partial" />
+				</main-type>
+			</compilation-unit>
+			<compilation-unit name="QwertyKeyListener" output="/output/sharpen">
+				<main-type>
+					<type name="Replaced">
+						<field name="mText">
+							<modify>
+								<visibility>INTERNAL</visibility>
+							</modify>
+						</field>
+					</type>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit output="/output/stub"/>
+		</namespace>
+		<namespace output="/output/stub" recursive="true"/>
+	</namespace>
+</api-definition>

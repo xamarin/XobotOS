@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="XmlBlock">
+	<native-handle id="NativeXmlBlock">
+		<name>NativeXmlBlock</name>
+		<type>android.content.res.XmlBlock</type>
+		<include>AssetManagerGlue.h</include>
+		<class>AssetManagerGlue::XmlBlock</class>
+		<field>mNative</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeXmlBlock"
+		id="XmlBlock" />
+	<native-handle id="NativeXmlParser">
+		<name>NativeXmlParser</name>
+		<type>android.content.res.XmlBlock.Parser</type>
+		<include>AssetManagerGlue.h</include>
+		<class>AssetManagerGlue::XmlParser</class>
+		<field>mParseState</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeXmlParser"
+		id="XmlParser" />
+	<marshal-info class="native-class" native-handle="NativeXmlParser"
+		flags="ALLOW_NULL" id="XmlParser-AllowNull" />
+	<compilation-unit name="XmlBlock" output="/output/sharpen">
+		<main-type partial="true" native-handle="NativeXmlBlock" >
+			<constructor name="XmlBlock(android.content.res.AssetManager,int)">
+				<parameter index="1">
+					<binding native-handle="NativeXmlBlock" />
+				</parameter>
+			</constructor>
+			<method name="nativeGetStringBlock(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<return-type marshal="/android.content/StringBlock/StringBlock" />
+						<parameter marshal="XmlBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="newParser" />
+			<method name="nativeCreateParseState(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<return-type marshal="XmlParser" />
+						<parameter marshal="XmlBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeNext(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetNamespace(int)">
+				<native name="getElementNamespaceID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetName(int)">
+				<native name="getElementNameID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetText(int)">
+				<native name="getTextID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetLineNumber(int)">
+				<native name="getLineNumber" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeCount(int)">
+				<native name="getAttributeCount" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeNamespace(int,int)">
+				<native name="getAttributeNamespaceID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeName(int,int)">
+				<native name="getAttributeNameID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeResource(int,int)">
+				<native name="getAttributeNameResID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeDataType(int,int)">
+				<native name="getAttributeDataType" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeData(int,int)">
+				<native name="getAttributeData" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAttributeStringValue(int,int)">
+				<native name="getAttributeValueStringID" kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeGetAttributeIndex(int,java.lang.String,java.lang.String)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetIdAttribute(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetClassAttribute(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetStyleAttribute(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="XmlParser" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestroy" output="/output/nothing" />
+			<method name="nativeDestroyParseState" output="/output/nothing" />
+			<method name="decOpenCountLocked" output="/output/partial" />
+			<constructor output="/output/stub" />
+			<type name="Parser" partial="true" native-handle="NativeXmlParser" >
+				<constructor name="Parser(int,android.content.res.XmlBlock)">
+					<parameter>
+						<binding native-handle="NativeXmlParser" />
+					</parameter>
+				</constructor>
+				<method name="close" output="/output/partial" />
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

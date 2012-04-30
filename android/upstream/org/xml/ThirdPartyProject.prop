@@ -1,0 +1,9 @@
+# Copyright 2010 Google Inc. All Rights Reserved.
+#Fri Jul 16 10:03:09 PDT 2010
+currentVersion=2.0.2
+version=2.0.2
+isNative=false
+name=xml_sax_parser
+keywords=xml sax parser
+onDevice=true
+homepage=http\://www.saxproject.org

@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/hardware/usb/IUsbManager.java: \
+  frameworks/base/core/java/android/hardware/usb/IUsbManager.aidl \
+  frameworks/base/core/java/android/app/PendingIntent.aidl \
+  frameworks/base/core/java/android/hardware/usb/UsbAccessory.aidl \
+  frameworks/base/core/java/android/hardware/usb/UsbDevice.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl 
+

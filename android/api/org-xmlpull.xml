@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="org.xmlpull">
+	<namespace name="org.xmlpull.v1" output="/output/sharpen">
+		<compilation-unit name="XmlPullParserException">
+			<main-type>
+				<method name="printStackTrace" output="/output/nothing" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit />
+	</namespace>
+</api-definition>

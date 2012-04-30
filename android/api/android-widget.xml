@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.widget">
+
+	<!-- Namespace: android.widget -->
+	<!-- -->
+	<!-- Work in progress -->
+	<!-- -->
+
+	<namespace name="android.widget" output="/output/sharpen">
+		<compilation-unit name="TextView">
+			<main-type recursive="true">
+				<method>
+					<filter>
+						<name>InsertionPointCursorController</name>
+						<name>SelectionModifierCursorController</name>
+					</filter>
+					<modify>
+						<visibility>PUBLIC</visibility>
+					</modify>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="EditText">
+			<main-type partial="true">
+				<method name="getText" output="/output/partial" />
+				<method name="selectAll" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ListView">
+			<main-type>
+				<field name="mHeaderViewInfos">
+					<modify>
+						<field-initializer code="new java.util.ArrayList&lt;FixedViewInfo&gt; ()" />
+					</modify>
+				</field>
+				<field name="mFooterViewInfos">
+					<modify>
+						<field-initializer code="new java.util.ArrayList&lt;FixedViewInfo&gt; ()" />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="RelativeLayout">
+			<main-type>
+				<type name="LayoutParams">
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="GridLayout">
+			<main-type>
+				<type recursive="true">
+					<constructor>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</constructor>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ImageView">
+			<main-type>
+				<enum name="ScaleType">
+					<binding reference="/android.graphics/native-int-enum" />
+				</enum>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TableRow">
+			<main-type>
+				<type name="LayoutParams">
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="OverScroller">
+			<main-type>
+				<type name="SplineOverScroller">
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="TabHost">
+			<main-type>
+				<type>
+					<filter>
+						<name>IndicatorStrategy</name>
+						<name>ContentStrategy</name>
+					</filter>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</type>
+				<type name="TabSpec">
+					<constructor>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</constructor>
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit>
+			<location-filter>
+				<include>CheckBox</include>
+				<include>ToggleButton</include>
+				<include>RadioButton</include>
+			</location-filter>
+			<main-type>
+				<method name="onPopulateAccessibilityEvent" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="AbsListView">
+			<main-type>
+				<type name="RecycleBin">
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="NumberPicker">
+			<main-type>
+				<type name="SetSelectionCommand">
+					<field>
+						<filter>
+							<name>mSelectionStart</name>
+							<name>mSelectionEnd</name>
+						</filter>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+				<type name="ChangeCurrentByOneFromLongPressCommand">
+					<method name="setIncrement">
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</method>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ExpandableListView">
+			<main-type>
+				<type name="SavedState" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="AdapterView">
+			<main-type partial="true">
+				<type>
+					<filter>
+						<name>OnItemClickListener</name>
+						<name>OnItemLongClickListener</name>
+						<name>OnItemSelectedListener</name>
+					</filter>
+					<binding is-event-interface="true" />
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ActivityChooserView">
+			<main-type>
+				<type name="Callbacks">
+					<method name="onItemClick">
+						<parameter>
+							<binding>
+								<auto-cast type="android.widget.IAdapterView" />
+							</binding>
+						</parameter>
+					</method>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SuggestionsAdapter">
+			<main-type>
+				<!-- This type is used in a static import in SearchView; we must always -->
+				<!-- parse it to correctly resolve the static import. -->
+				<binding />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SearchView">
+			<main-type>
+				<type name="SearchAutoComplete">
+					<method name="isEmpty">
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</method>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<!-- android.os.HandlerThread -->
+				<include>Filter</include>
+				<include>VideoView</include>
+				<include>RemoteViews</include>
+				<include>AdapterViewAnimator</include>
+				<include>ActivityChooserModel</include>
+				<include>RemoteViewsAdapter</include>
+				<include>RemoteViewsService</include>
+				<include>CalendarView</include>
+				<include>QuickContactBadge</include>
+				<include>DoubleDigitManager</include>
+				<include>MediaController</include>
+				<include>SimpleExpandableListAdapter</include>
+				<include>AlphabetIndexer</include>
+				<include>DateTimeView</include>
+				<include>SlidingDrawer</include>
+				<include>DigitalClock</include>
+				<include>DatePicker</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen" />
+		<namespace name="internal">
+			<compilation-unit name="LockPatternUtils" output="/output/stub">
+				<main-type>
+					<field name="sHaveNonZeroPatternFile">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+					<field name="sHaveNonZeroPasswordFile">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit output="/output/stub">
+				<location-filter>
+					<include>RotarySelector</include>
+					<include>PasswordEntryKeyboardHelper</include>
+					<include>PointerLocationView</include>
+					<include>WaveView</include>
+					<include>DigitalClock</include>
+					<include>TransportControlView</include>
+					<include>SlidingTab</include>
+					<include>LockPatternView</include>
+				</location-filter>
+			</compilation-unit>
+			<namespace name="multiwaveview">
+				<compilation-unit output="/output/stub">
+					<location-filter>
+						<include>Tweener</include>
+						<include>MultiWaveView</include>
+					</location-filter>
+				</compilation-unit>
+			</namespace>
+		</namespace>
+	</namespace>
+	
+</api-definition>

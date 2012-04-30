@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="NinePath">
+	<compilation-unit name="NinePatch">
+		<main-type>
+			<native-type />
+			<method name="getTransparentRegion(android.graphics.Rect)">
+				<variable name="r">
+					<binding native-handle="/android.graphics/Region/NativeRegion" />
+				</variable>
+			</method>
+			<method name="isNinePatchChunk(byte[])">
+				<native kind="STATIC">
+					<class>NinePatchGlue</class>
+					<include>NinePatchGlue.h</include>
+					<signature>
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="validateNinePatchChunk(int,byte[])">
+				<native kind="STATIC">
+					<class>NinePatchGlue</class>
+					<include>NinePatchGlue.h</include>
+					<signature>
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeGetTransparentRegion(int,byte[],android.graphics.Rect)">
+				<native name="getTransparentRegion" kind="STATIC">
+					<class>NinePatchGlue</class>
+					<include>NinePatchGlue.h</include>
+					<signature>
+						<return-type marshal="/android.graphics/Region/Region" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeDraw(int,android.graphics.RectF,int,byte[],int,int,int)">
+				<native name="drawF" native-name="draw" kind="PROXY">
+					<class>NinePatchGlue</class>
+					<include>NinePatchGlue.h</include>
+					<signature>
+						<parameter marshal="/android.graphics/Canvas/Canvas" />
+						<parameter mode="REF" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeDraw(int,android.graphics.Rect,int,byte[],int,int,int)">
+				<native name="drawI" native-name="draw" kind="PROXY">
+					<class>NinePatchGlue</class>
+					<include>NinePatchGlue.h</include>
+					<signature>
+						<parameter marshal="/android.graphics/Canvas/Canvas" />
+						<parameter mode="REF" />
+						<parameter marshal="/android.graphics/Bitmap/Bitmap" />
+						<parameter />
+						<parameter marshal="/android.graphics/Paint/Paint-AllowNull" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

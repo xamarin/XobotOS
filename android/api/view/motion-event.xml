@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="MotionEvent">
+	<native-handle id="NativeMotionEvent">
+		<name>NativeMotionEvent</name>
+		<type>android.view.MotionEvent</type>
+		<include>MotionEventGlue.h</include>
+		<class>MotionEventGlue</class>
+		<property>nativeInstance</property>
+		<field>mNativePtr</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeMotionEvent"
+		id="MotionEvent" />
+	<marshal-info class="native-class" native-handle="NativeMotionEvent"
+		flags="ALLOW_NULL" id="MotionEvent-AllowNull" />
+	<compilation-unit name="MotionEvent" output="/output/sharpen-no-docs">
+		<main-type native-handle="NativeMotionEvent" >
+			<field name="HISTORY_CURRENT">
+				<modify>
+					<field-initializer code="unchecked(-(int)0x80000000)" />
+				</modify>
+			</field>
+			<method name="nativeInitialize">
+				<native kind="STATIC" name="initialize">
+					<signature>
+						<return-type marshal="MotionEvent" />
+						<parameter marshal="MotionEvent-AllowNull" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCopy(int,int,boolean)">
+				<native kind="STATIC" name="copy">
+					<signature>
+						<return-type marshal="MotionEvent" />
+						<parameter marshal="MotionEvent-AllowNull" mode="REF" />
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeAddBatch(int,long,android.view.MotionEvent.PointerCoords[],int)">
+				<native kind="INSTANCE" name="addBatch">
+					<signature>
+						<parameter marshal="MotionEvent" />
+						<parameter index="2" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetDeviceId(int)">
+				<native kind="INSTANCE" name="getDeviceId">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetSource(int)">
+				<native kind="INSTANCE" name="getSource">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetSource(int,int)">
+				<native kind="INSTANCE" name="setSource" return-void="true">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAction(int)">
+				<native kind="INSTANCE" name="getAction">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetAction(int,int)">
+				<native kind="INSTANCE" name="setAction">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeIsTouchEvent(int)">
+				<native kind="INSTANCE" name="isTouchEvent">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetFlags(int)">
+				<native kind="INSTANCE" name="getFlags">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetFlags(int,int)">
+				<native kind="INSTANCE" name="setFlags">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+
+			<method name="nativeGetEdgeFlags(int)">
+				<native kind="INSTANCE" name="getEdgeFlags">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetEdgeFlags(int,int)">
+				<native kind="INSTANCE" name="setEdgeFlags">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetMetaState(int)">
+				<native kind="INSTANCE" name="getMetaState">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetButtonState(int)">
+				<native kind="INSTANCE" name="getButtonState">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeOffsetLocation(int,float,float)">
+				<native kind="INSTANCE" name="offsetLocation">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetXOffset(int)">
+				<native kind="INSTANCE" name="getXOffset">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetYOffset(int)">
+				<native kind="INSTANCE" name="getYOffset">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetXPrecision(int)">
+				<native kind="INSTANCE" name="getXPrecision">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetYPrecision(int)">
+				<native kind="INSTANCE" name="getYPrecision">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetDownTimeNanos(int)">
+				<native kind="INSTANCE" name="getDownTime">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetDownTimeNanos(int,long)">
+				<native kind="INSTANCE" name="setDownTime">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetPointerCount(int)">
+				<native kind="INSTANCE" name="getPointerCount">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetPointerId(int,int)">
+				<native kind="INSTANCE" name="getPointerId">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetToolType(int,int)">
+				<native kind="INSTANCE" name="getToolType">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeFindPointerIndex(int,int)">
+				<native kind="INSTANCE" name="findPointerIndex">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetHistorySize(int)">
+				<native kind="INSTANCE" name="getHistorySize">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetEventTimeNanos(int,int)">
+				<native kind="INSTANCE" name="getEventTimeNanos">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetRawAxisValue(int,int,int,int)">
+				<native kind="INSTANCE" name="getRawAxisValue">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetAxisValue(int,int,int,int)">
+				<native kind="INSTANCE" name="getAxisValue">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeScale(int,float)">
+				<native kind="INSTANCE" name="scale">
+					<signature>
+						<parameter marshal="MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeGetPointerCoords(int,int,int,android.view.MotionEvent.PointerCoords)">
+				<native kind="INSTANCE" name="getPointerCoords">
+					<signature>
+						<parameter marshal="MotionEvent" />
+						<parameter index="3" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeGetPointerProperties(int,int,android.view.MotionEvent.PointerProperties)">
+				<native kind="INSTANCE" name="getPointerProperties">
+					<signature>
+						<parameter marshal="MotionEvent" />
+						<parameter index="2" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method output="/output/stub">
+				<filter>
+					<name>transform</name>
+					<name>createFromParcelBody</name>
+					<name>writeToParcel</name>
+				</filter>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>nativeTransform</name>
+					<name>nativeReadFromParcel</name>
+					<name>nativeWriteToParcel</name>
+				</filter>
+			</method>
+			<method name="nativeDispose(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<type name="PointerProperties">
+				<native-struct id="PointerProperties"
+					native-type="MotionEventGlue::Properties">
+					<member name="id" native-name="id" />
+					<member name="toolType" native-name="toolType" />
+				</native-struct>
+			</type>
+			<type name="PointerCoords">
+				<native-struct id="PointerCoords"
+					native-type="MotionEventGlue::Coords">
+					<member name="mPackedAxisBits" native-name="packedAxisBits" />
+					<member name="mPackedAxisValues" native-name="packedAxisValues"
+						flags="ALLOW_NULL" />
+					<member name="x" />
+					<member name="y" />
+					<member name="pressure" />
+					<member name="size" />
+					<member name="touchMajor" />
+					<member name="touchMinor" />
+					<member name="toolMajor" />
+					<member name="toolMinor" />
+					<member name="orientation" />
+				</native-struct>
+				<field>
+					<filter>
+						<name>mPackedAxisBits</name>
+						<name>mPackedAxisValues</name>
+					</filter>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</field>
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>
+		

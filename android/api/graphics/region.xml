@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Region">
+	<native-handle id="NativeRegion">
+		<name>NativeRegion</name>
+		<type>android.graphics.Region</type>
+		<include>RegionGlue.h</include>
+		<class>RegionGlue</class>
+		<field>mNativeRegion</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeRegion"
+		id="Region" />
+	<marshal-info class="native-enum" id="Region-Op">
+		<native-type>SkRegion::Op</native-type>
+	</marshal-info>
+	<native-handle id="NativeRegionIterator">
+		<name>NativeRegionIterator</name>
+		<type>android.graphics.RegionIterator</type>
+		<include>RegionGlue.h</include>
+		<class>RegionIteratorGlue</class>
+		<field>mNativeIter</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeRegionIterator"
+		id="RegionIterator" />
+	<compilation-unit name="Region">
+		<main-type partial="true" native-handle="NativeRegion" >
+			<enum name="Op">
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<constructor name="Region(int)">
+				<parameter>
+					<binding native-handle="NativeRegion" />
+				</parameter>
+			</constructor>
+			<constructor name="Region(int,int)">
+				<parameter>
+					<binding native-handle="NativeRegion" />
+				</parameter>
+				<parameter>
+					<binding native-handle="NativeRegion" />
+				</parameter>
+			</constructor>
+			<method name="ni">
+				<binding native-handle="NativeRegion" />
+			</method>
+			<anonymous-class output="/output/nothing" />
+			<method name="contains(int,int)">
+				<native name="contains" kind="INSTANCE">
+					<signature implicit-instance="true">
+					</signature>
+				</native>
+			</method>
+			<method name="isComplex()">
+				<native name="isComplex" kind="INSTANCE">
+					<signature implicit-instance="true">
+					</signature>
+				</native>
+			</method>
+			<method name="isEmpty()">
+				<native name="isEmpty" kind="INSTANCE">
+					<signature implicit-instance="true">
+					</signature>
+				</native>
+			</method>
+			<method name="isRect()">
+				<native name="isRect" kind="INSTANCE">
+					<signature implicit-instance="true">
+					</signature>
+				</native>
+			</method>
+			<method name="nativeConstructor()">
+				<native name="constructor" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeCreateFromParcel(android.os.Parcel)"
+				output="/output/nothing" />
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="nativeEquals(int,int)">
+				<native name="equals" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetBoundaryPath(int,int)">
+				<native name="getBoundaryPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter marshal="/android.graphics/Path/Path" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetBounds(int,android.graphics.Rect)">
+				<native name="getBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeOp(int,android.graphics.Rect,int,int)">
+				<native name="rectOp" native-name="op" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter />
+						<parameter marshal="Region" />
+						<parameter index="3" marshal="Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeOp(int,int,int,int)">
+				<native name="op" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter marshal="Region" />
+						<parameter marshal="Region" />
+						<parameter marshal="Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeOp(int,int,int,int,int,int)">
+				<native name="recOp" native-name="op" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter index="5" marshal="Region-Op" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetPath(int,int,int)">
+				<native name="setPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetRect(int,int,int,int,int)">
+				<native name="setRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeSetRegion(int,int)">
+				<native name="setRegion" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Region" />
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeToString(int)" output="/output/nothing" />
+			<method name="toString" output="/output/partial" />
+			<method name="writeToParcel" output="/output/stub" />
+			<method name="nativeWriteToParcel" output="/output/nothing" />
+			<method name="quickContains(int,int,int,int)">
+				<native name="quickContains" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="quickReject(android.graphics.Region)">
+				<native name="quickReject" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="quickReject(int,int,int,int)">
+				<native name="quickRejectRect" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="scale(float,android.graphics.Region)">
+				<native name="scale" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="1" marshal="Region" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="translate(int,int,android.graphics.Region)">
+				<native name="translate" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="2" marshal="Region" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="RegionIterator">
+		<main-type native-handle="NativeRegionIterator" >
+			<method name="nativeConstructor(int)">
+				<native name="constructor" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="RegionIterator" />
+						<parameter marshal="Region" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeNext(int,android.graphics.Rect)">
+				<native name="next" kind="INSTANCE">
+					<signature>
+						<parameter marshal="RegionIterator" />
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestructor(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

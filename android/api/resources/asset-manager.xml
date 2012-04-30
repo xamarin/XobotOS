@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="AssetManager">
+	<native-handle id="NativeAssetManager">
+		<name>NativeAssetManager</name>
+		<type>android.content.res.AssetManager</type>
+		<include>AssetManagerGlue.h</include>
+		<class>AssetManagerGlue</class>
+		<field>mObject</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeAssetManager"
+		id="AssetManager" />
+	<native-handle id="NativeAsset">
+		<name>NativeAsset</name>
+		<type>android.content.res.AssetManager.AssetInputStream</type>
+		<include>AssetManagerGlue.h</include>
+		<class>android::Asset</class>
+		<field>mAsset</field>
+	</native-handle>
+	<marshal-info class="native-enum" id="Asset-AccessMode">
+		<native-type>android::Asset::AccessMode</native-type>
+	</marshal-info>
+	<marshal-info class="native-class" native-handle="NativeAsset"
+		id="Asset" />
+	<compilation-unit name="AssetManager" output="/output/sharpen-no-docs">
+		<main-type partial="true" native-handle="NativeAssetManager" >
+			<method output="/output/stub">
+				<filter>
+					<name>open</name>
+					<name>openFd</name>
+					<name>openNonAssetFd</name>
+				</filter>
+			</method>
+			<method output="/output/partial">
+				<filter>
+					<name>createTheme</name>
+					<name>incRefsLocked</name>
+					<name>decRefsLocked</name>
+				</filter>
+			</method>
+			<remove-members>
+				<member-kind>DESTRUCTOR</member-kind>
+			</remove-members>
+			<constructor output="/output/partial" />
+			<method name="init()">
+				<native kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="AssetManager" />
+					</signature>
+				</native>
+			</method>
+			<method name="setConfiguration(int,int,java.lang.String,int,int,int,int,int,int,int,int,int,int,int,int,int,int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="2" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="addAssetPath(java.lang.String)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="getStringBlockCount()">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getNativeStringBlock(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<return-type marshal="/android.content/StringBlock/StringBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="newTheme()">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<return-type marshal="/android.content/Resources/Theme" />
+					</signature>
+				</native>
+			</method>
+			<method name="applyStyle(int,int,int,int,int[],int[],int[])">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="/android.content/Resources/Theme" />
+						<parameter index="3"
+							marshal="/android.content/XmlBlock/XmlParser-AllowNull" mode="REF" />
+						<parameter flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="applyThemeStyle(int,int,boolean)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="/android.content/Resources/Theme" />
+					</signature>
+				</native>
+			</method>
+			<method name="copyTheme(int,int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="/android.content/Resources/Theme" />
+						<parameter marshal="/android.content/Resources/Theme" />
+					</signature>
+				</native>
+			</method>
+			<method name="getThemeValue(int,int,android.util.TypedValue,boolean)">
+				<parameter>
+					<binding native-handle="/android.content/Resources/NativeTheme" />
+				</parameter>
+			</method>
+			<method
+				name="loadThemeAttributeValue(int,int,android.util.TypedValue,boolean)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="/android.content/Resources/Theme" />
+						<parameter index="2" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="openXmlAssetNative(int,java.lang.String)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<return-type marshal="/android.content/XmlBlock/XmlBlock" />
+						<parameter index="1" />
+					</signature>
+				</native>
+			</method>
+			<method name="openXmlBlockAsset(int,java.lang.String)">
+				<variable name="xmlBlock">
+					<binding native-handle="/android.content/XmlBlock/NativeXmlBlock" />
+				</variable>
+			</method>
+			<method name="retrieveAttributes(int,int[],int[],int[])">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter marshal="/android.content/XmlBlock/XmlParser" mode="INSTANCE" />
+						<parameter index="2" mode="REF" flags="ALLOW_NULL" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="loadResourceValue(int,short,android.util.TypedValue,boolean)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="2" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="openNonAsset(int,java.lang.String,int)">
+				<variable name="asset">
+					<binding native-handle="NativeAsset" />
+				</variable>
+			</method>
+			<method name="openNonAssetNative(int,java.lang.String,int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<return-type marshal="Asset" />
+						<parameter index="1" />
+						<parameter marshal="Asset-AccessMode" />
+					</signature>
+				</native>
+			</method>
+			<method name="readAssetChar(int)">
+				<native kind="PROXY">
+					<class>AssetManagerGlue</class>
+					<signature>
+						<parameter marshal="Asset" />
+					</signature>
+				</native>
+			</method>
+			<method name="readAsset(int,byte[],int,int)">
+				<native kind="PROXY">
+					<class>AssetManagerGlue</class>
+					<signature>
+						<parameter marshal="Asset" />
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="seekAsset(int,long,int)">
+				<native kind="PROXY">
+					<class>AssetManagerGlue</class>
+					<signature>
+						<parameter marshal="Asset" />
+					</signature>
+				</native>
+			</method>
+			<method name="getAssetLength(int)">
+				<native kind="PROXY">
+					<class>AssetManagerGlue</class>
+					<signature>
+						<parameter marshal="Asset" />
+					</signature>
+				</native>
+			</method>
+			<method name="getAssetRemainingLength(int)">
+				<native kind="PROXY">
+					<class>AssetManagerGlue</class>
+					<signature>
+						<parameter marshal="Asset" />
+					</signature>
+				</native>
+			</method>
+			<method name="destroyAsset(int)" output="/output/nothing" />
+			<method name="getArraySize(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="retrieveArray(int,int[])">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter index="1" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="getArrayIntResource(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<return-type />
+					</signature>
+				</native>
+			</method>
+			<method name="getResourceIdentifier(java.lang.String,java.lang.String,java.lang.String)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+						<parameter flags="ALLOW_NULL" />
+						<parameter flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="getResourceName(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getResourcePackageName(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getResourceTypeName(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getResourceEntryName(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getArrayStringInfo(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getArrayStringResource(int)">
+				<native kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<type name="AssetInputStream" partial="true" native-handle="NativeAsset" >
+				<method name="getAssetInt">
+					<binding native-handle="NativeAsset" />
+				</method>
+				<constructor name="AssetInputStream(int)">
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+					<parameter>
+						<binding native-handle="NativeAsset" />
+					</parameter>
+				</constructor>
+				<destructor output="/output/nothing" />
+				<method name="close" output="/output/partial" />
+			</type>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>
+	

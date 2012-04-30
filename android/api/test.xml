@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Test">
+	<native-handle id="NativeTest">
+		<name>NativeTest</name>
+		<type>Test</type>
+		<include>MartinTest.h</include>
+		<class>MartinTest</class>
+		<field>mObject</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeTest"
+		id="Test" />
+	<compilation-unit name="Test" output="/output/sharpen-no-docs">
+		<main-type native-handle="NativeTest" >
+			<type name="Foo">
+				<native-struct id="Monkey" native-type="MartinTest::Foo">
+					<member name="hello" />
+					<member name="a" />
+				</native-struct>
+			</type>
+			<type name="Blittable">
+				<native-struct id="Blittable" native-type="MartinTest::Blittable">
+					<member name="hello" />
+				</native-struct>
+			</type>
+			<type name="Complex">
+				<native-struct id="Complex" native-type="MartinTest::Complex">
+					<member name="foo" />
+					<member name="str" />
+				</native-struct>
+			</type>
+			<method name="dumpMemoryUsage">
+				<native kind="STATIC" />
+			</method>
+			<method name="hello(int[])">
+				<native kind="STATIC">
+					<signature>
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="foo(martin.Test.Foo)">
+				<native kind="STATIC" />
+			</method>
+			<method name="bar(martin.Test.Foo[])">
+				<native kind="STATIC" />
+			</method>
+			<method name="refFunc(martin.Test.Foo)">
+				<native kind="STATIC">
+					<signature>
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="outFunc(martin.Test.Foo)">
+				<native kind="STATIC">
+					<signature>
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="retFunc()">
+				<native kind="STATIC" />
+			</method>
+			<method name="blittableFunc(martin.Test.Blittable)">
+				<native kind="STATIC" />
+			</method>
+			<method name="blittableRef(martin.Test.Blittable)">
+				<native kind="STATIC">
+					<signature>
+						<parameter mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="complex(martin.Test.Complex)">
+				<native kind="STATIC" />
+			</method>
+			<method name="complexRet()">
+				<native kind="STATIC" />
+			</method>
+			<method name="stringFunc(java.lang.String)">
+				<native kind="STATIC" />
+			</method>
+			<method name="stringArray(java.lang.String[])">
+				<native kind="STATIC" />
+			</method>
+			<method name="returnString()">
+				<native kind="STATIC" />
+			</method>
+			<method name="returnStringArray()">
+				<native kind="STATIC" />
+			</method>
+			<method name="returnIntArray()">
+				<native kind="STATIC" />
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

@@ -1,0 +1,3 @@
+<configuration>
+  <dllmap dll="libxobotos.so" target="libxobotos-@ARCH@.so" />
+</configuration>

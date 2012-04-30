@@ -1,0 +1,7 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/statusbar/IStatusBarService.java: \
+  frameworks/base/core/java/com/android/internal/statusbar/IStatusBarService.aidl \
+  frameworks/base/core/java/com/android/internal/statusbar/IStatusBar.aidl \
+  frameworks/base/core/java/com/android/internal/statusbar/StatusBarIcon.aidl \
+  frameworks/base/core/java/com/android/internal/statusbar/StatusBarIconList.aidl \
+  frameworks/base/core/java/com/android/internal/statusbar/StatusBarNotification.aidl 
+

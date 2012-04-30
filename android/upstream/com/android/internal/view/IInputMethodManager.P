@@ -1,0 +1,11 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/view/IInputMethodManager.java: \
+  frameworks/base/core/java/com/android/internal/view/IInputMethodManager.aidl \
+  frameworks/base/core/java/android/os/ResultReceiver.aidl \
+  frameworks/base/core/java/android/text/style/SuggestionSpan.aidl \
+  frameworks/base/core/java/android/view/inputmethod/InputMethodInfo.aidl \
+  frameworks/base/core/java/android/view/inputmethod/InputMethodSubtype.aidl \
+  frameworks/base/core/java/android/view/inputmethod/EditorInfo.aidl \
+  frameworks/base/core/java/com/android/internal/view/InputBindResult.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputContext.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputMethodClient.aidl 
+

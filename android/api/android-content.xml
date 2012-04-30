@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.content">
+
+	<!-- Namespace: android.content -->
+	<!-- -->
+	<!-- The stubs that we create for this namespace include all the -->
+	<!-- private API (methods, properties, nested classes and fields). -->
+	<!-- -->
+
+	<namespace name="android.content" output="/output/stub">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>ComponentName</include>
+				<include>Context</include>
+				<include>ContextWrapper</include>
+				<include>SyncActivityTooManyDeletes</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="AsyncTaskLoader">
+			<main-type>
+				<type name="LoadTask">
+					<field name="done">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ContentProvider">
+			<main-type>
+				<remove-members>
+					<member-kind>ANONYMOUS_CLASS</member-kind>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ContentResolver" output="/output/sharpen">
+			<main-type>
+				<method output="/output/stub">
+					<filter>
+						<name>openInputStream</name>
+						<name>openAssetFileDescriptor</name>
+						<name>getResourceId</name>
+						<name>modeToMode</name>
+						<name>acquireProvider</name>
+						<name>acquireExistingProvider</name>
+						<name>startSync</name>
+						<name>cancelSync</name>
+						<name>getCurrentSync</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Intent" output="/output/sharpen">
+			<main-type>
+				<method output="/output/stub">
+					<filter>
+						<name>parseUri</name>
+						<name>getIntentOld</name>
+						<name>getParcelableExtra</name>
+						<name>removeCategory</name>
+						<name>toUri</name>
+						<name>readFromParcel</name>
+						<name>writeToParcel</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SyncAdapterType">
+			<binding auto-rename-fields="true" />
+		</compilation-unit>
+		<namespace name="pm">
+			<compilation-unit output="/output/sharpen">
+				<location-filter>
+					<include>ActivityInfo</include>
+					<include>ApplicationInfo</include>
+					<include>ComponentInfo</include>
+					<include>ConfigurationInfo</include>
+					<include>FeatureInfo</include>
+					<include>InstrumentationInfo</include>
+					<include>PackageInfo</include>
+					<include>PackageInfoLite</include>
+					<include>PackageItemInfo</include>
+					<include>PackageManager</include>
+					<include>PermissionInfo</include>
+					<include>ProviderInfo</include>
+					<include>ServiceInfo</include>
+					<include>UserInfo</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit name="PackageParser" output="/output/sharpen">
+				<main-type>
+					<method output="/output/stub">
+						<filter>
+							<name>loadCertificates</name>
+							<name>collectCertificates</name>
+							<name>parseVerifier</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="res" output="/output/sharpen">
+			<template-include-file file="api/resources/asset-manager.xml" />
+			<template-include-file file="api/resources/string-block.xml" />
+			<template-include-file file="api/resources/resources.xml" />
+			<template-include-file file="api/resources/xml-block.xml" />
+
+			<compilation-unit name="AssetFileDescriptor" output="/output/stub" />
+
+			<compilation-unit name="CompatibilityInfo">
+				<main-type>
+					<type name="Translator">
+						<constructor>
+							<modify>
+								<remove-chained-invocation>true</remove-chained-invocation>
+							</modify>
+						</constructor>
+					</type>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit name="Configuration">
+				<main-type>
+					<method name="readFromParcel" output="/output/stub" />
+					<method name="writeToParcel" output="/output/stub" />
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="internal">
+			<compilation-unit>
+				<location-filter>
+					<include>PackageMonitor</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit output="/output/naked-stub" />
+		</namespace>
+	</namespace>
+
+</api-definition>

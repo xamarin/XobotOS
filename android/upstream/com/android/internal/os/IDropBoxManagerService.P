@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/os/IDropBoxManagerService.java: \
+  frameworks/base/core/java/com/android/internal/os/IDropBoxManagerService.aidl \
+  frameworks/base/core/java/android/os/DropBoxManager.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl 
+

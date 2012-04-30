@@ -1,0 +1,12 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/location/java/android/location/ILocationManager.java: \
+  frameworks/base/location/java/android/location/ILocationManager.aidl \
+  frameworks/base/core/java/android/app/PendingIntent.aidl \
+  frameworks/base/location/java/android/location/Address.aidl \
+  frameworks/base/location/java/android/location/Criteria.aidl \
+  frameworks/base/location/java/android/location/GeocoderParams.aidl \
+  frameworks/base/location/java/android/location/IGeocodeProvider.aidl \
+  frameworks/base/location/java/android/location/IGpsStatusListener.aidl \
+  frameworks/base/location/java/android/location/ILocationListener.aidl \
+  frameworks/base/location/java/android/location/Location.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{562B6196-A830-46F2-83AF-66C333A2C994}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrollView", "samples\ScrollView\ScrollView.csproj", "{648EFBBE-93CA-48BC-8840-62A818808C9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListActivity", "samples\ListActivity\ListActivity.csproj", "{6BF2BACD-6DBA-4F24-B68B-440B2447CF90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiaTests", "samples\SkiaTests\SkiaTests.csproj", "{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fragments", "samples\Fragments\Fragments.csproj", "{6CC68F68-321A-424D-A2F7-3A9FBD67D609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoDevelop.XobotBinding", "monodevelop\MonoDevelop.XobotBinding.csproj", "{39C2F1AE-D8D1-4D6A-8769-9252485B51AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XobotOS", "android\XobotOS.csproj", "{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}.Debug|x86.ActiveCfg = Debug|x86
+		{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}.Debug|x86.Build.0 = Debug|x86
+		{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}.Release|x86.ActiveCfg = Release|x86
+		{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}.Release|x86.Build.0 = Release|x86
+		{39C2F1AE-D8D1-4D6A-8769-9252485B51AC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39C2F1AE-D8D1-4D6A-8769-9252485B51AC}.Debug|x86.Build.0 = Debug|Any CPU
+		{39C2F1AE-D8D1-4D6A-8769-9252485B51AC}.Release|x86.ActiveCfg = Release|Any CPU
+		{39C2F1AE-D8D1-4D6A-8769-9252485B51AC}.Release|x86.Build.0 = Release|Any CPU
+		{648EFBBE-93CA-48BC-8840-62A818808C9A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{648EFBBE-93CA-48BC-8840-62A818808C9A}.Debug|x86.Build.0 = Debug|Any CPU
+		{648EFBBE-93CA-48BC-8840-62A818808C9A}.Release|x86.ActiveCfg = Release|Any CPU
+		{648EFBBE-93CA-48BC-8840-62A818808C9A}.Release|x86.Build.0 = Release|Any CPU
+		{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}.Debug|x86.Build.0 = Debug|Any CPU
+		{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}.Release|x86.Build.0 = Release|Any CPU
+		{6BF2BACD-6DBA-4F24-B68B-440B2447CF90}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6BF2BACD-6DBA-4F24-B68B-440B2447CF90}.Debug|x86.Build.0 = Debug|Any CPU
+		{6BF2BACD-6DBA-4F24-B68B-440B2447CF90}.Release|x86.ActiveCfg = Release|Any CPU
+		{6BF2BACD-6DBA-4F24-B68B-440B2447CF90}.Release|x86.Build.0 = Release|Any CPU
+		{6CC68F68-321A-424D-A2F7-3A9FBD67D609}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6CC68F68-321A-424D-A2F7-3A9FBD67D609}.Debug|x86.Build.0 = Debug|Any CPU
+		{6CC68F68-321A-424D-A2F7-3A9FBD67D609}.Release|x86.ActiveCfg = Release|Any CPU
+		{6CC68F68-321A-424D-A2F7-3A9FBD67D609}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{648EFBBE-93CA-48BC-8840-62A818808C9A} = {562B6196-A830-46F2-83AF-66C333A2C994}
+		{6BF2BACD-6DBA-4F24-B68B-440B2447CF90} = {562B6196-A830-46F2-83AF-66C333A2C994}
+		{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E} = {562B6196-A830-46F2-83AF-66C333A2C994}
+		{6CC68F68-321A-424D-A2F7-3A9FBD67D609} = {562B6196-A830-46F2-83AF-66C333A2C994}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = android\XobotOS.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.TextStylePolicy = $2
+		$2.inheritsSet = null
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/x-csharp
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.FileWidth = 120
+		$4.RemoveTrailingWhitespace = True
+		$4.EolMarker = Unix
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/plain
+		$4.scope = text/plain
+		$0.StandardHeader = $5
+		$5.Text = 
+		$5.IncludeInNewFiles = True
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+<HTML>
+<BODY>
+<p>Provides classes that manage Bluetooth functionality, such as scanning for
+devices, connecting with devices, and managing data transfer between devices.</p>
+
+<p>For more information, see the <a
+href="{@docRoot}guide/topics/wireless/bluetooth.html">Bluetooth</a> developer guide.</p>
+{@more}
+
+<p>The Bluetooth APIs let applications:</p>
+<ul>
+  <li>Scan for other Bluetooth devices</li>
+  <li>Query the local Bluetooth adapter for paired Bluetooth devices</li>
+  <li>Establish RFCOMM channels/sockets</li>
+  <li>Connect to specified sockets on other devices</li>
+  <li>Transfer data to and from other devices</li>
+</ul>
+
+<p>
+To perform Bluetooth communication using these APIs, an application must
+declare the {@link android.Manifest.permission#BLUETOOTH} permission. Some
+additional functionality, such as requesting device discovery,
+also requires the {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+permission.
+</p>
+
+<p class="note"><strong>Note:</strong>
+Not all Android-powered devices provide Bluetooth functionality.</p>
+</BODY>
+</HTML>

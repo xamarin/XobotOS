@@ -1,0 +1,96 @@
+Quick tutorial on how to create a new sample application in MonoDevelop.
+
+Setting up the Project:
+
+* Create a new library project and add a reference to XobotOS-debug
+  (don't worry, XobotOS-debug is an executable project)
+
+* Create your AndroidManifest.xml and res/ directory.
+
+  For instance:
+
+  ===[AndroidManifest.xml]===
+  <?xml version="1.0" encoding="utf-8"?>
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="XobotOS.ScrollView">
+
+        <application android:name="TestApplication"
+                android:label="XobotOS Scroll View">
+
+                <activity android:name="TestActivity">
+                </activity>
+        </application>
+    </manifest>
+  ====
+
+  ====[res/layout/scroll_view.xml]====
+  <?xml version="1.0" encoding="utf-8"?>
+  <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+                android:src="@drawable/venus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+  </ScrollView>
+  ====
+
+* Create your Application and Activity classes as specified in the manifest.
+
+* To build the resources, you need to run xorpt.pl prior to building:
+
+  Go to Project / Options / Build / Custom Command, then add a new
+  "Before Build" command.
+
+    Command: ${SolutionDir}/xorpt.pl ${ProjectDir} ${ProjectConfigName}
+    Working Directory: ${ProjectDir}
+
+  Don't check Run on external console.
+
+  This will add the following to the .csproj:
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="${SolutionDir}/xorpt.pl ${ProjectDir} ${ProjectConfigName}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+
+* Build the project.
+
+  This will run xorpt and generate the ProjectName-res.zip in the project
+  directory.
+
+  Xorpt (XobotOS Resource Packaging Tool) is a slightly modified version of
+  Android's aapt tool, which creates a R.cs and packages the
+  AndroidManifest.xml and all resources into a resources .zip file.
+
+  We embed this resource file in the assembly.
+
+* Add the generated R.cs to the build.
+
+* Add the generated ProjectName-res.zip as an embedded resource called
+  "XobotOS.Resources" (you must use this name).
+
+  To do this, add the file, then
+  right-click / Build Action / EmbeddedResource
+  right-click / Properties and set Resource ID to "XobotOS.Resources".
+
+* Now you can simply access your resources, for instance:
+
+        public class TestActivity : Activity
+        {
+                protected override void onCreate (android.os.Bundle savedInstanceState)
+                {
+                        base.onCreate (savedInstanceState);
+                        setContentView (R.layout.scroll_view);
+                }
+        }
+
+* Rebuild the project to make sure the resource file is embedded.
+
+To run this, simply run XobotOS.exe and pass it the assembly filename as
+command-line argument.
+
+
+

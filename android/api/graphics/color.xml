@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Color">
+	<marshal-info class="native-enum" id="Color">
+		<native-type>SkColor</native-type>
+	</marshal-info>
+	<compilation-unit name="Color">
+		<main-type partial="true">
+			<native-type />
+			<field>
+				<filter>
+					<name>BLACK</name>
+					<name>DKGRAY</name>
+					<name>GRAY</name>
+					<name>LTGRAY</name>
+					<name>WHITE</name>
+					<name>RED</name>
+					<name>GREEN</name>
+					<name>BLUE</name>
+					<name>YELLOW</name>
+					<name>CYAN</name>
+					<name>MAGENTA</name>
+					<name>TRANSPARENT</name>
+				</filter>
+				<modify>
+					<visibility>PUBLIC</visibility>
+				</modify>
+			</field>
+			<method name="parseColor(java.lang.String)" output="/output/partial" />
+			<method name="nativeRGBToHSV(int,int,int,float[])">
+				<native name="Color_RGBToHSV" kind="STATIC">
+					<class>ShaderGlue</class>
+					<include>ShaderGlue.h</include>
+					<signature>
+						<parameter index="3" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeHSVToColor(int,float[])">
+				<native name="Color_HSVToColor" kind="STATIC">
+					<class>ShaderGlue</class>
+					<include>ShaderGlue.h</include>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

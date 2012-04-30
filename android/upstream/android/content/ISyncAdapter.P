@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/content/ISyncAdapter.java: \
+  frameworks/base/core/java/android/content/ISyncAdapter.aidl \
+  frameworks/base/core/java/android/accounts/Account.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/core/java/android/content/ISyncContext.aidl 
+

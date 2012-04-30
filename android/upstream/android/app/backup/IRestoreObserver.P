@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/backup/IRestoreObserver.java: \
+  frameworks/base/core/java/android/app/backup/IRestoreObserver.aidl \
+  frameworks/base/core/java/android/app/backup/RestoreSet.aidl 
+

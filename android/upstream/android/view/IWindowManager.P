@@ -1,0 +1,19 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/view/IWindowManager.java: \
+  frameworks/base/core/java/android/view/IWindowManager.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputContext.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputMethodClient.aidl \
+  frameworks/base/core/java/android/content/res/CompatibilityInfo.aidl \
+  frameworks/base/core/java/android/content/res/Configuration.aidl \
+  frameworks/base/graphics/java/android/graphics/Bitmap.aidl \
+  frameworks/base/graphics/java/android/graphics/Point.aidl \
+  frameworks/base/core/java/android/os/IRemoteCallback.aidl \
+  frameworks/base/core/java/android/view/IApplicationToken.aidl \
+  frameworks/base/core/java/android/view/IOnKeyguardExitResult.aidl \
+  frameworks/base/core/java/android/view/IRotationWatcher.aidl \
+  frameworks/base/core/java/android/view/IWindowSession.aidl \
+  frameworks/base/core/java/android/view/KeyEvent.aidl \
+  frameworks/base/core/java/android/view/InputEvent.aidl \
+  frameworks/base/core/java/android/view/MotionEvent.aidl \
+  frameworks/base/core/java/android/view/InputChannel.aidl \
+  frameworks/base/core/java/android/view/InputDevice.aidl 
+

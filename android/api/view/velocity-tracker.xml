@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="VelocityTracker">
+	<native-handle id="NativeVelocityTracker">
+		<name>NativeVelocityTracker</name>
+		<type>android.view.VelocityTracker</type>
+		<include>VelocityTrackerGlue.h</include>
+		<class>VelocityTrackerGlue</class>
+		<field>mPtr</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeVelocityTracker"
+		id="VelocityTracker" />
+	<compilation-unit name="VelocityTracker" output="/output/sharpen-no-docs">
+		<main-type partial="true" native-handle="NativeVelocityTracker" >
+			<method name="nativeInitialize()">
+				<native kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeClear(int)">
+				<native kind="INSTANCE" name="clear">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeAddMovement(int,android.view.MotionEvent)">
+				<native kind="INSTANCE" name="addMovement">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+						<parameter marshal="/android.view/MotionEvent/MotionEvent" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeComputeCurrentVelocity(int,int,float)">
+				<native kind="INSTANCE" name="computeCurrentVelocity">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetXVelocity(int,int)">
+				<native kind="INSTANCE" name="getXVelocity">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetYVelocity(int,int)">
+				<native kind="INSTANCE" name="getYVelocity">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="getEstimator" output="/output/stub" />
+			<method
+				name="nativeGetEstimator(int,int,int,int,android.view.VelocityTracker.Estimator)" output="/output/stub">
+				<native kind="INSTANCE" name="getEstimator">
+					<signature>
+						<parameter marshal="VelocityTracker" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDispose(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

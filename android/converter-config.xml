@@ -1,0 +1,122 @@
+<configuration>
+	<log-file append="false">
+		<path>logfile.txt</path>
+	</log-file>
+
+	<map-namespace>
+		<from>^com\.android\.internal$</from>
+		<to>android.internal</to>
+	</map-namespace>
+	<map-namespace>
+		<from>^com\.android\.internal\.textservice$</from>
+		<to>android.view.textservice.internal</to>
+	</map-namespace>
+	<map-namespace>
+		<from>^com\.android\.internal\.(\w+)(\..+)?$</from>
+		<to>android.$1.internal$2</to>
+	</map-namespace>
+
+	<source-info>
+		<!-- Known problems -->
+
+		<location-filter must-match="true">
+			<exclude>android.net.LocalSocketAddress</exclude>
+			<exclude>android.net.vpn.VpnType</exclude>
+			<exclude>android.net.wifi.SupplicantState</exclude>
+			<exclude>android.renderscript.ProgramStore</exclude>
+			<exclude>android.renderscript.Primitive</exclude>
+			<exclude>android.renderscript.Dimension</exclude>
+			<exclude>android.renderscript.Sampler</exclude>
+			<exclude>android.renderscript.Element</exclude>
+			<exclude>android.renderscript.ProgramFragment</exclude>
+			<exclude>android.renderscript.RenderScript</exclude>
+			<exclude>android.view.ViewDebug</exclude>
+			<exclude>android.webkit.WebSettings</exclude>
+			<exclude>java.lang.reflect.Proxy</exclude>
+			<exclude>java.lang.Byte</exclude>
+			<exclude>java.lang.Short</exclude>
+			<exclude>java.lang.Integer</exclude>
+			<exclude>java.lang.Long</exclude>
+			<exclude>java.lang.Float</exclude>
+			<exclude>java.lang.Double</exclude>
+			<exclude>java.lang.Boolean</exclude>
+			<exclude>java.lang.Character</exclude>
+			<exclude>java.lang.Object</exclude>
+			<exclude>java.lang.String</exclude>
+			<exclude>java.lang.Void</exclude>
+			<exclude>java.lang.Class</exclude>
+			<exclude>java.lang.Number</exclude>
+			<exclude>java.lang.Enum</exclude>
+			<exclude>java.lang.Throwable</exclude>
+			<exclude>java.lang.Exception</exclude>
+			<exclude>java.lang.Error</exclude>
+			<exclude>java.lang.Math</exclude>
+			<exclude>java.lang.InterruptedException</exclude>
+			<exclude>java.lang.IndexOutOfBoundsException</exclude>
+			<exclude>java.lang.IllegalArgumentException</exclude>
+			<exclude>java.lang.ArrayIndexOutOfBoundsException</exclude>
+			<exclude>java.lang.System</exclude>
+			<exclude>java.lang.FindBugsSuppressWarnings</exclude>
+			<exclude>java.lang.SuppressWarnings</exclude>
+			<exclude>java.lang.Override</exclude>
+			<exclude>java.net.HttpURLConnection</exclude>
+			<exclude>java.util.ResourceBundle</exclude>
+			<exclude>java.util.UUID</exclude>
+			<exclude>java.util.Date</exclude>
+			<exclude>java.util.IdentityHashMap</exclude>
+			<exclude>java.util.concurrent.ConcurrentLinkedDeque</exclude>
+			<exclude>java.util.concurrent.ScheduledThreadPoolExecutor</exclude>
+			<exclude>java.util.concurrent.AbstractExecutorService</exclude>
+			<exclude>javax.security.auth.PrivateCredentialPermission</exclude>
+			<exclude>javax.sip.DialogState</exclude>
+			<exclude>libcore.icu.TimeZones</exclude>
+			<exclude>android.internal.widget.RotarySelector</exclude>
+			<exclude>java.math.RoundingMode</exclude>
+			<exclude>android.view.VolumePanel</exclude>
+
+			<!-- ICS -->
+			<exclude>org.bouncycastle.crypto.engines.AESFastEngine</exclude>
+			<exclude>org.bouncycastle.crypto.engines.AESEngine</exclude>
+			<exclude>org.apache.harmony.security.asn1.BerInputStream</exclude>
+		</location-filter>
+
+		<location-filter substring="true" must-match="true">
+			<include>java.lang.ref.</include>
+			<exclude>java.lang.annotation</exclude>
+			<exclude>android.annotation</exclude>
+			<exclude>com.google.common</exclude>
+			<exclude>org.apache.harmony.luni.lang.reflect</exclude>
+		</location-filter>
+		<location-filter regex="true" must-match="true">
+			<exclude>java\.util\.concurrent\..*package-info</exclude>
+			<exclude>javax\.annotation\..*</exclude>
+			<exclude>android\.test\..*</exclude>
+			<exclude>android\.tests\..*</exclude>
+		</location-filter>
+
+		<extra-csharp-sources>manual-stubs</extra-csharp-sources>
+		<extra-csharp-sources>naked-stubs</extra-csharp-sources>
+		<extra-csharp-sources>extra-sources</extra-csharp-sources>
+		<extra-csharp-sources>xobotos</extra-csharp-sources>
+		<extra-csharp-sources>sharpen</extra-csharp-sources>
+
+		<source-folder>upstream</source-folder>
+		<output-folder>output</output-folder>
+
+		<csproject-file>
+			<path>XobotOS.csproj</path>
+			<filelist-file>XobotOS.csproj.filelist</filelist-file>
+			<template-file>XobotOS.csproj.in</template-file>
+		</csproject-file>
+	</source-info>
+
+	<api-def>api/api-def.xml</api-def>
+
+	<native-config>
+		<dll-name>libxobotos.dll</dll-name>
+		<output-dir>glue</output-dir>
+		<function-prefix>libxobotos</function-prefix>
+		<include>libxobotos.h</include>
+	</native-config>
+
+</configuration>

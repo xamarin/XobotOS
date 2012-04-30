@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.app">
+
+	<!-- Namespace: android.app -->
+	<!-- -->
+	<!-- Full stubs for most of the classes. -->
+	<!-- -->
+	
+	<namespace name="android.app" output="/output/stub">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>Application</include>
+				<include>Fragment</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="Activity" output="/output/sharpen-no-docs">
+			<main-type partial="true">
+				<field>
+					<filter>
+						<name>mHandler</name>
+						<name>mInstanceTracker</name>
+					</filter>
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+				<method name="finish" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="IApplicationThread" output="/output/sharpen" />
+		<compilation-unit name="IActivityManager" output="/output/sharpen" />
+		<compilation-unit name="ApplicationThreadNative" />
+		<compilation-unit name="ActivityThread" output="/output/sharpen">
+			<main-type partial="true">
+				<field>
+					<filter>
+						<name>mAppThread</name>
+						<name>mGcIdler</name>
+						<name>mLooper</name>
+						<name>mH</name>
+					</filter>
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+				<field>
+					<filter>
+						<name>mAllApplications</name>
+						<name>mInstrumentation</name>
+						<name>mInstrumentationAppDir</name>
+						<name>mInstrumentationAppPackage</name>
+						<name>mInstrumentedAppDir</name>
+						<name>mSystemContext</name>
+						<name>TAG</name>
+					</filter>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</field>
+				<field>
+					<modify>
+						<visibility>PRIVATE</visibility>
+					</modify>
+				</field>
+				<method>
+					<filter>
+						<name>getPackageInfo</name>
+						<name>getPackageInfoNoCheck</name>
+						<name>getSystemContext</name>
+					</filter>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</method>
+				<method name="getApplicationThread">
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</method>
+				<method output="/output/stub">
+					<filter>
+						<name>ensureJitEnabled</name>
+						<name>scheduleGcIdler</name>
+						<name>unscheduleGcIdler</name>
+						<name>doGcIfNeeded</name>
+						<name>handleReceiver</name>
+						<name>handleCreateBackupAgent</name>
+						<name>handleDestroyBackupAgent</name>
+						<name>handleCreateService</name>
+						<name>handleDestroyService</name>
+						<name>handleResumeActivity</name>
+						<name>handleProfilerControl</name>
+						<name>handleDumpHeap</name>
+						<name>handleBindApplication</name>
+						<name>handleLowMemory</name>
+						<name>finishInstrumentation</name>
+						<name>installProvider</name>
+						<name>installContentProviders</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>systemMain</name>
+					</filter>
+				</method>
+				<method output="/output/nothing">
+					<filter>
+						<name>attach</name>
+						<name>main</name>
+					</filter>
+				</method>
+				<constructor name="ActivityThread" output="/output/partial" />
+				<type name="ActivityClientRecord" />
+				<type name="ResourcesKey" />
+				<type name="ApplicationThread" output="/output/stub">
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</type>
+				<type recursive="true" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ApplicationPackageManager" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/stub">
+					<filter>
+						<name>getInstalledPackages</name>
+						<name>getInstalledApplications</name>
+						<name>handlePackageBroadcast</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>getResourcesForApplication(android.content.pm.ApplicationInfo)</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ContextImpl" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/stub">
+					<filter>
+						<name>sendOrderedBroadcast</name>
+						<name>sendStickyOrderedBroadcast</name>
+						<name>registerReceiverInternal</name>
+						<name>createDropBoxManager</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>getPackageManager</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="FragmentManager" output="/output/sharpen">
+			<type name="FragmentManagerImpl" partial="true">
+				<method output="/output/partial">
+					<filter>
+						<name>execPendingActions</name>
+					</filter>
+				</method>
+			</type>
+		</compilation-unit>
+		<compilation-unit name="LoadedApk" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/stub">
+					<filter>
+						<name>initializeJavaContextClassLoader</name>
+						<name>removeContextRegistrations</name>
+						<name>forgetReceiverDispatcher</name>
+						<name>forgetServiceDispatcher</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>getClassLoader</name>
+					</filter>
+				</method>
+				<type name="WarningContextClassLoader" output="/output/naked-stub" />
+				<type name="ReceiverDispatcher" output="/output/stub">
+					<type name="Args" output="/output/nothing" />
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Instrumentation" output="/output/stub">
+			<main-type partial="true">
+				<field name="mPerfMetrics">
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+				<constructor output="/output/sharpen" />
+				<method output="/output/sharpen">
+					<filter>
+						<name>newActivity</name>
+						<name>onException</name>
+						<name>callApplicationOnCreate</name>
+						<name>callActivityOnStart</name>
+						<name>checkStartActivityResult</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>newApplication</name>
+						<name>callActivityOnCreate</name>
+						<name>callActivityOnPostCreate</name>
+						<name>execStartActivity</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="SharedPreferencesImpl">
+			<main-type>
+				<type name="MemoryCommitResult">
+					<field name="writtenToDiskLatch">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+				<type name="EditorImpl">
+					<field name="mModified">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>ListActivity</include>
+				<include>ListFragment</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="DownloadManager" output="/output/api-stub" />
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<exclude>UiModeManager</exclude>
+				<exclude>FullBackupAgent</exclude>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="admin">
+			<compilation-unit output="/output/api-stub">
+				<location-filter>
+					<include>IDevicePolicyManager</include>
+					<include>DevicePolicyManager</include>
+				</location-filter>
+			</compilation-unit>
+		</namespace>
+		<namespace name="internal">
+			<compilation-unit output="/output/sharpen">
+				<location-filter>
+					<include>AlertController</include>
+					<include>ActionBarImpl</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit output="/output/naked-stub"/>
+		</namespace>
+	</namespace>
+
+</api-definition>

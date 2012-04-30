@@ -1,0 +1,14 @@
+XobotOS now has experimental multi-device support.
+
+See http://developer.android.com/guide/practices/screens_support.html and
+http://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources
+
+XobotOS.exe now takes an optional '--device=handheld' or '--device=tablet'
+argument to run with a different screen size.  This must be given as first
+argument, before the assembly:
+
+$ mono --debug ../build/Debug/XobotOS.exe --device=tablet ../build/Debug/Fragments.dll
+
+samples/Fragments demonstrate an app that looks and behaves differently on a
+handheld and a tablet.
+

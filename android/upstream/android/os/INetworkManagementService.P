@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/os/INetworkManagementService.java: \
+  frameworks/base/core/java/android/os/INetworkManagementService.aidl \
+  frameworks/base/core/java/android/net/InterfaceConfiguration.aidl \
+  frameworks/base/core/java/android/net/INetworkManagementEventObserver.aidl \
+  frameworks/base/core/java/android/net/NetworkStats.aidl \
+  frameworks/base/core/java/android/net/RouteInfo.aidl \
+  frameworks/base/wifi/java/android/net/wifi/WifiConfiguration.aidl 
+

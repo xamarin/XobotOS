@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Rasterizer">
+	<native-handle id="NativeRasterizer">
+		<name>NativeRasterizer</name>
+		<type>android.graphics.Rasterizer</type>
+		<include>RasterizerGlue.h</include>
+		<class>SkRasterizer</class>
+		<field>native_instance</field>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeRasterizer"
+		id="Rasterizer" />
+	<marshal-info class="native-class" native-handle="NativeRasterizer"
+		flags="ALLOW_NULL" id="Rasterizer-AllowNull" />
+	<compilation-unit name="Rasterizer">
+		<main-type abstract="true" native-handle="NativeRasterizer" >
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="LayerRasterizer">
+		<main-type>
+			<native-type />
+			<method name="nativeConstructor()">
+				<native name="LayerRasterizer_create" kind="STATIC">
+					<class>RasterizerGlue</class>
+					<signature>
+						<return-type marshal="Rasterizer" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeAddLayer(int,int,float,float)">
+				<native name="LayerRasterizer_addLayer" kind="STATIC">
+					<class>RasterizerGlue</class>
+					<signature>
+						<parameter marshal="Rasterizer" mode="REF" />
+						<parameter marshal="/android.graphics/Paint/Paint" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

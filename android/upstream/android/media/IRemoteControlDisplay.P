@@ -1,0 +1,7 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/media/java/android/media/IRemoteControlDisplay.java: \
+  frameworks/base/media/java/android/media/IRemoteControlDisplay.aidl \
+  frameworks/base/core/java/android/app/PendingIntent.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl \
+  frameworks/base/graphics/java/android/graphics/Bitmap.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="java.io">
+	<namespace name="java.io" output="/output/api-stub">
+		<compilation-unit output="/output/sharpen">
+			<location-filter regex="true">
+				<include>.*Exception</include>
+				<include>IOError</include>
+			</location-filter>
+			<location-filter>
+				<include>BufferedInputStream</include>
+				<include>BufferedOutputStream</include>
+				<include>BufferedReader</include>
+				<include>BufferedWriter</include>
+				<include>CharArrayReader</include>
+				<include>CharArrayWriter</include>
+				<include>Closeable</include>
+				<include>Externalizable</include>
+				<include>FileFilter</include>
+				<include>FilenameFilter</include>
+				<include>FilePermission</include>
+				<include>FileReader</include>
+				<include>FileWriter</include>
+				<include>FilterInputStream</include>
+				<include>FilterOutputStream</include>
+				<include>FilterReader</include>
+				<include>FilterWriter</include>
+				<include>Flushable</include>
+				<include>HistoricalCharsetNames</include>
+				<include>InputStream</include>
+				<include>ObjectInput</include>
+				<include>ObjectInputValidation</include>
+				<include>ObjectOutput</include>
+				<include>OptionalDataException</include>
+				<include>OutputStream</include>
+				<include>OutputStreamWriter</include>
+				<include>PrintWriter</include>
+				<include>PushbackInputStream</include>
+				<include>PushbackReader</include>
+				<include>Reader</include>
+				<include>Serializable</include>
+				<include>SerializablePermission</include>
+				<include>SerializationHandleMap</include>
+				<include>StringBufferInputStream</include>
+				<include>StringReader</include>
+				<include>StringWriter</include>
+				<include>SyncFailedException</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/naked-stub">
+			<location-filter>
+				<include>EmulatedFields</include>
+				<include>EmulatedFieldsForDumping</include>
+				<include>EmulatedFieldsForLoading</include>
+				<include>ObjectStreamClass</include>
+				<include>ObjectStreamConstants</include>
+				<include>SequenceInputStream</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>PrintStream</include>
+				<include>Writer</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="Console" output="/output/sharpen">
+			<main-type partial="true">
+				<field name="console" output="/output/nothing" />
+				<method name="makeConsole" output="/output/nothing" />
+				<method name="readPassword()" output="/output/stub" />
+				<method name="setEcho" output="/output/nothing" />
+				<method name="setEchoImpl" output="/output/nothing" />
+				<type name="ConsoleReader" partial="true">
+					<constructor output="/output/partial" />
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="File" output="/output/sharpen">
+			<main-type partial="true" sealed="true">
+				<remove-members>
+					<member-kind>STATIC_CONSTRUCTOR</member-kind>
+				</remove-members>
+				<constructor output="/output/partial"/>
+				<method output="/output/partial">
+					<filter>
+						<name>canExecute</name>
+						<name>canRead</name>
+						<name>canWrite</name>
+						<name>delete</name>
+						<name>exists</name>
+						<name>getAbsolutePath</name>
+						<name>isDirectory</name>
+						<name>isFile</name>
+						<name>lastModified</name>
+						<name>length</name>
+					</filter>
+				</method>
+				<method output="/output/stub">
+					<filter>
+						<name>deleteOnExit</name>
+						<name>setExecutable</name>
+						<name>setReadable</name>
+						<name>setWritable</name>
+						<name>setLastModified</name>
+						<name>mkdir</name>
+						<name>createNewFile</name>
+						<name>createTempFile</name>
+						<name>renameTo</name>
+						<name>toURL</name>
+						<name>getTotalSpace</name>
+						<name>getUsableSpace</name>
+						<name>getFreeSpace</name>
+					</filter>
+				</method>
+				<method output="/output/nothing">
+					<filter>
+						<name>doAccess</name>
+						<name>doChmod</name>
+						<name>setLastModifiedImpl</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="InputStreamReader" output="/output/sharpen">
+			<main-type partial="true">
+				<constructor name="InputStreamReader(java.io.InputStream,java.lang.String)" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="StreamTokenizer">
+			<main-type>
+				<constructor>
+					<modify>
+						<remove-chained-invocation>true</remove-chained-invocation>
+					</modify>
+				</constructor>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ByteArrayInputStream">
+			<binding auto-rename-fields="true" />
+		</compilation-unit>
+	</namespace>
+</api-definition>

@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/view/IInputMethodCallback.java: \
+  frameworks/base/core/java/com/android/internal/view/IInputMethodCallback.aidl \
+  frameworks/base/graphics/java/android/graphics/Rect.aidl \
+  frameworks/base/core/java/android/view/KeyEvent.aidl \
+  frameworks/base/core/java/android/view/MotionEvent.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputContext.aidl \
+  frameworks/base/core/java/com/android/internal/view/IInputMethodSession.aidl \
+

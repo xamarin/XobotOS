@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/app/IBackupAgent.java: \
+  frameworks/base/core/java/android/app/IBackupAgent.aidl \
+  frameworks/base/core/java/android/app/backup/IBackupManager.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl 
+

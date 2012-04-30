@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Paint">
+	<native-handle id="NativePaint">
+		<name>NativePaint</name>
+		<type>android.graphics.Paint</type>
+		<include>PaintGlue.h</include>
+		<class>PaintGlue</class>
+		<field>mNativePaint</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePaint"
+		id="Paint" />
+	<marshal-info class="native-class" native-handle="NativePaint"
+		flags="ALLOW_NULL" id="Paint-AllowNull" />
+	<marshal-info class="native-enum" id="Paint-Style">
+		<native-type>SkPaint::Style</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Paint-Cap">
+		<native-type>SkPaint::Cap</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Paint-Join">
+		<native-type>SkPaint::Join</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Paint-Align">
+		<native-type>SkPaint::Align</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Paint-Hinting">
+		<native-type>SkPaint::Hinting</native-type>
+	</marshal-info>
+	<compilation-unit name="Paint">
+		<main-type native-handle="NativePaint">
+			<enum>
+				<filter>
+					<name>Style</name>
+					<name>Cap</name>
+					<name>Join</name>
+					<name>Align</name>
+				</filter>
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<type name="FontMetrics">
+				<native-struct native-type="SkPaint::FontMetrics">
+					<member name="top" native-name="fTop" />
+					<member name="ascent" native-name="fAscent" />
+					<member name="descent" native-name="fDescent" />
+					<member name="bottom" native-name="fBottom" />
+					<member name="leading" native-name="fLeading" />
+				</native-struct>
+			</type>
+			<type name="FontMetricsInt">
+				<native-struct native-type="PaintGlue::FontMetricsInt">
+					<member name="top" native-name="top" />
+					<member name="ascent" native-name="ascent" />
+					<member name="descent" native-name="descent" />
+					<member name="bottom" native-name="bottom" />
+					<member name="leading" native-name="leading" />
+				</native-struct>
+			</type>
+			<method name="ascent()">
+				<native name="ascent" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="descent()">
+				<native name="descent" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="getAlpha()">
+				<native name="getAlpha" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getColor()">
+				<native name="getColor" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getFlags()">
+				<native name="getFlags" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getFontMetrics(android.graphics.Paint.FontMetrics)">
+				<native name="getFontMetrics" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="getFontMetricsInt(android.graphics.Paint.FontMetricsInt)">
+				<native name="getFontMetricsInt" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="getHinting()">
+				<native name="getHinting" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getStrokeMiter()">
+				<native name="getStrokeMiter" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getStrokeWidth()">
+				<native name="getStrokeWidth" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getTextScaleX()">
+				<native name="getTextScaleX" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getTextSize()">
+				<native name="getTextSize" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="getTextSkewX()">
+				<native name="getTextSkewX" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="nSetShadowLayer(float,float,float,int)">
+				<native name="setShadowLayer" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method
+				name="nativeGetCharArrayBounds(int,char[],int,int,android.graphics.Rect)">
+				<native name="getCharArrayBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="4" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="nativeGetStringBounds(int,java.lang.String,int,int,android.graphics.Rect)">
+				<native name="getStringBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="4" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_breakText(char[],int,int,float,float[])">
+				<native name="breakTextC" native-name="breakTextC" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+						<parameter index="4" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_breakText(java.lang.String,boolean,float,float[])">
+				<native name="breakTextS" native-name="breakTextS" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+						<parameter index="3" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getFillPath(int,int,int)">
+				<native name="getFillPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/Path/Path" />
+						<parameter marshal="/android.graphics/Path/Path" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_getFontMetrics(int,android.graphics.Paint.FontMetrics)">
+				<native name="getFontMetrics" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getStrokeCap(int)">
+				<native name="getStrokeCap" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getStrokeJoin(int)">
+				<native name="getStrokeJoin" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getStyle(int)">
+				<native name="getStyle" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getTextAlign(int)">
+				<native name="getTextAlign" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method output="/output/stub">
+				<filter>
+					<name>getTextGlyphs</name>
+				</filter>
+				<modify>
+					<comment
+						text="This requires frameworks/base/core/jni/android/graphics/TextLayout.cpp." />
+				</modify>
+			</method>
+			<method output="/output/nothing">
+				<filter>
+					<name>native_getTextGlyphs</name>
+				</filter>
+			</method>
+			<method
+				name="native_getTextRunAdvances(int,char[],int,int,int,int,int,float[],int,int)">
+				<native name="getTextRunAdvancesC" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="7" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_getTextRunAdvances(int,java.lang.String,int,int,int,int,int,float[],int,int)">
+				<native name="getTextRunAdvancesS" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="7" mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getTextPath(int,int,char[],int,int,float,float,int)">
+				<native name="getTextPathC" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter index="2" />
+						<parameter index="7" marshal="/android.graphics/Path/Path"
+							mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_getTextPath(int,int,java.lang.String,int,int,float,float,int)">
+				<native name="getTextPathS" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter index="2" />
+						<parameter index="7" marshal="/android.graphics/Path/Path"
+							mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getTextWidths(int,char[],int,int,float[])"
+				output="/output/stub">
+				<native name="getTextWidthsC" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="4" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getTextWidths(int,java.lang.String,int,int,float[])"
+				output="/output/stub">
+				<native name="getTextWidthsS" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+						<parameter index="4" mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getTextRunCursor(int,char[],int,int,int,int,int)">
+				<native name="getTextRunCursorC" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_getTextRunCursor(int,java.lang.String,int,int,int,int,int)">
+				<native name="getTextRunCursorS" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_init()">
+				<native name="init" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_initWithPaint(int)">
+				<native name="initWithPaint" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Paint" />
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_measureText(char[],int,int)">
+				<native name="measureTextC" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_measureText(java.lang.String)">
+				<native name="measureTextS2" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_measureText(java.lang.String,int,int)">
+				<native name="measureTextS" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_reset(int)">
+				<native name="reset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_set(int,int)">
+				<native name="set" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="Paint" />
+					</signature>
+				</native>
+			</method>
+			<method name="setColorFilter(android.graphics.ColorFilter)">
+				<variable name="filterNative">
+					<binding native-handle="/android.graphics/ColorFilter/NativeColorFilter" />
+				</variable>
+			</method>
+			<method name="native_setColorFilter(int,int)">
+				<native name="setColorFilter" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/ColorFilter/ColorFilter-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setMaskFilter(android.graphics.MaskFilter)">
+				<variable name="maskfilterNative">
+					<binding native-handle="/android.graphics/MaskFilter/NativeMaskFilter" />
+				</variable>
+			</method>
+			<method name="native_setMaskFilter(int,int)">
+				<native name="setMaskFilter" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/MaskFilter/MaskFilter-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setPathEffect(android.graphics.PathEffect)">
+				<variable name="effectNative">
+					<binding native-handle="/android.graphics/PathEffect/NativePathEffect" />
+				</variable>
+			</method>
+			<method name="native_setPathEffect(int,int)">
+				<native name="setPathEffect" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/PathEffect/PathEffect-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setRasterizer(android.graphics.Rasterizer)">
+				<variable name="rasterizerNative">
+					<binding native-handle="/android.graphics/Rasterizer/NativeRasterizer" />
+				</variable>
+			</method>
+			<method name="native_setRasterizer(int,int)">
+				<native name="setRasterizer" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/Rasterizer/Rasterizer-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setShader(android.graphics.Shader)">
+				<variable name="shaderNative">
+					<binding native-handle="/android.graphics/Shader/NativeShader" />
+				</variable>
+			</method>
+			<method name="native_setShader(int,int)">
+				<native name="setShader" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/Shader/Shader-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setStrokeCap(int,int)">
+				<native name="setStrokeCap" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="Paint-Cap" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setStrokeJoin(int,int)">
+				<native name="setStrokeJoin" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="Paint-Join" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setStyle(int,int)">
+				<native name="setStyle" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="Paint-Style" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setTextAlign(int,int)">
+				<native name="setTextAlign" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="Paint-Align" />
+					</signature>
+				</native>
+			</method>
+			<method name="setTypeface(android.graphics.Typeface)">
+				<variable name="typefaceNative">
+					<binding native-handle="/android.graphics/Typeface/NativeTypeface" />
+				</variable>
+			</method>
+			<method name="native_setTypeface(int,int)">
+				<native name="setTypeface" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/Typeface/Typeface-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setXfermode(android.graphics.Xfermode)">
+				<variable name="xfermodeNative">
+					<binding native-handle="/android.graphics/Xfermode/NativeXfermode" />
+				</variable>
+			</method>
+			<method name="native_setXfermode(int,int)">
+				<native name="setXfermode" return-void="true" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Paint" />
+						<parameter marshal="/android.graphics/Xfermode/Xfermode-AllowNull"
+							mode="REF" />
+					</signature>
+				</native>
+			</method>
+			<method name="setAlpha(int)">
+				<native name="setAlpha" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setAntiAlias(boolean)">
+				<native name="setAntiAlias" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setColor(int)">
+				<native name="setColor" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setDither(boolean)">
+				<native name="setDither" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setFakeBoldText(boolean)">
+				<native name="setFakeBoldText" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setFilterBitmap(boolean)">
+				<native name="setFilterBitmap" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setFlags(int)">
+				<native name="setFlags" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setHinting(int)">
+				<native name="setHinting" kind="INSTANCE">
+					<signature implicit-instance="true">
+						<parameter marshal="Paint-Hinting" />
+					</signature>
+				</native>
+			</method>
+			<method name="setLinearText(boolean)">
+				<native name="setLinearText" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setStrikeThruText(boolean)">
+				<native name="setStrikeThruText" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setStrokeMiter(float)">
+				<native name="setStrokeMiter" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setStrokeWidth(float)">
+				<native name="setStrokeWidth" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setSubpixelText(boolean)">
+				<native name="setSubpixelText" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setTextScaleX(float)">
+				<native name="setTextScaleX" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setTextSize(float)">
+				<native name="setTextSize" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setTextSkewX(float)">
+				<native name="setTextSkewX" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+			<method name="setUnderlineText(boolean)">
+				<native name="setUnderlineText" kind="INSTANCE">
+					<signature implicit-instance="true" />
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

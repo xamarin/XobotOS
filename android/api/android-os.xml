@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition>
+
+	<namespace name="android.os" output="/output/stub">
+		<compilation-unit>
+			<location-filter>
+				<include>IBinder</include>
+				<include>Binder</include>
+				<include>ResultReceiver</include>
+				<include>PatternMatcher</include>
+				<include>Parcelable</include>
+				<include>IInterface</include>
+				<include>FileObserver</include>
+				<include>RemoteException</include>
+				<include>FileUtils</include>
+				<include>Environment</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>ParcelFileDescriptor</include>
+				<include>Parcel</include>
+				<include>Looper</include>
+				<include>Handler</include>
+				<include>ServiceManager</include>
+				<include>IPowerManager</include>
+				<include>PowerManager</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="AsyncTask" output="/output/api-stub">
+			<main-type>
+				<type output="/output/naked-stub"/>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="RecoverySystem">
+			<main-type>
+				<remove-members>
+					<member-kind>METHOD</member-kind>
+					<name>RecoverySystem()</name>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Bundle" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/partial">
+					<filter>
+						<name>getSparseParcelableArray</name>
+						<name>putSparseParcelableArray</name>
+						<name>unparcel</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="StrictMode">
+			<main-type partial="true">
+				<field>
+					<filter>
+						<name>sVmPolicy</name>
+						<name>sThisThreadSpanState</name>
+					</filter>
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+				<field name="NO_OP_SPAN" output="/output/partial" />
+				<method output="/output/partial">
+					<filter>
+						<name>incrementExpectedActivityCount</name>
+						<name>decrementExpectedActivityCount</name>
+						<name>enterCriticalSpan</name>
+					</filter>
+				</method>
+				<remove-members>
+					<member-kind>FIELD</member-kind>
+					<name>sDropboxCallsInFlight</name>
+				</remove-members>
+				<type name="Span" output="/output/sharpen" />
+				<type name="InstanceCountViolation">
+					<remove-members>
+						<member-kind>FIELD</member-kind>
+						<name>FAKE_STACK</name>
+					</remove-members>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Build" output="/output/sharpen">
+			<main-type partial="true">
+				<field name="RADIO">
+					<modify>
+						<field-initializer code="null" />
+					</modify>
+				</field>
+				<method output="/output/partial">
+					<filter>
+						<name>getRadioVersion</name>
+						<name>getString</name>
+						<name>getLong</name>
+					</filter>
+				</method>
+				<type name="VERSION">
+					<field name="SDK_INT">
+						<modify>
+							<field-initializer code="VERSION_CODES.ICE_CREAM_SANDWICH" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Message" output="/output/sharpen">
+			<main-type>
+				<method output="/output/stub">
+					<filter>
+						<name>writeToParcel</name>
+						<name>readFromParcel</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Process">
+			<type name="ZygoteStartFailedEx" output="/output/naked-stub" />
+			<main-type partial="true">
+				<method name="myUid" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/naked-stub"/>
+		<namespace name="storage">
+			<compilation-unit output="/output/api-stub">
+				<location-filter>
+					<include>IMountShutdownObserver</include>
+					<include>StorageManager</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit output="/output/naked-stub"/>
+		</namespace>
+		<namespace name="internal">
+			<compilation-unit>
+				<location-filter>
+					<include>IResultReceiver</include>
+				</location-filter>
+			</compilation-unit>
+			<compilation-unit output="/output/naked-stub"/>
+		</namespace>
+	</namespace>
+
+</api-definition>

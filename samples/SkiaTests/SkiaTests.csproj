@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1EE8F2DF-9EF8-4A44-AB70-CB7CB54A282E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XobotOS.Samples.SkiaTests</RootNamespace>
+    <AssemblyName>SkiaTests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="${SolutionDir}/xorpt.pl ${ProjectDir} ${ProjectConfigName}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\Release</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestView.cs" />
+    <Compile Include="skia\BigBlur.cs" />
+    <Compile Include="skia\Box.cs" />
+    <Compile Include="skia\Emboss.cs" />
+    <Compile Include="skia\Spiral.cs" />
+    <Compile Include="TestException.cs" />
+    <None Include="README" />
+    <Compile Include="skia\Gradients.cs" />
+    <Compile Include="skia\BigGradient.cs" />
+    <None Include="AndroidManifest.xml" />
+    <Compile Include="TestActivity.cs" />
+    <None Include="res\drawable\balloons.jpg" />
+    <None Include="res\drawable\beach.jpg" />
+    <None Include="res\drawable-hdpi\alert_dialog_icon.png" />
+    <None Include="res\drawable-hdpi\apidemo_androidlogo.png" />
+    <None Include="res\drawable-hdpi\app_sample_code.png" />
+    <None Include="res\drawable-hdpi\arrow_down_float.png" />
+    <None Include="res\drawable-hdpi\arrow_up_float.png" />
+    <None Include="res\drawable-hdpi\btn_check_off.png" />
+    <None Include="res\drawable-hdpi\btn_check_on.png" />
+    <None Include="res\drawable-hdpi\btn_circle_normal.png" />
+    <None Include="res\drawable-hdpi\btn_default_normal.9.png" />
+    <None Include="res\drawable-hdpi\button.9.png" />
+    <None Include="res\drawable-hdpi\ic_contact_picture.png" />
+    <None Include="res\drawable-hdpi\ic_launcher_settings.png" />
+    <None Include="res\drawable-hdpi\ic_popup_reminder.png" />
+    <None Include="res\drawable-hdpi\icon48x48_2.png" />
+    <None Include="res\drawable-hdpi\progress_circular_background.png" />
+    <None Include="res\drawable-hdpi\progress_particle.png" />
+    <None Include="res\drawable-hdpi\scrollbar_state2.png" />
+    <None Include="res\drawable-hdpi\star_big_on.png" />
+    <EmbeddedResource Include="SkiaTests-res.zip">
+      <LogicalName>XobotOS.Resources</LogicalName>
+    </EmbeddedResource>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="TestAttribute.cs" />
+    <Compile Include="android\AlphaBitmap.cs" />
+    <Compile Include="android\Arcs.cs" />
+    <Compile Include="android\BitmapMesh.cs" />
+    <Compile Include="android\Clipping.cs" />
+    <Compile Include="android\ColorFilters.cs" />
+    <Compile Include="android\ColorMatrixSample.cs" />
+    <Compile Include="android\DrawPoints.cs" />
+    <Compile Include="android\Layers.cs" />
+    <Compile Include="android\PathEffects.cs" />
+    <Compile Include="android\PathFillTypes.cs" />
+    <Compile Include="android\PolyToPoly.cs" />
+    <Compile Include="android\Regions.cs" />
+    <Compile Include="android\RoundRects.cs" />
+    <Compile Include="android\ScaleToFit.cs" />
+    <Compile Include="android\Vertices.cs" />
+    <Compile Include="android\Xfermodes.cs" />
+    <Compile Include="R.cs" />
+    <Compile Include="XobotMonkey.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\android\XobotOS.csproj">
+      <Project>{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}</Project>
+      <Name>XobotOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

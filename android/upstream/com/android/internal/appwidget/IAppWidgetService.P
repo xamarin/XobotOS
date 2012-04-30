@@ -1,0 +1,8 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/appwidget/IAppWidgetService.java: \
+  frameworks/base/core/java/com/android/internal/appwidget/IAppWidgetService.aidl \
+  frameworks/base/core/java/android/content/ComponentName.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl \
+  frameworks/base/core/java/android/appwidget/AppWidgetProviderInfo.aidl \
+  frameworks/base/core/java/com/android/internal/appwidget/IAppWidgetHost.aidl \
+  frameworks/base/core/java/android/widget/RemoteViews.aidl 
+

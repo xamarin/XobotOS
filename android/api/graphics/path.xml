@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Path">
+	<native-handle id="NativePath">
+		<name>NativePath</name>
+		<type>android.graphics.Path</type>
+		<include>PathGlue.h</include>
+		<class>PathGlue</class>
+		<field>mNativePath</field>
+		<property>nativeInstance</property>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativePath"
+		id="Path" />
+	<marshal-info class="native-class" native-handle="NativePath"
+		flags="ALLOW_NULL" id="Path-AllowNull" />
+	<marshal-info class="native-enum" id="Path-FillType">
+		<native-type>SkPath::FillType</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="Path-Direction">
+		<native-type>SkPath::Direction</native-type>
+	</marshal-info>
+	<compilation-unit name="Path">
+		<main-type native-handle="NativePath" >
+			<enum name="Direction">
+				<binding reference="/android.graphics/nullable-native-int-enum" />
+			</enum>
+			<enum name="FillType">
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<constructor name="Path(android.graphics.Path)">
+				<variable name="valNative">
+					<binding native-handle="NativePath" />
+				</variable>
+			</constructor>
+			<method name="offset(float,float,android.graphics.Path)">
+				<variable name="dstNative">
+					<binding native-handle="NativePath" />
+				</variable>
+			</method>
+			<method name="transform(android.graphics.Matrix,android.graphics.Path)">
+				<variable name="dstNative">
+					<binding native-handle="NativePath" />
+				</variable>
+			</method>
+			<method name="ni">
+				<binding native-handle="NativePath" />
+			</method>
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<method name="init1()">
+				<native name="init1" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="init2(int)">
+				<native name="init2" kind="CONSTRUCTOR">
+					<signature>
+						<return-type marshal="Path" />
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addArc(int,android.graphics.RectF,float,float)">
+				<native name="addArc" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addCircle(int,float,float,float,int)">
+				<native name="addCircle" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter index="4" marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addOval(int,android.graphics.RectF,int)">
+				<native name="addOval" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+						<parameter marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addPath(int,int)">
+				<native name="addPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addPath(int,int,float,float)">
+				<native name="addPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addPath(int,int,int)">
+				<native name="addPath" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="Path" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addRect(int,android.graphics.RectF,int)">
+				<native name="addRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+						<parameter marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addRect(int,float,float,float,float,int)">
+				<native name="addRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter index="5" marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_addRoundRect(int,android.graphics.RectF,float,float,int)">
+				<native name="addRoundRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+						<parameter index="4" marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_addRoundRect(int,android.graphics.RectF,float[],int)">
+				<native name="addRoundRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+						<parameter index="3" marshal="Path-Direction" />
+					</signature>
+				</native>
+			</method>
+			<method
+				name="native_arcTo(int,android.graphics.RectF,float,float,boolean)">
+				<native name="arcTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter />
+					</signature>
+				</native>
+			</method>
+			<method name="native_close(int)">
+				<native name="close" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_computeBounds(int,android.graphics.RectF)">
+				<native name="getBounds" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_cubicTo(int,float,float,float,float,float,float)">
+				<native name="cubicTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_getFillType(int)">
+				<native name="getFillType" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_incReserve(int,int)">
+				<native name="incReserve" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_isEmpty(int)">
+				<native name="isEmpty" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_isRect(int,android.graphics.RectF)">
+				<native name="isRect" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter mode="REF" flags="ALLOW_NULL" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_lineTo(int,float,float)">
+				<native name="lineTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_moveTo(int,float,float)">
+				<native name="moveTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_offset(int,float,float)">
+				<native name="offset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_offset(int,float,float,int)">
+				<native name="offset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter index="3" marshal="Path" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_quadTo(int,float,float,float,float)">
+				<native name="quadTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rCubicTo(int,float,float,float,float,float,float)">
+				<native name="rCubicTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rLineTo(int,float,float)">
+				<native name="rLineTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rMoveTo(int,float,float)">
+				<native name="rMoveTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rQuadTo(int,float,float,float,float)">
+				<native name="rQuadTo" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_reset(int)">
+				<native name="reset" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_rewind(int)">
+				<native name="rewind" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_set(int,int)">
+				<native name="set" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setFillType(int,int)">
+				<native name="setFillType" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="Path-FillType" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_setLastPoint(int,float,float)">
+				<native name="setLastPt" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_transform(int,int)">
+				<native name="transform" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+					</signature>
+				</native>
+			</method>
+			<method name="native_transform(int,int,int)">
+				<native name="transform" kind="INSTANCE">
+					<signature>
+						<parameter marshal="Path" />
+						<parameter marshal="/android.graphics/Matrix/Matrix" />
+						<parameter marshal="Path" mode="OUT" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

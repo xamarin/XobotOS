@@ -1,0 +1,3 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/location/java/android/location/INetInitiatedListener.java: \
+  frameworks/base/location/java/android/location/INetInitiatedListener.aidl 
+

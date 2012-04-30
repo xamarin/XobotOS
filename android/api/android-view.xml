@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="android.view">
+
+	<!-- Namespace: android.view -->
+	<!-- -->
+	<!-- We have full stubs for android.view -->
+	<!-- -->
+
+	<namespace name="android.view" output="/output/stub">
+		<template-include-file file="api/view/motion-event.xml" />
+		<template-include-file file="api/view/velocity-tracker.xml" />
+
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>ActionMode</include>
+				<include>ActionProvider</include>
+				<include>CollapsibleActionView</include>
+				<include>CompatibilityInfoHolder</include>
+				<include>ContextMenu</include>
+				<include>ContextThemeWrapper</include>
+				<include>DisplayList</include>
+				<include>DragEvent</include>
+				<include>FallbackEventHandler</include>
+				<include>FocusFinder</include>
+				<include>FocusFinderHelper</include>
+				<include>GestureDetector</include>
+				<include>Gravity</include>
+				<include>HapticFeedbackConstants</include>
+				<include>HardwareCanvas</include>
+				<include>HardwareLayer</include>
+				<include>IApplicationToken</include>
+				<include>InflateException</include>
+				<include>InputEvent</include>
+				<include>InputEventConsistencyVerifier</include>
+				<include>InputHandler</include>
+				<include>InputQueue</include>
+				<include>IOnKeyguardExitResult</include>
+				<include>IRotationWatcher</include>
+				<include>LayoutInflater</include>
+				<include>Menu</include>
+				<include>MenuItem</include>
+				<include>OrientationListener</include>
+				<include>ScaleGestureDetector</include>
+				<include>SoundEffectConstants</include>
+				<include>SubMenu</include>
+				<include>SurfaceHolder</include>
+				<include>SurfaceSession</include>
+				<include>SurfaceView</include>
+				<include>TextureView</include>
+				<include>TouchDelegate</include>
+				<include>ViewManager</include>
+				<include>ViewParent</include>
+				<include>ViewStub</include>
+				<include>ViewTreeObserver</include>
+				<include>Window</include>
+				<include>WindowManagerPolicy</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="HardwareRenderer">
+			<main-type partial="true">
+				<method name="isAvailable" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ViewGroup" output="/output/sharpen">
+			<main-type>
+				<binding>
+					<!-- Required for 'import static' -->
+				</binding>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="View" output="/output/sharpen">
+			<main-type partial="true">
+				<binding>
+					<!-- Required for 'import static' -->
+				</binding>
+				<type name="TransformationInfo">
+					<field>
+						<modify>
+							<visibility>INTERNAL</visibility>
+						</modify>
+					</field>
+				</type>
+				<type name="AttachInfo" partial="true">
+					<type name="InvalidateInfo">
+						<field name="sPool">
+							<modify>
+								<field-initializer code="null" />
+							</modify>
+						</field>
+					</type>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ViewConfiguration" output="/output/sharpen">
+			<main-type partial="true">
+				<constructor name="ViewConfiguration(android.content.Context)" output="/output/partial" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="KeyEvent" output="/output/sharpen">
+			<main-type partial="true" />
+		</compilation-unit>
+		<compilation-unit name="MenuInflater">
+			<main-type>
+				<field name="ACTION_VIEW_CONSTRUCTOR_SIGNATURE">
+					<modify>
+						<field-type type="System.Type[]"/>
+					</modify>
+				</field>
+				<field name="ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE">
+					<modify>
+						<field-type type="System.Type[]"/>
+					</modify>
+				</field>
+				<type name="InflatedOnMenuItemClickListener">
+					<field name="PARAM_TYPES">
+						<modify>
+							<field-type type="System.Type[]"/>
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ViewRootImpl" output="/output/sharpen">
+			<main-type partial="true">
+				<method name="getRunQueue" output="/output/sharpen" />
+				<method name="isInTouchMode" output="/output/partial" />
+				<method output="/output/stub" />
+				<constructor output="/output/stub" />
+				<field>
+					<filter>
+						<name>mResizeInterpolator</name>
+						<name>mSurface</name>
+					</filter>
+					<modify>
+						<field-initializer />
+					</modify>
+				</field>
+				<type name="AccessibilityInteractionController" output="/output/stub">
+					<field name="mPool">
+						<modify>
+							<field-initializer code="null" />
+						</modify>
+					</field>
+				</type>
+				<type name="RunQueue" />
+				<type recursive="true" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="GLES20RecordingCanvas">
+			<main-type>
+				<field name="sPool">
+					<modify>
+						<field-initializer code="null" />
+					</modify>
+				</field>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="VolumePanel" output="/output/naked-stub"/>
+		<compilation-unit name="WindowManager" output="/output/sharpen">
+			<main-type>
+				<type name="LayoutParams">
+					<method name="toString" output="/output/nothing" />
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="WindowManagerImpl" output="/output/sharpen">
+		</compilation-unit>
+		<compilation-unit name="Display" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/partial">
+					<filter>
+						<name>init</name>
+						<name>nativeClassInit</name>
+						<name>getWindowManager</name>
+						<name>getRawWidth</name>
+						<name>getRawHeight</name>
+						<name>getOrientation</name>
+						<name>getDisplayCount</name>
+					</filter>
+				</method>
+				<method output="/output/nothing">
+					<filter>
+						<name>getRawWidthNative</name>
+						<name>getRawHeightNative</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+		<namespace name="accessibility">
+			<compilation-unit name="AccessibilityManager" output="/output/sharpen">
+				<main-type partial="true">
+					<method name="isEnabled" output="/output/partial" />
+					<method name="getInstance" output="/output/partial" />
+					<method output="/output/stub" />
+					<remove-members>
+						<member-kind>CONSTRUCTOR</member-kind>
+					</remove-members>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="animation" output="/output/sharpen" />
+		<namespace name="textservice">
+			<compilation-unit name="SpellCheckerSession">
+				<main-type>
+					<type name="SpellCheckerSessionListenerImpl">
+						<field name="mPendingTasks">
+							<modify>
+								<field-type type="System.Collections.Generic.Queue&lt;SpellCheckerParams&gt;"/>
+								<field-initializer code="new System.Collections.Generic.Queue&lt;SpellCheckerParams&gt; ()" />
+							</modify>
+						</field>
+					</type>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="inputmethod">
+			<compilation-unit name="InputMethodManager" output="/output/sharpen">
+				<main-type>
+					<method output="/output/stub">
+						<filter>
+							<name>doDump</name>
+							<name>dump</name>
+							<name>getShortcutInputMethodsAndSubtypes</name>
+						</filter>
+					</method>
+					<field name="mClient">
+						<modify>
+							<field-initializer />
+						</modify>
+					</field>
+					<anonymous-class output="/output/stub" />
+					<type recursive="true" output="/output/stub" />
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="internal.menu" output="/output/sharpen">
+			<compilation-unit>
+				<location-filter>
+					<include>ListMenuPresenter</include>
+					<include>IconMenuPresenter</include>
+				</location-filter>
+				<main-type>
+					<method output="/output/stub">
+						<filter>
+							<name>saveHierarchyState</name>
+							<name>restoreHierarchyState</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit name="MenuBuilder">
+				<main-type>
+					<method output="/output/stub">
+						<filter>
+							<name>restoreActionViewStates</name>
+							<name>dispatchRestoreInstanceState</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace recursive="true"/>
+	</namespace>
+
+</api-definition>

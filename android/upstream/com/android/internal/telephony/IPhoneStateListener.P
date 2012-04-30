@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/telephony/java/com/android/internal/telephony/IPhoneStateListener.java: \
+  frameworks/base/telephony/java/com/android/internal/telephony/IPhoneStateListener.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/telephony/java/android/telephony/ServiceState.aidl \
+  frameworks/base/telephony/java/android/telephony/SignalStrength.aidl 
+

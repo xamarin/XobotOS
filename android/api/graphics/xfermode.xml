@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Xfermode">
+	<native-handle id="NativeXfermode">
+		<name>NativeXfermode</name>
+		<type>android.graphics.Xfermode</type>
+		<include>XfermodeGlue.h</include>
+		<class>SkXfermode</class>
+		<field>native_instance</field>
+		<property>nativeInstance</property>
+		<has-refcount>true</has-refcount>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeXfermode"
+		id="Xfermode" />
+	<marshal-info class="native-class" native-handle="NativeXfermode"
+		flags="ALLOW_NULL" id="Xfermode-AllowNull" />
+	<marshal-info class="native-enum" id="Xfermode-Mode">
+		<native-type>SkXfermode::Mode</native-type>
+	</marshal-info>
+	<marshal-info class="native-enum" id="AvoidXfermode-Mode">
+		<native-type>SkAvoidXfermode::Mode</native-type>
+	</marshal-info>
+	<compilation-unit name="Xfermode">
+		<main-type abstract="true" native-handle="NativeXfermode" >
+			<method name="finalizer(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="AvoidXfermode">
+		<main-type>
+			<native-type />
+			<enum name="Mode">
+				<binding reference="/android.graphics/native-int-enum" />
+			</enum>
+			<method name="nativeCreate(int,int,int)">
+				<native name="Avoid_create" kind="STATIC">
+					<class>XfermodeGlue</class>
+					<signature>
+						<return-type marshal="Xfermode" />
+						<parameter marshal="/android.graphics/Color/Color" />
+						<parameter index="2" marshal="AvoidXfermode-Mode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="PixelXorXfermode">
+		<main-type>
+			<native-type />
+			<method name="nativeCreate(int)">
+				<native name="PixelXor_create" kind="STATIC">
+					<class>XfermodeGlue</class>
+					<signature>
+						<return-type marshal="Xfermode" />
+						<parameter marshal="/android.graphics/Color/Color" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="PorterDuffXfermode">
+		<main-type>
+			<native-type />
+			<method name="nativeCreateXfermode(int)">
+				<native name="PorterDuff_create" kind="STATIC">
+					<class>XfermodeGlue</class>
+					<signature>
+						<return-type marshal="Xfermode" />
+						<parameter marshal="/android.graphics/PorterDuff-Mode" />
+					</signature>
+				</native>
+			</method>
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

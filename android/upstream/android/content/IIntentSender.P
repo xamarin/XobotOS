@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/content/IIntentSender.java: \
+  frameworks/base/core/java/android/content/IIntentSender.aidl \
+  frameworks/base/core/java/android/content/IIntentReceiver.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl 
+

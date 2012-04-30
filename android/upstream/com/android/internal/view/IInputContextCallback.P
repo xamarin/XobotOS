@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/view/IInputContextCallback.java: \
+  frameworks/base/core/java/com/android/internal/view/IInputContextCallback.aidl \
+  frameworks/base/core/java/android/view/inputmethod/ExtractedText.aidl 
+

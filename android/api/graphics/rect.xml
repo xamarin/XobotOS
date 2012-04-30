@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Rect">
+	<compilation-unit name="Rect">
+		<main-type>
+			<native-struct native-type="SkIRect">
+				<member name="left" native-name="fLeft" />
+				<member name="top" native-name="fTop" />
+				<member name="right" native-name="fRight" />
+				<member name="bottom" native-name="fBottom" />
+			</native-struct>
+			<binding />
+			<field name="FLATTENED_PATTERN" output="/output/nothing" />
+			<method name="unflattenFromString" output="/output/nothing" />
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="RectF">
+		<main-type>
+			<native-struct native-type="SkRect">
+				<member name="left" native-name="fLeft" />
+				<member name="top" native-name="fTop" />
+				<member name="right" native-name="fRight" />
+				<member name="bottom" native-name="fBottom" />
+			</native-struct>
+			<binding />
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/location/java/android/location/ILocationListener.java: \
+  frameworks/base/location/java/android/location/ILocationListener.aidl \
+  frameworks/base/location/java/android/location/Location.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6CC68F68-321A-424D-A2F7-3A9FBD67D609}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XobotOS.Samples.Fragments</RootNamespace>
+    <AssemblyName>Fragments</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="${SolutionDir}/xorpt.pl ${ProjectDir} ${ProjectConfigName}" workingdir="${ProjectDir}" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="R.cs" />
+    <Compile Include="Monkey.cs" />
+    <Compile Include="MonkeyList.cs" />
+    <Compile Include="MonkeyImage.cs" />
+    <Compile Include="ImageActivity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="AndroidManifest.xml" />
+    <None Include="res\layout\main.xml" />
+    <None Include="res\drawable\aye_aye.jpg" />
+    <None Include="res\drawable\bamboo_lemur.jpg" />
+    <None Include="res\drawable\fork_marked_lemur.png" />
+    <None Include="res\drawable\gray_mouse_lemur.jpg" />
+    <None Include="res\drawable\indri.jpg" />
+    <None Include="res\drawable\jupiter.jpg" />
+    <None Include="res\drawable\mars.jpg" />
+    <None Include="res\drawable\mouse_lemur.jpg" />
+    <None Include="res\drawable\red_fronted_lemur.jpg" />
+    <None Include="res\drawable\ring_tailed_lemur.jpg" />
+    <None Include="res\drawable\ring_tailed_lemur_2.jpg" />
+    <None Include="res\drawable\ruffed_lemur.jpg" />
+    <None Include="res\drawable\sahamalaza_sportive_lemur.png" />
+    <None Include="res\drawable\sifaka.jpg" />
+    <None Include="res\drawable\silky_sifaka.jpg" />
+    <None Include="res\values\lemurs.xml" />
+    <None Include="res\values\strings.xml" />
+    <None Include="res\layout\monkey_image.xml" />
+    <None Include="res\layout-large\main.xml" />
+    <None Include="res\layout\handheld.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fragments-res.zip">
+      <LogicalName>XobotOS.Resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\android\XobotOS.csproj">
+      <Project>{67942F02-5F09-4D4E-AB98-C44E48CF6AAC}</Project>
+      <Name>XobotOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

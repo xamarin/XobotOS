@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="other-namespaces">
+	<include-file file="api/java-io.xml" />
+	<include-file file="api/java-nio.xml" />
+	<include-file file="api/java-util.xml" />
+	<include-file file="api/org-xmlpull.xml" />
+
+	<!-- Stuff that's referenced somewhere, but we're not interested it. -->
+
+	<namespace name="java.security">
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>BasicPermission</include>
+				<include>Permission</include>
+			</location-filter>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="java.text">
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<exclude>AttributedString</exclude>
+				<include>Format</include>
+				<include>DateFormat</include>
+				<include>DateFormatSymbols</include>
+				<include>AttributedCharacterIterator</include>
+				<include>Collator</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="CharacterIterator" output="/output/sharpen">
+			<main-type>
+				<method name="clone">
+					<binding rename="Clone" />
+				</method>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="StringCharacterIterator" output="/output/sharpen" />
+		<compilation-unit name="SimpleDateFormat" output="/output/stub">
+			<main-type>
+				<method name="parseNumber(int,java.lang.String,java.text.ParsePosition)"
+					output="/output/nothing" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="BreakIterator" output="/output/sharpen">
+			<main-type partial="true">
+				<field name="wrapped" output="/output/nothing" />
+				<constructor output="/output/nothing" />
+				<method output="/output/partial">
+					<filter>
+						<name>getAvailableLocales</name>
+						<name>getCharacterInstance(java.util.Locale)</name>
+						<name>getLineInstance(java.util.Locale)</name>
+						<name>getSentenceInstance(java.util.Locale)</name>
+						<name>getWordInstance(java.util.Locale)</name>
+						<name>isBoundary</name>
+						<name>preceding</name>
+						<name>setText</name>
+						<name>clone</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="java.lang">
+		<compilation-unit output="/output/sharpen">
+			<location-filter regex="true">
+				<include>.*Exception</include>
+			</location-filter>
+			<location-filter>
+				<include>AssertionError</include>
+				<include>Runnable</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/nothing">
+			<location-filter>
+				<include>IntegralToString</include>
+				<include>RealToString</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="AbstractStringBuilder"
+			output="/output/sharpen">
+			<main-type>
+				<binding visibility="PUBLIC" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Iterable" output="/output/sharpen" />
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>StringBuffer</include>
+				<include>StringBuilder</include>
+			</location-filter>
+			<main-type partial="true">
+				<method name="append(int)" output="/output/partial" />
+				<method name="append(long)" output="/output/partial" />
+				<method name="append(double)" output="/output/partial" />
+				<method name="append(float)" output="/output/partial" />
+				<method name="appendCodePoint" output="/output/stub" />
+				<field name="serialPersistentFields" output="/output/nothing" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="ClassLoader" output="/output/sharpen">
+			<type output="/output/naked-stub" />
+			<main-type partial="true">
+				<type name="SystemClassLoader" output="/output/partial" />
+				<method output="/output/stub">
+					<filter>
+						<name>defineClass</name>
+						<name>getResources</name>
+						<name>getResourceAsStream</name>
+						<name>findResources</name>
+						<name>getPackage</name>
+						<name>getPackages</name>
+						<name>definePackage</name>
+					</filter>
+				</method>
+				<method output="/output/partial">
+					<filter>
+						<name>createSystemClassLoader</name>
+						<name>findLoadedClass</name>
+						<name>findSystemClass</name>
+					</filter>
+				</method>
+			</main-type>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="java.net">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>UnknownHostException</include>
+				<include>URISyntaxException</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="URI" output="/output/sharpen">
+			<main-type partial="true">
+				<method output="/output/partial">
+					<filter>
+						<name>isValidHost</name>
+						<name>isValidDomainName</name>
+					</filter>
+				</method>
+				<method name="toURL" output="/output/stub" />
+			</main-type>
+		</compilation-unit>
+	</namespace>
+
+	<namespace name="dalvik.system">
+		<compilation-unit name="CloseGuard" output="/output/sharpen" />
+	</namespace>
+
+	<namespace name="libcore">
+		<namespace name="io">
+			<compilation-unit name="Streams" output="/output/sharpen">
+				<main-type>
+					<field name="skipBuffer">
+						<modify>
+							<field-type type="XobotOS.Runtime.AtomicReference&lt;byte[]&gt;" />
+							<field-initializer code="XobotOS.Runtime.AtomicReference.create&lt;byte[]&gt;(null)" />
+						</modify>
+					</field>
+				</main-type>
+			</compilation-unit>
+		</namespace>
+		<namespace name="util">
+			<compilation-unit name="EmptyArray" output="/output/sharpen" />
+			<compilation-unit name="Objects" output="/output/sharpen" />
+		</namespace>
+		<namespace name="net">
+			<compilation-unit name="UriCodec" output="/output/sharpen" />
+			<namespace name="url">
+				<compilation-unit name="UrlUtils" output="/output/sharpen" />
+			</namespace>
+		</namespace>
+	</namespace>
+
+</api-definition>

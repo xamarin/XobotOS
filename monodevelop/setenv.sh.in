@@ -1,0 +1,3 @@
+export MSBuildExtensionsPath=@TARGET@
+export PKG_CONFIG_PATH=@TARGET@:$PKG_CONFIG_PATH
+

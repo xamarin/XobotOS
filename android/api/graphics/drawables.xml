@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="Drawables" output="/output/sharpen">
+	<compilation-unit name="GradientDrawable">
+		<main-type>
+			<type name="GradientState">
+				<field>
+					<filter>
+						<name>mUseLevel</name>
+						<name>mUseLevelForShape</name>
+						<name>mCenterX</name>
+						<name>mCenterY</name>
+						<name>mGradientRadius</name>
+					</filter>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</field>
+			</type>
+		</main-type>
+	</compilation-unit>
+	<compilation-unit name="StateListDrawable">
+		<main-type>
+			<type name="StateListState">
+				<method name="indexOfStateSet">
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</method>
+			</type>
+		</main-type>
+	</compilation-unit>
+	<namespace name="shapes" output="/output/sharpen">
+		<compilation-unit name="Shape">
+			<main-type>
+				<method name="clone()">
+					<binding>
+						<rename>Clone</rename>
+					</binding>
+				</method>
+			</main-type>
+		</compilation-unit>
+	</namespace>
+</namespace-templates>

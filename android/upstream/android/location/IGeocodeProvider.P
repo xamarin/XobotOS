@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/location/java/android/location/IGeocodeProvider.java: \
+  frameworks/base/location/java/android/location/IGeocodeProvider.aidl \
+  frameworks/base/location/java/android/location/Address.aidl \
+  frameworks/base/location/java/android/location/GeocoderParams.aidl 
+

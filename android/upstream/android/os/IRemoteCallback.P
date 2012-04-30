@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/os/IRemoteCallback.java: \
+  frameworks/base/core/java/android/os/IRemoteCallback.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

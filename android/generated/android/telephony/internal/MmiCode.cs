@@ -1,0 +1,14 @@
+using Sharpen;
+
+namespace android.telephony.@internal
+{
+	[Sharpen.NakedStub]
+	public interface MmiCode
+	{
+	}
+
+	[Sharpen.NakedStub]
+	public static class MmiCodeClass
+	{
+	}
+}

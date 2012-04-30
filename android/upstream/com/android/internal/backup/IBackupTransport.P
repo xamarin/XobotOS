@@ -1,0 +1,7 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/com/android/internal/backup/IBackupTransport.java: \
+  frameworks/base/core/java/com/android/internal/backup/IBackupTransport.aidl \
+  frameworks/base/core/java/android/app/backup/RestoreSet.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl \
+  frameworks/base/core/java/android/content/pm/PackageInfo.aidl \
+  frameworks/base/core/java/android/os/ParcelFileDescriptor.aidl 
+

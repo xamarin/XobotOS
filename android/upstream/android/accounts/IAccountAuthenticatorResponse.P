@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/accounts/IAccountAuthenticatorResponse.java: \
+  frameworks/base/core/java/android/accounts/IAccountAuthenticatorResponse.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl 
+

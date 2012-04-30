@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/nfc/INdefPushCallback.java: \
+  frameworks/base/core/java/android/nfc/INdefPushCallback.aidl \
+  frameworks/base/core/java/android/nfc/NdefMessage.aidl 
+

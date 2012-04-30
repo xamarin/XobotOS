@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/net/INetworkStatsService.java: \
+  frameworks/base/core/java/android/net/INetworkStatsService.aidl \
+  frameworks/base/core/java/android/net/NetworkStats.aidl \
+  frameworks/base/core/java/android/net/NetworkStatsHistory.aidl \
+  frameworks/base/core/java/android/net/NetworkTemplate.aidl 
+

@@ -1,0 +1,42 @@
+<body>
+This is the root of the JAIN implementation of SIP. It contains an
+implementation of the Provider, Listener and Stack. Implementation of the
+headers is contained in header and implementation of the parser in the
+parser subdirectory. The SIP Protocol specific abstractions are implemented
+in the stack subdirectory.
+
+<p> 
+The RI contains several additional Features that are not required by the JAIN-SIP spec
+ and that can be enabled by RI-specific properties that are specified when the SipStack
+ is created. The purpose of these additional properties is to enable the following:
+
+<ul>
+<li> Message Logging features - permits the application to log messages in
+a format that are suitable for trace viewing using the trace viewer facility.  
+<li> TCP starvation attack prevention -  Limit the size and timeout for 
+  tcp connections.
+<li> UDP Flooding attack prevention -- limit the size of queues and transaction
+  table size.
+<li> TCP message size limitation -- limit the size of TCP messages to prevent
+TCP flooding attacks. 
+<li> Connection caching and reuse for TCP connections -- reduce latency by re-using
+ TCP connections on client and server transactions.
+<li> Address resolution -- resolve addresses that are not direct DNS lookups or IP addresses
+  using a custom address resolver.
+<li> Network Layer -- allows your application code to have direct access to the
+ Sockets that are used by the stack (use this feature with caution!).
+</li>
+</ul>
+
+See the javadoc for gov.nist.javax.sip.SipStackImpl for a detailed explanation of 
+these features.
+
+<p>
+The interfaces that are suffixed with Ext in this package will not be altered and will 
+be included in the next specification revision. These are provided here for those who
+wish to use these extensions and do not want to wait until the next spec revision
+becomes available.
+
+</body>
+
+</a>

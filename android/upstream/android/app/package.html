@@ -1,0 +1,44 @@
+<html>
+
+<body>
+
+<p>Contains high-level classes encapsulating the overall Android application model.</p>
+
+<p>An Android application is defined using one or more of Android's four core application
+components. Two such application components are defined in this package: {@link
+android.app.Activity} and {@link android.app.Service}. The other two components are from the {@link
+android.content} package: {@link android.content.BroadcastReceiver} and {@link
+android.content.ContentProvider}.</p>
+
+<p>An {@link android.app.Activity} is an application component that provides a screen with which
+users can interact in order to do something, such as dial the phone, take a photo, send an email, or
+view a map. An activity can start other activities, including activities that live in separate
+applications.</p>
+
+<p>A {@link android.app.Service} is an application component that can perform
+long-running operations in the background without a user interface. For example, a service
+can handle network transactions, play music, or work with a content provider without the user being
+aware of the work going on.</p>
+
+<p>The {@link android.app.Fragment} class is also an important part of an application's
+design&mdash;especially when designing for large screen devices, such as tablets. A fragment defines
+a distinct part of an activity's behavior, including the associated UI. It has its own lifecycle
+that is similar to that of the activity and can exist alongside other fragments that are embedded in
+the activity. While an activity is running, you can add and remove fragments and include each
+fragment in a back stack that's managed by the activity&mdash;allowing the user to navigate
+backwards through the fragment states, without leaving the activity.</p>
+
+<p>This package also defines application utilities, such as dialogs, notifications, and the
+action bar.</p>
+
+<p>For information about using some the classes in this package, see the following
+documents: <a href="{@docRoot}guide/topics/fundamentals/activities.html">Activities</a>, <a
+href="{@docRoot}guide/topics/fundamentals/services.html">Services</a>, <a
+href="{@docRoot}guide/topics/fundamentals/fragments.html">Fragments</a>, <a
+href="{@docRoot}guide/topics/ui/actionbar.html">Using the Action Bar</a>, <a
+href="{@docRoot}guide/topics/ui/dialogs.html">Creating Dialogs</a>, and <a
+href="{@docRoot}guide/topics/ui/notifiers/index.html">Notifying the User</a>.</p>
+
+
+</body>
+</html>

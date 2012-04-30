@@ -1,0 +1,8 @@
+prefix=@TARGET@
+assemblies_dir=${prefix}
+Libraries=${assemblies_dir}/XobotOS.exe
+
+Name: XobotOS
+Description: XobotOS
+Version: 0.0.0.0
+Libs: -r:${assemblies_dir}/XobotOS.exe

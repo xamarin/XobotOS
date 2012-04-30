@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin id="sharpen.core"
+   name="Java To C# Core Plug-in"
+   version="1.0.0.qualifier"
+   provider-name="db4objects Inc."
+   class="sharpen.core.Sharpen">
+
+   <runtime>
+      <library name=".">
+         <export
+               name="*">
+         </export>
+      </library>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+   </requires>
+   
+   <extension
+         id="problem"
+         name="C# Conversion Problem"
+         point="org.eclipse.core.resources.markers">
+         <super type="org.eclipse.core.resources.problemmarker" />
+         <super type="org.eclipse.core.resources.textmarker" />
+         <persistent value="false" />
+   </extension>
+
+</plugin>

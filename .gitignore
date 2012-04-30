@@ -1,0 +1,10 @@
+/Debug
+/build
+/bin
+/upstream
+/ipch/
+/*.pidb
+/*.suo
+/*.sdf
+/*.opensdf
+/*.userprefs

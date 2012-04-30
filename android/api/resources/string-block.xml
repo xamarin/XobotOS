@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespace-templates id="StringBlock">
+	<native-handle id="NativeStringBlock">
+		<name>NativeStringBlock</name>
+		<type>android.content.res.StringBlock</type>
+		<include>AssetManagerGlue.h</include>
+		<class>AssetManagerGlue::StringBlock</class>
+		<field>mNative</field>
+	</native-handle>
+	<marshal-info class="native-class" native-handle="NativeStringBlock"
+		id="StringBlock" />
+	<compilation-unit name="StringBlock" output="/output/sharpen-no-docs">
+		<main-type partial="true" native-handle="NativeStringBlock" >
+			<constructor name="StringBlock(int,boolean)">
+				<parameter>
+					<binding native-handle="NativeStringBlock" />
+				</parameter>
+			</constructor>
+			<constructor output="/output/stub" />
+			<method name="nativeCreate" output="/output/stub" />
+			<method name="nativeGetSize(int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="StringBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetString(int,int)">
+				<native kind="INSTANCE">
+					<signature>
+						<return-type />
+						<parameter marshal="StringBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeGetStyle(int,int)">
+				<native kind="INSTANCE">
+					<signature>
+						<parameter marshal="StringBlock" />
+					</signature>
+				</native>
+			</method>
+			<method name="nativeDestroy(int)">
+				<native kind="DESTRUCTOR" />
+			</method>
+			<remove-members>
+				<member-kind>DESTRUCTOR</member-kind>
+			</remove-members>
+			<type name="StyleIDs">
+				<field>
+					<modify>
+						<visibility>INTERNAL</visibility>
+					</modify>
+				</field>
+			</type>
+			<type recursive="true" output="/output/stub" />
+		</main-type>
+	</compilation-unit>
+</namespace-templates>

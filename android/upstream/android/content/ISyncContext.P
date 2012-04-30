@@ -1,0 +1,4 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/content/ISyncContext.java: \
+  frameworks/base/core/java/android/content/ISyncContext.aidl \
+  frameworks/base/core/java/android/content/SyncResult.aidl 
+

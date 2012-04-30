@@ -1,0 +1,6 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/core/java/android/speech/IRecognitionService.java: \
+  frameworks/base/core/java/android/speech/IRecognitionService.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl \
+  frameworks/base/core/java/android/speech/IRecognitionListener.aidl 
+

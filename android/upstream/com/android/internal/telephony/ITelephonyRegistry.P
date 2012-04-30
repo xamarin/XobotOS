@@ -1,0 +1,10 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/telephony/java/com/android/internal/telephony/ITelephonyRegistry.java: \
+  frameworks/base/telephony/java/com/android/internal/telephony/ITelephonyRegistry.aidl \
+  frameworks/base/core/java/android/content/Intent.aidl \
+  frameworks/base/core/java/android/net/LinkProperties.aidl \
+  frameworks/base/core/java/android/net/LinkCapabilities.aidl \
+  frameworks/base/core/java/android/os/Bundle.aidl \
+  frameworks/base/telephony/java/android/telephony/ServiceState.aidl \
+  frameworks/base/telephony/java/android/telephony/SignalStrength.aidl \
+  frameworks/base/telephony/java/com/android/internal/telephony/IPhoneStateListener.aidl 
+

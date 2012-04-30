@@ -1,0 +1,5 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/voip/java/android/net/sip/ISipSession.java: \
+  frameworks/base/voip/java/android/net/sip/ISipSession.aidl \
+  frameworks/base/voip/java/android/net/sip/ISipSessionListener.aidl \
+  frameworks/base/voip/java/android/net/sip/SipProfile.aidl 
+

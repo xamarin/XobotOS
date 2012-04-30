@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+	<string-array name="lemur_string_array">
+		<item>@string/ring_tailed_lemur</item>
+		<item>@string/silky_sifaka</item>
+		<item>@string/mouse_lemur</item>
+		<item>@string/bamboo_lemur</item>
+		<item>@string/gray_mouse_lemur</item>
+		<item>@string/fork_marked_lemur</item>
+		<item>@string/red_fronted_lemur</item>
+		<item>@string/ruffed_lemur</item>
+		<item>@string/sahamalaza_sportive_lemur</item>
+		<item>@string/indri</item>
+		<item>@string/sifaka</item>
+		<item>@string/aye_aye</item>
+	</string-array>
+
+	<array name="lemurs">
+		<item>@drawable/ring_tailed_lemur</item>
+		<item>@drawable/silky_sifaka</item>
+		<item>@drawable/mouse_lemur</item>
+		<item>@drawable/bamboo_lemur</item>
+		<item>@drawable/gray_mouse_lemur</item>
+		<item>@drawable/fork_marked_lemur</item>
+		<item>@drawable/red_fronted_lemur</item>
+		<item>@drawable/ruffed_lemur</item>
+		<item>@drawable/sahamalaza_sportive_lemur</item>
+		<item>@drawable/indri</item>
+		<item>@drawable/sifaka</item>
+		<item>@drawable/aye_aye</item>
+	</array>
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="java.util">
+	<namespace name="java.util">
+		<template-include-file file="api/java-util-collections.xml" />
+
+		<compilation-unit output="/output/sharpen">
+			<location-filter regex="true">
+				<include>.*Exception</include>
+			</location-filter>
+			<location-filter>
+				<include>Formattable</include>
+				<include>FormattableFlags</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/stub">
+			<location-filter>
+				<include>SimpleTimeZone</include>
+				<include>TimeZone</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="Calendar" output="/output/stub">
+			<binding auto-rename-fields="true" />
+		</compilation-unit>
+		<compilation-unit name="Formatter" output="/output/sharpen">
+			<binding auto-rename-fields="true" />
+			<main-type partial="true">
+				<constructor name="Formatter(java.io.File,java.lang.String,java.util.Locale)" output="/output/stub"/>
+				<field name="conversionType">
+					<modify>
+						<field-initializer code="unchecked((char)UNSET)" />
+					</modify>
+				</field>
+				<field name="cachedDecimalFormat" output="/output/nothing"/>
+				<method output="/output/partial">
+					<filter>
+						<name>transform(java.util.Formatter.FormatToken,java.lang.Object)</name>
+						<name>transformFromCharacter</name>
+						<name>transformFromInteger</name>
+						<name>transformFromFloat</name>
+						<name>transformFromDateTime</name>
+						<name>transformA</name>
+						<name>transformE</name>
+						<name>transformF</name>
+						<name>transformG</name>
+					</filter>
+				</method>
+				<method output="/output/nothing">
+					<filter>
+						<name>appendT</name>
+						<name>getDecimalFormat</name>
+						<name>transformFromBigInteger</name>
+					</filter>
+				</method>
+				<type name="CachedDecimalFormat" output="/output/nothing"/>
+				<type name="FormatToken">
+					<field name="conversionType">
+						<modify>
+							<field-initializer code="unchecked((char)UNSET)" />
+						</modify>
+					</field>
+				</type>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Arrays" output="/output/stub">
+			<main-type partial="true">
+				<method output="/output/partial">
+					<filter>
+						<name>checkOffsetAndCount</name>
+						<name>copyOf(U[],int,java.lang.Class)</name>
+					</filter>
+				</method>
+				<method output="/output/sharpen">
+					<filter>
+						<name>equals</name>
+						<name>fill</name>
+						<name>checkStartAndEnd</name>
+						<name>copyOf</name>
+						<name>copyOfRange</name>
+						<name>asList</name>
+					</filter>
+				</method>
+				<type name="ArrayList" output="/output/sharpen" />
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>Formatter</include>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="regex" output="/output/sharpen">
+			<template-include-file file="api/java-util-regex.xml" />
+		</namespace>
+		<namespace name="jar">
+			<compilation-unit name="Pack200" output="/output/api-stub" />
+		</namespace>
+	</namespace>
+</api-definition>

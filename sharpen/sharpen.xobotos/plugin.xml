@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="sharpenXobotBuilder"
+         name="Sharpen Xobot Project Builder"
+         point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="sharpen.xobotos.builder.SharpenBuilder">
+         </run>
+      </builder>
+   </extension>
+   <extension
+         id="sharpenXobotNature"
+         name="Sharpen Xobot Project Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="sharpen.xobotos.builder.SharpenNature">
+         </run>
+      </runtime>
+      <builder
+            id="sharpen.xobotos.sharpenXobotBuilder">
+      </builder>
+   </extension>
+   <extension
+         id="sharpenXobotProblem"
+         name="C# Conversion Problem"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+
+</plugin>

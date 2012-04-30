@@ -1,0 +1,9 @@
+out/target/common/obj/JAVA_LIBRARIES/framework_intermediates/src/wifi/java/android/net/wifi/IWifiManager.java: \
+  frameworks/base/wifi/java/android/net/wifi/IWifiManager.aidl \
+  frameworks/base/wifi/java/android/net/wifi/WifiInfo.aidl \
+  frameworks/base/wifi/java/android/net/wifi/WifiConfiguration.aidl \
+  frameworks/base/wifi/java/android/net/wifi/ScanResult.aidl \
+  frameworks/base/core/java/android/net/DhcpInfo.aidl \
+  frameworks/base/core/java/android/os/Messenger.aidl \
+  frameworks/base/core/java/android/os/WorkSource.aidl 
+

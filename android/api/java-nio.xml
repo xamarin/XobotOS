@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api-definition id="java.nio">
+	<namespace name="java.nio">
+		<compilation-unit output="/output/sharpen">
+			<location-filter>
+				<include>IntBuffer</include>
+				<include>ShortBuffer</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<include>DirectByteBuffer</include>
+				<include>ReadOnlyDirectByteBuffer</include>
+				<include>ReadWriteDirectByteBuffer</include>
+				<include>MappedByteBuffer</include>
+				<include>MappedByteBufferAdapter</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit name="ByteOrder" output="/output/sharpen">
+			<main-type>
+				<method name="isLittleEndian">
+					<binding rename="Sharpen.Util.IsLittleEndian" />
+				</method>
+				<remove-members>
+					<name>isLittleEndian</name>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="Buffer" output="/output/sharpen">
+			<binding auto-rename-fields="true" />
+		</compilation-unit>
+		<compilation-unit name="ByteBuffer" output="/output/sharpen">
+			<binding auto-rename-fields="true" />
+			<main-type partial="true">
+				<remove-members>
+					<name>allocateDirect</name>
+					<name>put(java.nio.ByteBuffer)</name>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit name="CharBuffer" output="/output/sharpen">
+			<main-type partial="true">
+				<remove-members>
+					<name>subSequence</name>
+				</remove-members>
+			</main-type>
+		</compilation-unit>
+		<compilation-unit output="/output/sharpen">
+			<location-filter regex="true">
+				<include>.*Buffer</include>
+				<include>.*Adapter</include>
+			</location-filter>
+		</compilation-unit>
+		<compilation-unit output="/output/api-stub">
+			<location-filter>
+				<exclude>DatagramChannelImpl</exclude>
+				<exclude>FileChannelImpl</exclude>
+				<exclude>PipeImpl</exclude>
+				<exclude>SelectionKeyImpl</exclude>
+				<exclude>SelectorImpl</exclude>
+				<exclude>SelectorProviderImpl</exclude>
+				<exclude>ServerSocketChannelImpl</exclude>
+				<exclude>SocketChannelImpl</exclude>
+			</location-filter>
+		</compilation-unit>
+		<namespace name="charset">
+			<compilation-unit name="Charset" output="/output/sharpen">
+				<main-type partial="true">
+					<constructor output="/output/partial" />
+					<field output="/output/nothing">
+						<filter>
+							<name>CACHED_CHARSETS</name>
+							<name>aliasesSet</name>
+						</filter>
+					</field>
+					<method output="/output/partial">
+						<filter>
+							<name>getDefaultCharset</name>
+							<name>availableCharsets</name>
+							<name>forName</name>
+							<name>forNameUEE</name>
+							<name>isSupported</name>
+							<name>compareTo</name>
+						</filter>
+					</method>
+					<method output="/output/nothing">
+						<filter>
+							<name>cacheCharset</name>
+						</filter>
+					</method>
+					<method output="/output/stub">
+						<filter>
+							<name>forNameEE</name>
+							<name>aliases</name>
+						</filter>
+					</method>
+				</main-type>
+			</compilation-unit>
+			<compilation-unit output="/output/sharpen">
+				<location-filter>
+					<include>Charsets</include>
+					<include>CharacterCodingException</include>
+					<include>CharsetDecoder</include>
+					<include>CharsetEncoder</include>
+					<include>CodingErrorAction</include>
+					<include>CoderMalfunctionError</include>
+					<include>CoderResult</include>
+					<include>IllegalCharsetNameException</include>
+					<include>MalformedInputException</include>
+					<include>UnmappableCharacterException</include>
+					<include>UnsupportedCharsetException</include>
+				</location-filter>
+			</compilation-unit>
+		</namespace>
+	</namespace>
+</api-definition>
